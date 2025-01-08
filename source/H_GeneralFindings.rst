@@ -15,5 +15,9 @@
 7.2 Future Build Considerations
 *******************************
 
+Planning for Visibility with Post-Quantum Cryptography
+======================================================
 
+Client-Based Monitoring
+=======================
 

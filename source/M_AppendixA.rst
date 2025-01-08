@@ -8,8 +8,9 @@ As indicated in :ref:`Architecture_and_Builds`, this appendix contains the detai
 
 .. _A.1:
 
-A.1 Description of the Bounded-lifetime DH Key Architecture
-***********************************************************
+A.1 Description of the Bounded-Lifetime Diffie-Hellman Architecture
+*******************************************************************
+
 
 
 
