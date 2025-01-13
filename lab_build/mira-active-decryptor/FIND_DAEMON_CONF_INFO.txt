@@ -1,1 +1,0 @@
-Need to locate the configuration info for daemonizing the script.
