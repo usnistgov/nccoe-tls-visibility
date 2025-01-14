@@ -1,0 +1,11 @@
+[project]
+name = "nccoe-tls-visibility"
+version = "0.1.0"
+description = "A tool that converts the demonstration scenario template to RST."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "click>=8.1.8",
+    "et_xmlfile>=2.0.0",
+    "openpyxl>=3.1.5",
+]
