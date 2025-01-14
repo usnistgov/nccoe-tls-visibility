@@ -1,0 +1,33 @@
+# Copyright (c) 2018.  F5 Networks, Inc.  See End User License Agreement (EULA) for license terms.
+# Notwithstanding anything to the contrary in the EULA, Licensee may copy and modify
+# this software product for its internal business purposes. Further, Licensee may upload,
+# publish and distribute the modified version of the software product on devcentral.f5.com.
+
+when CLIENT_ACCEPTED {
+# add new variable
+    set cl_ssl_enabled 0
+}
+
+when CLIENTSSL_HANDSHAKE {
+# set the cl_ssl_enabled flag if not bypassed
+    set cl_ssl_enabled 1
+}
+
+when CONNECTOR_OPEN {
+    set connector_profile [CONNECTOR::profile]
+    set l7_proto [L7CHECK::protocol get]
+    if { ( $connector_profile eq "/Common/ssloS_NETSCOUT.app/ssloS_NETSCOUT-t-4-connector"
+            || $connector_profile eq "/Common/ssloS_NETSCOUT.app/ssloS_NETSCOUT-t-6-connector" )
+        && $cl_ssl_enabled == 1
+        && ( $l7_proto eq "https"
+            || $l7_proto eq "http-connect" ) }
+    {
+        if { [info exists ctx]
+            && [info exists ctx(log)]
+            && $ctx(log) > 1 }
+        {
+            ACCESS::log ssl-orchestrator.debug "[virtual] CONNECTOR_OPEN from [IP::client_addr]_[TCP::client_port] to [IP::local_addr]_[TCP::local_port] $connector_profile remap server port to 80"
+        }
+        CONNECTOR::remap server_port 80
+    }
+}
