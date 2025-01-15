@@ -1,0 +1,23 @@
+
+services:
+  app:
+    container_name: testapp
+    command: python3 testapp.py
+    build: ./testapp-build
+    volumes:
+      - ./testapp-build/testapp:/app
+      - ./certs:/certs
+    ports:
+      - "5000:5000"
+    restart: unless-stopped
+
+  reverse_proxy:
+    container_name: reverse_proxy
+    build: ./nginx-build
+    ports:
+      - "80:80"
+      - "443:443"
+    restart: unless-stopped
+    volumes:
+      - ./certs:/certs
+      - ./nginx-default.conf:/etc/nginx/sites-enabled/default.conf
