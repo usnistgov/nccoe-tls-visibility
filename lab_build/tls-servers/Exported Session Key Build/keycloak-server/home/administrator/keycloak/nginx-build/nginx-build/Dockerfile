@@ -1,6 +1,6 @@
 FROM ubuntu:20.04
 
-LABEL maintainer="Bob"
+LABEL maintainer="Michael"
 LABEL version="0.1"
 LABEL description="This is custom Docker Image for an Nginx reverse proxy service."
 
