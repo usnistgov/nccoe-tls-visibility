@@ -1,6 +1,6 @@
 FROM ubuntu:20.04
 
-LABEL maintainer="jtsexton@mitre.org"
+LABEL maintainer="NCCoE Administrator"
 LABEL version="1"
 LABEL description="This is a custom Docker Image for running Postfix with TLS 1.3"
 
