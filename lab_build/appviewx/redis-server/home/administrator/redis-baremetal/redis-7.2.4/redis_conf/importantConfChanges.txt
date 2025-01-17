@@ -27,6 +27,5 @@ Leave the rest of the config set to defaults.
 
 All files named in the TLS/SSL section of the configuration file contain the PKI information (certificate chain, certificate, or key) encoded in PEM format. 
 
-**Julian to add info about creating the redis service**
 created the file /etc/systemd/system/redis.service
 Enabled the redis service.  
