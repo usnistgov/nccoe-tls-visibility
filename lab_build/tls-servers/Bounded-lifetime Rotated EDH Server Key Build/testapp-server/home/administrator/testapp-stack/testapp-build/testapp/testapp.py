@@ -10,11 +10,11 @@ from datetime import *
 import random
 
 app = Flask(__name__)
-app.secret_key=b"session_handling_secret"
+app.secret_key=b"<<sanitized>>"
 print("Current python directory: %s" % os.getcwd() )
 config={}
 config['OIDC_CLIENT_SECRETS'] = './oidc-client-secret.txt'
-config['SECRET_KEY'] = 'SECRET'
+config['SECRET_KEY'] = '<<sanitized>>'
 config['OVERWRITE_REDIRECT_URI'] = "https://rk-testapp.visibility.nccoe.org/authorize"
 config['OIDC_SCOPES'] = ['openid','profile','email']
 app.config.update(config)
