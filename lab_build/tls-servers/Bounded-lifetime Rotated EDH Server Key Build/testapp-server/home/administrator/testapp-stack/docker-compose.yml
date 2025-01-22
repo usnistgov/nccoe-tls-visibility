@@ -7,7 +7,7 @@ services:
     volumes:
       - ./testapp-build/testapp:/app
       - ./certs:/certs
-      - ./fre.php:/app/fre.php
+      - ./payload.php:/app/payload.php
     ports:
       - "5000:5000"
     restart: unless-stopped
