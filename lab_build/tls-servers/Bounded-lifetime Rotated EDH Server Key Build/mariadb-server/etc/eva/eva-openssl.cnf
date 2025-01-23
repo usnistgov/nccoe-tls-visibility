@@ -1,0 +1,15 @@
+openssl_conf = openssl_init
+
+[openssl_init]
+engines = engines_sect
+
+[engines_sect]
+eva = eva_sect
+
+[eva_sect]
+dynamic_path = /usr/lib/x86_64-linux-gnu/eva/eva-openssl-engine.so
+eva_early_log = "syslog://?facility=local5&levels=all:info&annotate=topic,level,align"
+eva_applications = "mariadbd"
+eva_zone = "zone-1"
+init = 1
+default_algorithms = ALL
