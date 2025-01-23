@@ -18,12 +18,30 @@ With custom template and default stem:
 
 """
 
+from functools import reduce
 import os
+from pathlib import Path
 import click
 import openpyxl
 
-def format_rst_content(scenario_id, title, purpose, description, procedure, expected, screenshot, screentshotNotes, passive_tests, active_tests):
-    title = title or f"Scenario {scenario_id}"  # Default title if missing
+def format_rst_content(scenario_id, title, purpose, description, procedure, expected, screenshot, passive_tests, active_tests):
+    title = f"Scenario {scenario_id}: {title}"
+
+    results = [[passive_tests[k][kk] for kk in passive_tests[k].keys()] for k in passive_tests.keys()] + [[active_tests[k][kk] for kk in active_tests[k].keys()] for k in active_tests.keys()]
+    
+    results = [
+        passive_tests['bounded_life_time']['real_time'],
+        passive_tests['bounded_life_time']['post_facto'],
+        passive_tests['exported_session_key']['real_time'],
+        passive_tests['exported_session_key']['post_facto'],
+        active_tests['break_and_inspect_mira']['real_time'],
+        active_tests['break_and_inspect_mira']['post_facto'],
+        active_tests['break_and_inspect_f5']['real_time'],
+        active_tests['break_and_inspect_f5']['post_facto']
+    ]
+    results_out = [f"{results[n]}{' '*(len('Real-Time' if n % 2 == 0 else 'Post-Facto')-len(results[n]))}" for n in range(len(results))]
+    
+    results_str = ' | '.join(results_out)
     rst_content = f""".. _scenario-{scenario_id}:
 
 {title}
@@ -49,39 +67,47 @@ Expected Outcome
 
 {expected or "No expected outcome provided."}
 
-Screenshot
-----------
++-------------------------------------------------+-------------------------------------------------+
+| Passive                                         | Active                                          |
++------------------------+------------------------+------------------------+------------------------+
+| Bounded Life-Time      | Exported Session Key   | Break & Inspect (Mira) | Break and Inspect (F5) |
++-----------+------------+-----------+------------+-----------+------------+-----------+------------+
+| Real-Time | Post-Facto | Real-Time | Post-Facto | Real-Time | Post-Facto | Real-Time | Post-Facto |
++===========+============+===========+============+===========+============+===========+============+
+| {results_str} | 
++-----------+------------+-----------+------------+-----------+------------+-----------+------------+
+
+Screenshots
+-----------
 
 {screenshot or "No screenshot provided."}
 
-Screenshot Notes
-----------------
 
-{screentshotNotes or "No screenshot notes provided."}
-
-Passive Tests
--------------
-
-* Bounded Life-Time:
-  * Real-Time: {passive_tests['bounded_life_time']['real_time']}
-  * Post Facto: {passive_tests['bounded_life_time']['post_facto']}
-
-* Exported Session Key:
-  * Real-Time: {passive_tests['exported_session_key']['real_time']}
-  * Post Facto: {passive_tests['exported_session_key']['post_facto']}
-
-Active Tests
-------------
-
-* Break and Inspect (MIRA):
-  * Real-Time: {active_tests['break_and_inspect_mira']['real_time']}
-  * Post Facto: {active_tests['break_and_inspect_mira']['post_facto']}
-
-* Break and Inspect (F5):
-  * Real-Time: {active_tests['break_and_inspect_f5']['real_time']}
-  * Post Facto: {active_tests['break_and_inspect_f5']['post_facto']}
 """
     return rst_content
+
+        
+
+def format_screenshots(screenshot_cell, screenshot_caption_cell, screenshot_alt_text_cell):
+    screens = screenshot_cell.split(',')
+    captions = screenshot_caption_cell.split('//')
+    alts = screenshot_alt_text_cell.split('//')
+    screens = [s.strip() for s in screens]
+    captions = [s.strip() for s in captions]
+    alts = [s.strip() for s in alts]
+    rst_out = ""
+    for k in range(len(screens)):
+        rst_content = f"""
+
+.. figure:: /images/demonstration_results/{screens[k]}
+   :width: 90%
+   :alt: {alts[k]}
+
+   {captions[k]}
+
+"""
+        rst_out += rst_content
+    return rst_out
 
 @click.command()
 @click.argument('xlsx_file', type=click.Path(exists=True))
@@ -105,8 +131,10 @@ def generate_rst_files(xlsx_file, location, stem, root):
     workbook = openpyxl.load_workbook(xlsx_file)
     sheet = workbook.active
     data = [list(row) for row in sheet.iter_rows(values_only=True)][3:]  # Skip the first three header rows
-
+    data = [row for row in data if row[0] != None]
     click.echo(f"Excel file '{xlsx_file}' processed, {len(data)} scenarios read.")
+
+    scenario_list = []
 
     # Generate RST files
     generated_files = []
@@ -119,6 +147,7 @@ def generate_rst_files(xlsx_file, location, stem, root):
         expected = row[5]
         screenshot = row[14]
         screenshotNotes = row[15]
+        screenshotAlts = row[16]
 
         passive_tests = {
             'bounded_life_time': {'real_time': row[6], 'post_facto': row[7]},
@@ -130,8 +159,12 @@ def generate_rst_files(xlsx_file, location, stem, root):
             'break_and_inspect_f5': {'real_time': row[12], 'post_facto': row[13]}
         }
 
+        #print(gen_grid_table([['Passive', 'Active'],['Break and Inspect (MIRA)', 'Break and Inspect (F5)', 'Bounded Life-Time', 'Exported Session Key'], ['Real Time', 'Post-Facto']], ['Pass', 'Pass', 'Pass', 'Pass', 'Pass', 'Pass', 'Pass', 'Pass']))
+
+        one_screen = format_screenshots(screenshot_cell=screenshot, screenshot_caption_cell=screenshotNotes, screenshot_alt_text_cell=screenshotAlts)
+
         rst_content = format_rst_content(
-            scenario_id, title, purpose, description, procedure, expected, screenshot, screenshotNotes, passive_tests, active_tests
+            scenario_id, title, purpose, description, procedure, expected, one_screen, passive_tests, active_tests
         )
 
         output_filename = f"{stem}-{i + 1}.rst"
@@ -140,17 +173,17 @@ def generate_rst_files(xlsx_file, location, stem, root):
             output_file.write(rst_content)
         click.echo(f"Generating file '{output_filename}'.")
         generated_files.append(output_filename)
-
+        scenario_list += [f'* Scenario {scenario_id}: :ref:`scenario-{scenario_id}`\n']
     # Generate aggregation RST file
     index_filename = f"{stem}-index.rst"
     index_path = os.path.join(location, index_filename)
     with open(index_path, 'w') as index_file:
         index_file.write(".. toctree::\n   :maxdepth: 1\n\n")
         for file in generated_files:
-            index_file.write(f"   {file}\n")
-        index_file.write("\n---\n\nIncluded Files:\n===============\n\n")
-        for file in generated_files:
-            index_file.write(f"* {file}\n")
+            index_file.write(f"   /{str(Path(location) / file)}\n")
+        # index_file.write("\nIncluded Files:\n===============\n\n")
+        #for scenario in scenario_list:
+        #    index_file.write(scenario)
     click.echo(f"Generating aggregation file, '{index_filename}'.")
 
     click.echo("\nComplete.")
