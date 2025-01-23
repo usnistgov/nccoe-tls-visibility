@@ -1,0 +1,16 @@
+[Unit]
+Description=Redis Service
+
+[Service]
+Type=simple
+ExecStart=/home/administrator/redis-baremetal/redis-7.2.4/src/redis-server /home/administrator/redis-baremetal/redis-7.2.4/redis_conf/redis.conf
+StandardOutput=/home/administrator/logs/redis.log
+Restart=on-failure
+
+# Increase the default a bit in order to allow many simultaneous
+# files to be monitored, we might need a lot of fds.
+LimitNOFILE=16384
+
+[Install]
+WantedBy=multi-user.target
+Alias=redis.service
