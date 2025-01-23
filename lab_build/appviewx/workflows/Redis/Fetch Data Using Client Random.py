@@ -9,7 +9,6 @@ out = []
 
 from redis.exceptions import ConnectionError, DataError, NoScriptError, RedisError, ResponseError
 
-# r = redis.Redis(host="pe-pki-apvx-node2.lab.appviewx.net", port=6379,password="Sup3rc@t",db=0)
 r = redis.Redis(host="redis.visibility.nccoe.org", port=6379,ssl=True)
 keys = b'sk-cr<%client_random%>'
 
