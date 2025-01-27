@@ -9,9 +9,9 @@ Network Configuration
 +-----------+------------+---------------+--------------------------------------------------------------------------------------------------+
 | Interface | Network    | Address       | Purpose                                                                                          |
 +-----------+------------+---------------+--------------------------------------------------------------------------------------------------+
-| 1         | MANAGEMENT | [[NIC0     ]] | Management access to the server and transfer of session key material to Key Governance Platform. |
+| 1         | MANAGEMENT | [[NIC0]]      | Management access to the server and transfer of session key material to Key Governance Platform. |
 +-----------+------------+---------------+--------------------------------------------------------------------------------------------------+
-| 2         | SERVER     | [[NIC1     ]] | Connectivity from TLS clients.                                                                   |
+| 2         | SERVER     | [[NIC1]]      | Connectivity from TLS clients.                                                                   |
 +-----------+------------+---------------+--------------------------------------------------------------------------------------------------+
 
 Service Details
