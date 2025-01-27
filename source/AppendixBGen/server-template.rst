@@ -14,10 +14,24 @@ Network Configuration
 | 2         | SERVER     | [[NIC1     ]] | Connectivity from TLS clients.                                                                   |
 +-----------+------------+---------------+--------------------------------------------------------------------------------------------------+
 
+Service Details
+---------------
++-----------+------------+---------------------------+
+| Service   | Version    | Containerized             | 
++-----------+------------+---------------------------+
+| [[Serv1]] | [[V1]]     | [[Containerized1]]        | 
++-----------+------------+---------------------------+
+| [[Serv2]] | [[V2]]     | [[Containerized2]]        | 
++-----------+------------+---------------------------+
+| OpenSSL   | 1.1.1f     | [[OpenSSL Containerized]] |
++-----------+------------+---------------------------+
+
+
 Notes
 -----
 
 [[Description]]
+
 
 
 The server was assigned the unique hostname [[Hostname]]. An associated "A" record for the server's hostname and IP address was recorded in the lab DNS service. The [[Name]] software was installed using the native "apt" Ubuntu package installer.
