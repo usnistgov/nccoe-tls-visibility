@@ -37,6 +37,6 @@ Configuration Files
 Startup Instructions
 --------------------
 
-Finally, the [[Name]] service was enabled through systemd with the following commands:
+Finally, the [[Name]] service was enabled through the following commands:
 
 [[Startup Instructions]]
