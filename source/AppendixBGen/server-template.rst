@@ -1,8 +1,10 @@
-# [[Name]] Server Configuration
+[[Name]] Server Configuration
+=============================
 
 The [[Name]] server build started with a standard [[OS]] virtual machine created with allocations of 2 vCPUs, 16 GB of memory, 50 GB of storage, and 2 network interface cards. 
 
-## Network Configuration
+Network Configuration
+---------------------
 
 +-----------+------------+---------------+--------------------------------------------------------------------------------------------------+
 | Interface | Network    | Address       | Purpose                                                                                          |
@@ -12,7 +14,8 @@ The [[Name]] server build started with a standard [[OS]] virtual machine created
 | 2         | SERVER     | 192.168.30.xx | Connectivity from TLS clients.                                                                   |
 +-----------+------------+---------------+--------------------------------------------------------------------------------------------------+
 
-## Notes
+Notes
+-----
 
 [[Description]]
 
@@ -24,13 +27,15 @@ First, a PKI certificate and key were created in PEM format using the DigiCert C
 Second, [[Name]] was configured to only listen on the network interface connected to the SERVER network. 
 
 
-## Configuration Files
+Configuration Files
+-------------------
 
 [[Configuration Files]]
 
 [[Configuration Description]]
 
-## Startup Instructions
+Startup Instructions
+--------------------
 
 Finally, the [[Name]] service was enabled through systemd with the following commands:
 
