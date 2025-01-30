@@ -51,6 +51,5 @@ Insert Description
 Startup Instructions
 --------------------
 
-Finally, the TestApp service was enabled through the following commands:
-
-[[Startup Instructions]]
+Finally, the TestApp service was enabled through the following commands::
+    [[Startup Instructions]]

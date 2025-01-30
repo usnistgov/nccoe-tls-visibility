@@ -46,6 +46,5 @@ Configuration Files
 Startup Instructions
 --------------------
 
-Finally, the [[Name]] service was enabled through the following commands:
-
-[[Startup Instructions]]
+Finally, the [[Name]] service was enabled through the following commands::
+    [[Startup Instructions]]

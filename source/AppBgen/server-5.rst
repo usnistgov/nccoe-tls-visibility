@@ -49,6 +49,5 @@ Insert Description
 Startup Instructions
 --------------------
 
-Finally, the Proxy service was enabled through the following commands:
-
-[[Startup Instructions]]
+Finally, the Proxy service was enabled through the following commands::
+    [[Startup Instructions]]
