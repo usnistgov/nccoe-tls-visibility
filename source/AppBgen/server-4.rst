@@ -59,5 +59,7 @@ Additionally, the configuration option "require-secure-transport" must be set to
 Startup Instructions
 --------------------
 
-Finally, the MariaDB service was enabled through the following commands::
+Finally, the MariaDB service was enabled through the following commands:
+
+.. code-block::
     systemctl status enable mariadb

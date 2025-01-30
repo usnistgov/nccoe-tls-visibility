@@ -51,5 +51,7 @@ Insert Description
 Startup Instructions
 --------------------
 
-Finally, the TestApp service was enabled through the following commands::
+Finally, the TestApp service was enabled through the following commands:
+
+.. code-block::
     [[Startup Instructions]]

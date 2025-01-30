@@ -49,5 +49,7 @@ Insert Description
 Startup Instructions
 --------------------
 
-Finally, the MariaDB service was enabled through the following commands::
+Finally, the MariaDB service was enabled through the following commands:
+
+.. code-block::
     [[Startup Instructions]]

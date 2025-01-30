@@ -51,5 +51,7 @@ Insert Description
 Startup Instructions
 --------------------
 
-Finally, the Keycloak service was enabled through the following commands::
+Finally, the Keycloak service was enabled through the following commands:
+
+.. code-block::
     [[Startup Instructions]]
