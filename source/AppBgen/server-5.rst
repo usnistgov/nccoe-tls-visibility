@@ -52,4 +52,5 @@ Startup Instructions
 Finally, the Proxy service was enabled through the following commands:
 
 .. code-block:: bash
+
     [[Startup Instructions]]

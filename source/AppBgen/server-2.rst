@@ -54,4 +54,5 @@ Startup Instructions
 Finally, the Mail service was enabled through the following commands:
 
 .. code-block:: bash
+
     [[Startup Instructions]]
