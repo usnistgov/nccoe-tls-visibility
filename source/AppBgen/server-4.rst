@@ -61,5 +61,5 @@ Startup Instructions
 
 Finally, the MariaDB service was enabled through the following commands:
 
-.. code-block::
+.. code-block:: bash
     systemctl status enable mariadb

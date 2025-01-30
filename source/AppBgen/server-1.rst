@@ -53,5 +53,5 @@ Startup Instructions
 
 Finally, the TestApp service was enabled through the following commands:
 
-.. code-block::
+.. code-block:: bash
     [[Startup Instructions]]
