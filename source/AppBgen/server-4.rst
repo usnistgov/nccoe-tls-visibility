@@ -21,6 +21,8 @@ Service Details
 +-----------+------------+---------------------------+
 | MariaDB   | 11.0.2     | No                        |
 +-----------+------------+---------------------------+
+|           |            |                           |
++-----------+------------+---------------------------+
 | OpenSSL   | 1.1.1f     | No                        |
 +-----------+------------+---------------------------+
 
@@ -42,19 +44,32 @@ Second, MariaDB was configured to only listen on the network interface connected
 Configuration Files
 -------------------
 
-[[Configuration Files]]
+| /etc/mysql/mariadb.conf.d/50-server.cnf                      |
++--------------------------------------------------------------+
+| /etc/eva/eva.conf                                            |
++--------------------------------------------------------------+
+| /etc/eva-openssl.cnf                                         |
++--------------------------------------------------------------+
+| /etc/mysql/mariadb.cnf                                       |
++--------------------------------------------------------------+
+| /etc/ssl/openssl.cnf                                         |
++--------------------------------------------------------------+
+| /etc/systemd/system/mariadb.service.d/override.conf          |
++--------------------------------------------------------------+
 
-The configuration file  [[config=/etc/mysql/mariadb.conf.d/50-server.cnf]] was edited to set the "bind" parameter in the "[mysqld]" section to the VM's IP address on the SERVER network. Next, the MariaDB was configured to use the TLS certificate and key, by adding the section titled "# * SSL/TLS" to [[config=/etc/mysql/mariadb.conf.d/50-server.cnf]].
+The configuration file  /etc/mysql/mariadb.conf.d/50-server.cnf                      was edited to set the "bind" parameter in the "[mysqld]" section to the VM's IP address on the SERVER network. Next, the MariaDB was configured to use the TLS certificate and key, by adding the section titled "# * SSL/TLS" to /etc/mysql/mariadb.conf.d/50-server.cnf                     .
 
-All files named in the SSL section of the configuration file contain the PKI information (certificate chain, certificate, or key) encoded in PEM format. 
+All files named in the SSL section of the configuration file contain the PKI information (certificate chain, certificate, or key) encoded in PEM format.
 
-The ssl_ca configuration parameter must name the file containing the certificate chain for the Certificate Authority that issued the server's PKI certificate. 
+The ssl_ca configuration parameter must name the file containing the certificate chain for the Certificate Authority that issued the server's PKI certificate.
 
-The ssl_cert configuration parameter must name the file containing the server's PKI certificate. 
+The ssl_cert configuration parameter must name the file containing the server's PKI certificate.
 
-The ssl_key configuration parameter must name the file containing the private key for the server's PKI certificate. 
+The ssl_key configuration parameter must name the file containing the private key for the server's PKI certificate.
 
 Additionally, the configuration option "require-secure-transport" must be set to "on" and the option "tls_version" must be set to "TLSv1.3" (capitalization important) to enable TLSv1.3 functionality on the server.
+
+Certificates location: `/etc/mariadb/certs`
 
 Startup Instructions
 --------------------

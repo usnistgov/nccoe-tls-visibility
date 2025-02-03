@@ -1,7 +1,7 @@
 Mail Server Configuration
 =============================
 
-The Mail server build started with a standard [[OS]] virtual machine created with allocations of 2 vCPUs, 16 GB of memory, 50 GB of storage, and 2 network interface cards. 
+The Mail server build started with a standard   virtual machine created with allocations of 2 vCPUs, 16 GB of memory, 50 GB of storage, and 2 network interface cards. 
 
 Network Configuration
 ---------------------
@@ -37,16 +37,18 @@ Insert Description
 The server was assigned the unique hostname rk-mail.visibility.nccoe.org. An associated "A" record for the server's hostname and IP address was recorded in the lab DNS service. The Mail software was installed using the native "apt" Ubuntu package installer.
 
 
-First, a PKI certificate and key were created in PEM format using the DigiCert CertCentral service referencing the server's hostname. The certificate and key were uploaded to the VM and stored in the [[Certificates]] directory. Additionally, the DigiCert CertCentral CA certificate in PEM format was uploaded to the same folder.
+First, a PKI certificate and key were created in PEM format using the DigiCert CertCentral service referencing the server's hostname. The certificate and key were uploaded to the VM and stored in the   directory. Additionally, the DigiCert CertCentral CA certificate in PEM format was uploaded to the same folder.
 Second, Mail was configured to only listen on the network interface connected to the SERVER network. 
 
 
 Configuration Files
 -------------------
 
-[[Configuration Files]]
+
 
 Insert Description
+
+Certificates location: ` `
 
 Startup Instructions
 --------------------
@@ -55,4 +57,4 @@ Finally, the Mail service was enabled through the following commands:
 
 .. code-block:: bash
 
-    [[Startup Instructions]]
+     

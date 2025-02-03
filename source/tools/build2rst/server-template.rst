@@ -39,9 +39,12 @@ Second, [[Name]] was configured to only listen on the network interface connecte
 Configuration Files
 -------------------
 
-[[Configuration Files]]
++--------------------------------------------------------------+
+ENUMERATE_Config
 
 [[Configuration Description]]
+
+Certificates location: `[[Certificates]]`
 
 Startup Instructions
 --------------------

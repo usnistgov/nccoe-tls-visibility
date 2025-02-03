@@ -110,12 +110,17 @@ def generate_rst_files(xlsx_file, location, stem, root, template):
                 rst_content = rst_content.replace(k, table_replacer[k])
 
             # replace something like [[Description]] with the value of the "Description" column
-            for r in replacers.keys():
-                if row[r] != None:
-                    print(f"[[{replacers[r]}]]")
 
-                    tag, value = lengthen_shorten(replacers[r], row[r])
-                    rst_content = rst_content.replace(f"[[{tag}]]", value)
+            for k in range(10): # if we replace things multiple times, we can replace [[]] references in the cells of the workbook
+                for r in replacers.keys():
+                    if row[r] != None:
+                        print(f"[[{replacers[r]}]]")
+                        if k == 0:
+                            tag, value = lengthen_shorten(replacers[r], row[r])
+                        else:
+                            tag = str(replacers[r])
+                            value = str(row[r])
+                        rst_content = rst_content.replace(f"[[{tag}]]", value)
 
             output_filename = f"{stem}-{i}.rst"
             output_path = os.path.join(location, output_filename)
