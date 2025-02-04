@@ -12,13 +12,15 @@
 Configuration Procedure
 -----------------------
 
-SCREENSHOTS
+
 
 
 Additional Configuration Files
 ------------------------------
 
-
++------------------------------------------------------------------------------------+
+| Relevant Configuration Files                                                       |
++====================================================================================+
 
 [[Configuration Files Description]]
 

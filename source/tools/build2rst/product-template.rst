@@ -12,7 +12,7 @@
 Configuration Procedure
 -----------------------
 
-SCREENSHOTS
+REPLACE_WITH_SCREENSHOTS
 
 
 Additional Configuration Files

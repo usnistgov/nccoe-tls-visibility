@@ -89,16 +89,16 @@ def screenshots(row, row_names, loc='tools/build2rst/screenshot-template.rst'):
     out = ""
     for m in range(0,MAX_NUM_SCREENSHOTS+1):
         curr = template
+        addme = False
         for n in range(len(row_names)):
             #print(row_names[n])
-            if (row[n] == None and "Screenshot" in row_names[n]):
-                #print("breaking:",row[n], row_names[n])
-                break
-            if (row_names[n][-1] == str(m)):
-                #print("replacing:", row_names[n][:-1], row[n])
-                curr.replace(f"[[{row_names[n][:-1]}]]", str(row[n]))
-        curr += "\n\n"
-        out += curr
+            if ("Screenshot" in row_names[n]):
+                if (row_names[n][-1] == str(m) and row[n] != None):
+                    curr = curr.replace(f"[[{row_names[n][:-1]}]]", str(row[n]))
+                    addme = True
+        if (addme):
+            curr += "\n\n"
+            out += curr
     return out
 
 def perform_replacement(row, replacers, rst_content, template_lines, data):
@@ -107,8 +107,9 @@ def perform_replacement(row, replacers, rst_content, template_lines, data):
     for k in table_replacer.keys():
         rst_content = rst_content.replace(k, table_replacer[k])
 
-    rst_content.replace("SCREENSHOTS", screenshots(row, data[0]))
-
+    #print(rst_content)
+    rst_content = rst_content.replace("REPLACE_WITH_SCREENSHOTS", screenshots(row, data[0]))
+    #print(rst_content)
     for k in range(10): # if we replace things multiple times, we can replace [[]] references in the cells of the workbook
         for r in replacers.keys():
             if row[r] != None:

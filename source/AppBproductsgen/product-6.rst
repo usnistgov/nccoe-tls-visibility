@@ -59,13 +59,43 @@ The primary appliance was provisioned with the following modules:
 Configuration Procedure
 -----------------------
 
-SCREENSHOTS
+Picture of AppViewX UI Workflow creation
+
+.. figure:: /images/figures/appviewx_screenshot1.png
+   :width: 90%
+   :alt: An image of the AppViewX UI depicting the creation of a workflow for …
+
+
+
+
+
+
 
 
 Additional Configuration Files
 ------------------------------
 
++------------------------------------------------------------------------------------+
+| Relevant Configuration Files                                                       |
++====================================================================================+
+| lab_build/appviewx/workflows/Redis%20DB%20-%20NIST%20POC/Result.py                 |
++------------------------------------------------------------------------------------+
+| lab_build/appviewx/workflows/Redis DB - NIST POC/JSON Content.yaml                 |
++------------------------------------------------------------------------------------+
+| lab_build/appviewx/workflows/Redis DB - NIST POC/Fetch Data Using Client Random.py |
++------------------------------------------------------------------------------------+
+| lab_build/appviewx/workflows/TLS 1_3 DH 2024/1st Attempt Key.py                    |
++------------------------------------------------------------------------------------+
+| lab_build/appviewx/workflows/TLS 1_3 DH 2024/Defining Curves.py                    |
++------------------------------------------------------------------------------------+
+| lab_build/appviewx/workflows/TLS 1_3 DH 2024/Encrypting and Archiving.py           |
++------------------------------------------------------------------------------------+
+| lab_build/appviewx/workflows/TLS 1_3 DH 2024/Executing Commands.py                 |
++------------------------------------------------------------------------------------+
+| lab_build/appviewx/workflows/TLS 1_3 DH 2024/Key Generation In.py                  |
++------------------------------------------------------------------------------------+
+| lab_build/appviewx/workflows/TLS 1_3 DH 2024/add_external_key.py                   |
++------------------------------------------------------------------------------------+
 
-
-[[Configuration Files Description]]
+These python files were created  as part of the creation of the workflow for this build in AppViewX.
 
