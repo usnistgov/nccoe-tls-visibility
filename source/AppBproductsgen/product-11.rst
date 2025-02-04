@@ -20,7 +20,5 @@ Additional Configuration Files
 
 
 
-
-
 [[Configuration Files Description]]
 

@@ -11,3 +11,4 @@
    /AppBproductsgen/product-8.rst
    /AppBproductsgen/product-9.rst
    /AppBproductsgen/product-10.rst
+   /AppBproductsgen/product-11.rst

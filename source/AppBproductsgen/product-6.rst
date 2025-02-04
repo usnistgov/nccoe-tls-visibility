@@ -13,13 +13,13 @@ The second virtual appliance, the Software Security Module, was created in vSphe
 AppViewX Appliance Network Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-+-----------+------------+----------------+--------------------------------------------------------------------------------+
-| Interface | Network    | IP Address     | Purpose                                                                        |
-+===========+============+================+================================================================================+
-| 1         | MANAGEMENT | 192.168.10.xxx | Access to the web-based management console and connectivity to other products. |
-+-----------+------------+----------------+--------------------------------------------------------------------------------+
-| 2         | HSMNET     | Provides connectivity to the hardware security module                          |
-+-----------+------------+--------------------------------------------------------------------------------+
++-----------+------------+-----------------+--------------------------------------------------------------------------------+
+| Interface | Network    | IP Address      | Purpose                                                                        |
++===========+============+=================+================================================================================+
+| 1         | MANAGEMENT | 192.168.10.xxx  | Access to the web-based management console and connectivity to other products. |
++-----------+------------+-----------------+--------------------------------------------------------------------------------+
+| 2         | HSMNET     | 192.168.yyy.xxx | Provides connectivity to the hardware security module                          |
++-----------+------------+-----------------+--------------------------------------------------------------------------------+
 
 
 AppViewX Software Security Module Appliance Network Configuration
