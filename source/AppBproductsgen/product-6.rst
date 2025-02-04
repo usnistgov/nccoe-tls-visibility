@@ -59,11 +59,21 @@ The primary appliance was provisioned with the following modules:
 Configuration Procedure
 -----------------------
 
-Picture of AppViewX UI Workflow creation
+Configuring AppViewX to manage the rotation and distribution of bounded-lifetime EDH keys is accomplished by installing two custom workflows through the AppViewX web console.  The figure below shows how to access the workflow library.
 
-.. figure:: /images/figures/appviewx_screenshot1.png
+.. figure:: /images/figures//images/figures/Figure-2-1.png
    :width: 90%
-   :alt: An image of the AppViewX UI depicting the creation of a workflow for …
+   :alt: Image showing how to access the workflow library.
+
+
+
+
+
+The figure below shows shows the contents of the workflow for the Diffie-Hellman workflow.
+
+.. figure:: /images/figures//lab_build/appviewx/workflows/TLS 1_3 DH 2024/workflow.png
+   :width: 90%
+   :alt: Image showing the contents of the Diffie Hellman workflow.
 
 
 
@@ -78,12 +88,6 @@ Additional Configuration Files
 +------------------------------------------------------------------------------------+
 | Relevant Configuration Files                                                       |
 +====================================================================================+
-| lab_build/appviewx/workflows/Redis%20DB%20-%20NIST%20POC/Result.py                 |
-+------------------------------------------------------------------------------------+
-| lab_build/appviewx/workflows/Redis DB - NIST POC/JSON Content.yaml                 |
-+------------------------------------------------------------------------------------+
-| lab_build/appviewx/workflows/Redis DB - NIST POC/Fetch Data Using Client Random.py |
-+------------------------------------------------------------------------------------+
 | lab_build/appviewx/workflows/TLS 1_3 DH 2024/1st Attempt Key.py                    |
 +------------------------------------------------------------------------------------+
 | lab_build/appviewx/workflows/TLS 1_3 DH 2024/Defining Curves.py                    |
@@ -95,6 +99,8 @@ Additional Configuration Files
 | lab_build/appviewx/workflows/TLS 1_3 DH 2024/Key Generation In.py                  |
 +------------------------------------------------------------------------------------+
 | lab_build/appviewx/workflows/TLS 1_3 DH 2024/add_external_key.py                   |
++------------------------------------------------------------------------------------+
+| lab_build/appviewx/workflows/TLS 1_3 DH 2024/final.py                              |
 +------------------------------------------------------------------------------------+
 
 These python files were created  as part of the creation of the workflow for this build in AppViewX.
