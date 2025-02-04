@@ -4,5 +4,7 @@
    :width: 90%
    :alt: [[ScreenshotAltText]]
 
+   [[ScreenshotCaption]]
+
 
 

@@ -12,6 +12,8 @@
 Configuration Procedure
 -----------------------
 
+[[Configuration Procedure Summary]]
+
 REPLACE_WITH_SCREENSHOTS
 
 

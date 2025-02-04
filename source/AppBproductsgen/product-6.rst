@@ -60,11 +60,15 @@ The primary appliance was provisioned with the following modules:
 Configuration Procedure
 -----------------------
 
-Configuring AppViewX to manage the rotation and distribution of bounded-lifetime EDH keys is accomplished by installing two custom workflows through the AppViewX web console.  The figure below shows how to access the workflow library.
+This section describes the configuration of AppViewX to do several things: periodically generate EDH keys, register the keys in the AppViewX Secure Software Module in a location available via SSH. The consumers of these keys include the decryptors and the TLSv1.3 configured servers which use them to form connections over TLSv1.3. Configuring AppViewX to manage the rotation and distribution of bounded-lifetime EDH keys is accomplished by installing two custom workflows through the AppViewX web console.
+
+The figure below shows how to access the workflow library.
 
 .. figure:: /images/figures//images/figures/Figure-2-1.png
    :width: 90%
    :alt: Image showing how to access the workflow library.
+
+   Access to AppViewX Workflows
 
 
 
@@ -75,6 +79,8 @@ The figure below shows shows the contents of the workflow for the Diffie-Hellman
 .. figure:: /images/figures//lab_build/appviewx/workflows/TLS 1_3 DH 2024/workflow.png
    :width: 90%
    :alt: Image showing the contents of the Diffie Hellman workflow.
+
+   Diffie-Hellman Key Rotation Workflow
 
 
 
