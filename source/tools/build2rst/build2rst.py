@@ -25,7 +25,7 @@ import click
 import openpyxl
 
 LARGEST_TABLE_SIZE = 10
-
+MAX_NUM_SCREENSHOTS = 20
 def lengthen_shorten(tag, value):
     value = str(value)
     if "_LEN_" in tag:
@@ -33,9 +33,9 @@ def lengthen_shorten(tag, value):
         desired_length = int(splitted[-1])
         if (desired_length < len(value)):
             print(f"Error: {tag} length not long enough for value {value}.")
-            return splitted[0], value[:desired_length]
+            return '_'.join(splitted[:-2]), value[:desired_length]
         else:
-            return splitted[0], value + (desired_length - len(value)) * ' '
+            return '_'.join(splitted[:-2]), value + (desired_length - len(value)) * ' '
     else:
         return tag, value
 
@@ -46,6 +46,25 @@ def gen_tables(template_lines, current_row, row_names):
         if line.startswith("ENUMERATE"):
             fields = line.strip().split('_')[1:]
             table = ""
+            table_title_1 = ""
+            table_title_2 = ""
+            table_title_3 = ""
+
+            for f in fields:
+                for r in range(len(row_names)):
+                    tag, value = lengthen_shorten(row_names[r], current_row[r])
+                    #print("CHECKING TITLE:", tag, f)
+                    if (tag == f + "_TITLE"):
+                        print("CHECKING TITLE:", tag, f, value)
+                        table_title_1 += '+-' + len(value + ' ')*'-'
+                        table_title_2 += '| ' + value + ' '
+                        table_title_3 += '+=' + len(value + ' ')*'='
+            if (table_title_1 != ""):
+                table_title_1 += "+"
+                table_title_2 += "|"
+                table_title_3 += "+"
+                table += table_title_1 + "\n" + table_title_2 + "\n" + table_title_3 + "\n"
+            print(table)
             for k in range(0,LARGEST_TABLE_SIZE):
                 table_line = ""
                 table_line_2 = ""
@@ -62,6 +81,57 @@ def gen_tables(template_lines, current_row, row_names):
                     table += table_line + "\n" + table_line_2 + "\n"
             replacer[line.strip()] = table[:-1]
     return replacer
+
+def screenshots(row, row_names, loc='tools/build2rst/screenshot-template.rst'):
+    with open(loc, 'r') as f:
+        template = f.read()
+
+    out = ""
+    for m in range(0,MAX_NUM_SCREENSHOTS+1):
+        curr = template
+        for n in range(len(row_names)):
+            #print(row_names[n])
+            if (row[n] == None and "Screenshot" in row_names[n]):
+                #print("breaking:",row[n], row_names[n])
+                break
+            if (row_names[n][-1] == str(m)):
+                #print("replacing:", row_names[n][:-1], row[n])
+                curr.replace(f"[[{row_names[n][:-1]}]]", str(row[n]))
+        curr += "\n\n"
+        out += curr
+    return out
+
+def perform_replacement(row, replacers, rst_content, template_lines, data):
+
+    table_replacer = gen_tables(template_lines, row, data[0])
+    for k in table_replacer.keys():
+        rst_content = rst_content.replace(k, table_replacer[k])
+
+    rst_content.replace("SCREENSHOTS", screenshots(row, data[0]))
+
+    for k in range(10): # if we replace things multiple times, we can replace [[]] references in the cells of the workbook
+        for r in replacers.keys():
+            if row[r] != None:
+                #print(f"[[{replacers[r]}]]")
+                if k == 0:
+                    tag, value = lengthen_shorten(replacers[r], row[r])
+                else:
+                    tag = str(replacers[r])
+                    value = str(row[r])
+
+                if tag.endswith("_RST") and f"[[{tag[:-4]}]]" in rst_content:
+                    with open('tools/build2rst/templates/' + value, 'r') as read_rst:
+                        readvalue = read_rst.read()
+                    with open('tools/build2rst/templates/' + value, 'r') as read_rst_lines:
+                        lines = read_rst_lines.readlines()
+                    value = perform_replacement(row, replacers, readvalue, lines, data)
+                    tag = tag[:-4]
+                    
+                rst_content = rst_content.replace(f"[[{tag}]]", value)
+    return rst_content
+
+
+
 @click.command()
 @click.argument('xlsx_file', type=click.Path(exists=True))
 @click.option('--location', required=True, type=click.Path(), help='Location to write generated RST files.')
@@ -83,7 +153,7 @@ def generate_rst_files(xlsx_file, location, stem, root, template):
     # Read Excel file
     click.echo(f"Reading XLSX file: {xlsx_file}")
     workbook = openpyxl.load_workbook(xlsx_file)
-    sheet = workbook.active
+    sheet = workbook["1"]
     data = [list(row) for row in sheet.iter_rows(values_only=True)]
     data = [row for row in data if row[0] != None]
 
@@ -91,6 +161,7 @@ def generate_rst_files(xlsx_file, location, stem, root, template):
 
     replacers = {k:data[0][k] for k in range(len(data[0]))}
 
+    
     print(replacers)
     # Generate RST files
     generated_files = []
@@ -105,22 +176,10 @@ def generate_rst_files(xlsx_file, location, stem, root, template):
         if i != 0:
             rst_content = template_contents
 
-            table_replacer = gen_tables(template_lines, row, data[0])
-            for k in table_replacer.keys():
-                rst_content = rst_content.replace(k, table_replacer[k])
+
 
             # replace something like [[Description]] with the value of the "Description" column
-
-            for k in range(10): # if we replace things multiple times, we can replace [[]] references in the cells of the workbook
-                for r in replacers.keys():
-                    if row[r] != None:
-                        print(f"[[{replacers[r]}]]")
-                        if k == 0:
-                            tag, value = lengthen_shorten(replacers[r], row[r])
-                        else:
-                            tag = str(replacers[r])
-                            value = str(row[r])
-                        rst_content = rst_content.replace(f"[[{tag}]]", value)
+            rst_content = perform_replacement(row, replacers, rst_content, template_lines, data)
 
             output_filename = f"{stem}-{i}.rst"
             output_path = os.path.join(location, output_filename)
