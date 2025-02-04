@@ -60,7 +60,7 @@ The primary appliance was provisioned with the following modules:
 Configuration Procedure
 -----------------------
 
-This section describes the configuration of AppViewX to do several things: periodically generate EDH keys, register the keys in the AppViewX Secure Software Module in a location available via SSH. The consumers of these keys include the decryptors and the TLSv1.3 configured servers which use them to form connections over TLSv1.3. Configuring AppViewX to manage the rotation and distribution of bounded-lifetime EDH keys is accomplished by installing two custom workflows through the AppViewX web console.
+This section describes the configuration of AppViewX to do several things: periodically generate EDH keys, register the keys in the AppViewX Secure Software Module in a location available via SSH. The consumers of these keys include the decryptors and the TLSv1.3 configured servers which use them to form connections. In the case of these configured servers, the local NFR agent will pull the keys via SSH and make them available to the TLS application. Configuring AppViewX to manage the rotation and distribution of bounded-lifetime EDH keys is accomplished by installing two custom workflows through the AppViewX web console.
 
 The figure below shows how to access the workflow library.
 
