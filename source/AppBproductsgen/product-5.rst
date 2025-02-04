@@ -12,6 +12,7 @@ The second virtual appliance, the Software Security Module, was created in vSphe
 
 AppViewX Appliance Network Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 +-----------+------------+----------------+--------------------------------------------------------------------------------+
 | Interface | Network    | IP Address     | Purpose                                                                        |
 +===========+============+================+================================================================================+
@@ -19,6 +20,7 @@ AppViewX Appliance Network Configuration
 
 AppViewX Software Security Module Appliance Network Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 +-----------+------------+----------------+--------------------------------------------+
 | Interface | Network    | IP Address     | Purpose                                    |
 +===========+============+================+============================================+
@@ -27,6 +29,7 @@ AppViewX Software Security Module Appliance Network Configuration
 Additional Modules
 ^^^^^^^^^^^^^^^^^^
 The primary appliance was provisioned with the following modules:
+
 +----------------------------------------------------------+--------------------------------------------------------------------------+
 | Plugin Name                                              | Plugin Link                                                              |
 +==========================================================+==========================================================================+
