@@ -20,11 +20,11 @@ Thales TCT Luna HSM Appliance Network Configuration
 
 2. Elevate the shell session privileges:
 
-``hsm login -password <HSM admin password>``
+   ``hsm login -password <HSM admin password>``
 
 3. Create a named "partition" within the HSM to hold the AppViewX data, providing the partition name, a password for accessing the partition, and a "domain":
 
-``par create -par <partition_name> -pas <partition_password> -domain <domain> -f``
+   ``par create -par <partition_name> -pas <partition_password> -domain <domain> -f``
 
 
 

@@ -1,7 +1,12 @@
 Instantiation of the NETSCOUT Virtual Appliances
 ------------------------------------------------
 
-The NETSCOUT platform consists of four virtual appliances created from the vendor supplied OVF files: two vStream appliances, the ISNG appliance, and the OCI appliance. The VS appliances are provisioned with three network interfaces, and the ISNG and OCI appliances are each configured with a single network interface. 
+The NETSCOUT platform consists of four virtual appliances created from the vendor supplied OVF files: two vStream appliances, the ISNG appliance, and the OCI appliance. The vStream and vCyberStream appliances are provisioned with three network interfaces, and the ISNG and OCI appliances are each configured with a single network interface. 
+
+The vStream appliance is used to provide decrypted and encrypted traffic to the NetScout ISNG appliance.
+
+Similarly, the vCyberStream appliance is used to provide decrypted and encrypted traffic to the NetScout OCI appliance.
+
 
 NetScout vStream Virtual Appliance Network Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
