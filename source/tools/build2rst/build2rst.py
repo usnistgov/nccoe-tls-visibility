@@ -90,13 +90,20 @@ def screenshots(row, row_names, loc='tools/build2rst/screenshot-template.rst'):
     for m in range(0,MAX_NUM_SCREENSHOTS+1):
         curr = template
         addme = False
+        indent = False
         for n in range(len(row_names)):
             #print(row_names[n])
             if ("Screenshot" in row_names[n]):
                 if (row_names[n][-1] == str(m) and row[n] != None):
-                    curr = curr.replace(f"[[{row_names[n][:-1]}]]", str(row[n]))
+                    if "INDENT:" in str(row[n]):
+                        indent = True
+                    curr = curr.replace(f"[[{row_names[n][:-1]}]]", str(row[n]).replace("INDENT:", ""))
                     addme = True
         if (addme):
+            if (indent):
+                curr = curr.replace("[[spaces]]", "   ")
+            else:
+                curr = curr.replace("[[spaces]]", "")
             curr += "\n\n"
             out += curr
     return out

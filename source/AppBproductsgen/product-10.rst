@@ -41,8 +41,7 @@ This section contains instructions for configuring the AppViewX key governance p
 
 
 #. The AppViewX dependency configuration information was updated to include the HSM by editing the file: ``/home/appviewx/appviewx/appviewx_dependences/properties/hsm``
-   to ensure the line:
-``export ChrystokiConfigurationPath=/appviewx/dependencies/hsm/``
+   to ensure the line: ``export ChrystokiConfigurationPath=/appviewx/dependencies/hsm/``
 
 
    exists and is not commented.
@@ -68,11 +67,11 @@ This section contains instructions for configuring the AppViewX key governance p
 
 #. Navigate to ``Inventory > Device > HSM``.
 
-.. figure:: /images/figures/[[Screenshot]]
-   :width: 90%
-   :alt: Image showing the HSM tab in AppViewX.
+   .. figure:: /images/figures/
+      :width: 90%
+      :alt: Image showing the HSM tab in AppViewX.
 
-   AppViewX HSM Inventory
+      AppViewX HSM Inventory
 
 
 
@@ -104,11 +103,11 @@ This section contains instructions for configuring the AppViewX key governance p
 
 #. Choose a ``Key Handler Name`` of appviewx-all.
 
-.. figure:: /images/figures/[[Screenshot]]
-   :width: 90%
-   :alt: Image showing the configuration parameters for the HSM device.
+   .. figure:: /images/figures/
+      :width: 90%
+      :alt: Image showing the configuration parameters for the HSM device.
 
-   AppViewX HSM Configuration Parameters
+      AppViewX HSM Configuration Parameters
 
 
 
