@@ -36,24 +36,39 @@ Configuration Procedure
 
 This section contains instructions for configuring the AppViewX key governance product to use a master encryption secret derived from the Thales HSM to secure its store of key material. To do this, understand that the AppViewX application appliance consists of a number of services running in a Kubernetes ecosystem running on a Linux host. Some of the instructions are to be performed at the Linux host shell and others are performed through the AppViewX web-based management console.
 
-First, the Thales TCT Luna Client software must be installed on the AppViewX appliance (not the AppViewX SSM appliance). The client software was installed to the `/home/appviewx/appviewx/hsm` directory.
+First, the Thales TCT Luna Client software must be installed on the AppViewX appliance (not the AppViewX SSM appliance). The client software was installed to the ``/home/appviewx/appviewx/hsm`` directory.
+
+
 Second, the AppViewX dependency configuration information was updated to include the HSM by editing the file:
-`/home/appviewx/appviewx/appviewx_dependences/properties/hsm`
+``/home/appviewx/appviewx/appviewx_dependences/properties/hsm``
+
 
 to ensure the line:
-`export ChrystokiConfigurationPath=/appviewx/dependencies/hsm/`
+``export ChrystokiConfigurationPath=/appviewx/dependencies/hsm/``
+
 
 exists and is not commented.
+
+
 Third, the AppViewX configuration information was updated to include the HSM. This is done by editing the configuration for the avx-common-config Kubernetes pod by issuing the command:
-`kubectl edit cm avx-common -n absecon`
+
+
+``kubectl edit cm avx-common -n absecon``
+
 
 In the resulting editor, add the following line:
-`export ChrystokiConfigurationPath=/appviewx/dependencies/hsm/`
+
+
+``export ChrystokiConfigurationPath=/appviewx/dependencies/hsm/``
+
 
 and then instruct Kubernetes to restart the avx-common-hsm pod.
+
+
 Finally, with the necessary software dependencies installed and registered, the AppViewX application was configured to use the HSM using the web-based management console.
 
-Navigate to `Inventory > Device > HSM`
+
+Navigate to ``Inventory > Device > HSM``.
 
 .. figure:: /images/figures/[[Screenshot]]
    :width: 90%
@@ -65,23 +80,31 @@ Navigate to `Inventory > Device > HSM`
 
 
 
-On the left-hand side of the screen, select the icon for `Gemalto a Thales Company`.
+On the left-hand side of the screen, select the icon for ``Gemalto a Thales Company``.
+
 
 Next click the plus sign icon in the top right of the screen to create a new HSM device entry.
 
-In the resulting screen, choose deployment type `General Purpose Network`.
+
+In the resulting screen, choose deployment type ``General Purpose Network``.
+
 
 Enter a name for the HSM device.
 
-Choose `Both` for `Implementation Type`.
 
-Choose the `Datacenter`, defaulting to absecon for the appliance.
+Choose ``Both`` for ``Implementation Type``.
 
-Choose the `HSM Slot` to use.
+
+Choose the ``Datacenter``, defaulting to absecon for the appliance.
+
+
+Choose the ``HSM Slot`` to use.
+
 
 Enter the partition password as configured earlier.
 
-Choose a `Key Handler Name` of appviewx-all.
+
+Choose a ``Key Handler Name`` of appviewx-all.
 
 .. figure:: /images/figures/[[Screenshot]]
    :width: 90%
