@@ -12,9 +12,10 @@ ENUMERATE_App1Interface_App1Network_App1IP_App1Purpose
 1. SSH into the hardware appliance as the appliance administrator account to access the Luna shell
 
 2. Elevate the shell session privileges:
-`hsm login -password <HSM admin password>``
 
-3. Create a named "partition" within the HSM to hold the AppViewX data, providing the partition name, a password for accessing the partition, and a "domain"
-par create -par <partition_name> -pas <partition_password> \
--domain <domain> -f
+``hsm login -password <HSM admin password>``
+
+3. Create a named "partition" within the HSM to hold the AppViewX data, providing the partition name, a password for accessing the partition, and a "domain":
+
+``par create -par <partition_name> -pas <partition_password> -domain <domain> -f``
 
