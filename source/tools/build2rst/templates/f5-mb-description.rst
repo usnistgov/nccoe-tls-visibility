@@ -16,7 +16,7 @@ The VM was created with a resource allocation including 8 vCPUs, 16 GB of memory
 
 Additional Modules
 ^^^^^^^^^^^^^^^^^^
-The primary appliance was provisioned with the following modules from the `System > Resource Provisioning` menu item:
+The primary appliance was provisioned with the following modules from the ``System > Resource Provisioning`` menu item:
 
 ENUMERATE_PluginName
 
