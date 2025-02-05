@@ -19,11 +19,12 @@ Thales TCT Luna HSM Appliance Network Configuration
 1. SSH into the hardware appliance as the appliance administrator account to access the Luna shell
 
 2. Elevate the shell session privileges:
-`hsm login -password <HSM admin password>``
 
-3. Create a named "partition" within the HSM to hold the AppViewX data, providing the partition name, a password for accessing the partition, and a "domain"
-par create -par <partition_name> -pas <partition_password> \
--domain <domain> -f
+``hsm login -password <HSM admin password>``
+
+3. Create a named "partition" within the HSM to hold the AppViewX data, providing the partition name, a password for accessing the partition, and a "domain":
+
+``par create -par <partition_name> -pas <partition_password> -domain <domain> -f``
 
 
 
@@ -36,10 +37,10 @@ Configuration Procedure
 
 This section contains instructions for configuring the AppViewX key governance product to use a master encryption secret derived from the Thales HSM to secure its store of key material. To do this, understand that the AppViewX application appliance consists of a number of services running in a Kubernetes ecosystem running on a Linux host. Some of the instructions are to be performed at the Linux host shell and others are performed through the AppViewX web-based management console.
 
-First, the Thales TCT Luna Client software must be installed on the AppViewX appliance (not the AppViewX SSM appliance). The client software was installed to the ``/home/appviewx/appviewx/hsm`` directory.
+1. The Thales TCT Luna Client software must be installed on the AppViewX appliance (not the AppViewX SSM appliance). The client software was installed to the ``/home/appviewx/appviewx/hsm`` directory.
 
 
-Second, the AppViewX dependency configuration information was updated to include the HSM by editing the file:
+2. The AppViewX dependency configuration information was updated to include the HSM by editing the file:
 ``/home/appviewx/appviewx/appviewx_dependences/properties/hsm``
 
 
@@ -50,7 +51,7 @@ to ensure the line:
 exists and is not commented.
 
 
-Third, the AppViewX configuration information was updated to include the HSM. This is done by editing the configuration for the avx-common-config Kubernetes pod by issuing the command:
+3. The AppViewX configuration information was updated to include the HSM. This is done by editing the configuration for the avx-common-config Kubernetes pod by issuing the command:
 
 
 ``kubectl edit cm avx-common -n absecon``
@@ -65,7 +66,7 @@ In the resulting editor, add the following line:
 and then instruct Kubernetes to restart the avx-common-hsm pod.
 
 
-Finally, with the necessary software dependencies installed and registered, the AppViewX application was configured to use the HSM using the web-based management console.
+4. With the necessary software dependencies installed and registered, the AppViewX application was configured to use the HSM using the web-based management console.
 
 
 Navigate to ``Inventory > Device > HSM``.
