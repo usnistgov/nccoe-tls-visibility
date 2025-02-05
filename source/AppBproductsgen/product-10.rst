@@ -41,10 +41,8 @@ This section contains instructions for configuring the AppViewX key governance p
 
 
 #. The AppViewX dependency configuration information was updated to include the HSM by editing the file: ``/home/appviewx/appviewx/appviewx_dependences/properties/hsm``
-
-
    to ensure the line:
-   ``export ChrystokiConfigurationPath=/appviewx/dependencies/hsm/``
+``export ChrystokiConfigurationPath=/appviewx/dependencies/hsm/``
 
 
    exists and is not commented.
@@ -53,16 +51,16 @@ This section contains instructions for configuring the AppViewX key governance p
 #. The AppViewX configuration information was updated to include the HSM. This is done by editing the configuration for the avx-common-config Kubernetes pod by issuing the command:
 
 
-``kubectl edit cm avx-common -n absecon``
+   ``kubectl edit cm avx-common -n absecon``
 
 
-In the resulting editor, add the following line:
+   In the resulting editor, add the following line:
 
 
-``export ChrystokiConfigurationPath=/appviewx/dependencies/hsm/``
+   ``export ChrystokiConfigurationPath=/appviewx/dependencies/hsm/``
 
 
-and then instruct Kubernetes to restart the avx-common-hsm pod.
+   and then instruct Kubernetes to restart the avx-common-hsm pod.
 
 
 #. With the necessary software dependencies installed and registered, the AppViewX application was configured to use the HSM using the web-based management console.
