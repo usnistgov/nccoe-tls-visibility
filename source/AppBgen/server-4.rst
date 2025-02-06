@@ -16,14 +16,11 @@ Network Configuration
 
 Service Details
 ---------------
-+-----------+------------+---------------------------+
-| Service   | Version    | Containerized             | 
-+-----------+------------+---------------------------+
 +-------------+-----------+---------------+
 | Service     | Version   | Containerized |
 +=============+===========+===============+
-| 11.0.2    | No            |
-+-----------+---------------+
+| MariaDB     | 11.0.2    | No            |
++-------------+-----------+---------------+
 |             |           |               |
 +-------------+-----------+---------------+
 | OpenSSL     | 1.1.1f    | No            |
@@ -66,7 +63,7 @@ MariaDB is configured to listen for incoming TLSv1.3 connections on the SERVER n
 * ``override.conf`` contains instructions for the system to ensure that the EVA agent is running prior to the affected service.
 
 
-Certificates location: `/etc/mysql/certs`
+Certificates location: ``/etc/mysql/certs``
 
 Startup Instructions
 --------------------

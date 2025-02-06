@@ -16,14 +16,11 @@ Network Configuration
 
 Service Details
 ---------------
-+-----------+------------+---------------------------+
-| Service   | Version    | Containerized             | 
-+-----------+------------+---------------------------+
 +-------------+-----------+---------------+
 | Service     | Version   | Containerized |
 +=============+===========+===============+
-| 1.18.0    | No            |
-+-----------+---------------+
+| Nginx       | 1.18.0    | No            |
++-------------+-----------+---------------+
 | TestApp     | N/A       | Yes           |
 +-------------+-----------+---------------+
 | OpenSSL     | 1.1.1f    | No            |
@@ -78,7 +75,7 @@ Nginx is configured to listen for incoming TLSv1.3 connections on the SERVER net
 
 The Nginx container manages access to a small python application which acts as a web server. The docker files are primarily for ensuring that the service is running.
 
-Certificates location: ` /certs`
+Certificates location: `` /certs``
 
 Startup Instructions
 --------------------
@@ -89,4 +86,4 @@ Finally, the TestApp service was enabled through the following commands:
 
     docker compose up -d
 
-service nginx start
+    service nginx start

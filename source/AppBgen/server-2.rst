@@ -16,14 +16,11 @@ Network Configuration
 
 Service Details
 ---------------
-+-----------+------------+---------------------------+
-| Service   | Version    | Containerized             | 
-+-----------+------------+---------------------------+
 +-------------+-----------+---------------+
 | Service     | Version   | Containerized |
 +=============+===========+===============+
-| 3.4.13    | No            |
-+-----------+---------------+
+| Postfix     | 3.4.13    | No            |
++-------------+-----------+---------------+
 | Dovecot     | 1:2.3.7.2 | No            |
 +-------------+-----------+---------------+
 | OpenSSL     | 1.1.1f    | No            |
@@ -73,7 +70,7 @@ In addition to the configs listed, it was also necessary to create MX records in
 
 ``local-data: "rk-mail.visibility.nccoe.org. IN MX 10 ek-mail.visibility.nccoe.org"``
 
-Certificates location: `/home/tlsadmin/certs`
+Certificates location: ``/home/tlsadmin/certs``
 
 Startup Instructions
 --------------------
@@ -84,6 +81,6 @@ Finally, the Mail service was enabled through the following commands:
 
     # Note that by default these start automatically with system boot.
 
-service postfix start
+    service postfix start
 
-service dovecot start
+    service dovecot start

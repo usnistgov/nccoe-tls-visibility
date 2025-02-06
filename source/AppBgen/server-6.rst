@@ -16,14 +16,11 @@ Network Configuration
 
 Service Details
 ---------------
-+-----------+------------+---------------------------+
-| Service   | Version    | Containerized             | 
-+-----------+------------+---------------------------+
 +-------------+-----------+---------------+
 | Service     | Version   | Containerized |
 +=============+===========+===============+
-| 1.18.0    | Yes           |
-+-----------+---------------+
+| Nginx       | 1.18.0    | Yes           |
++-------------+-----------+---------------+
 | TestApp     | N/A       | Yes           |
 +-------------+-----------+---------------+
 | OpenSSL     | 1.1.1f    | Yes           |
@@ -77,7 +74,7 @@ Nginx is configured to listen for incoming TLSv1.3 connections on the SERVER net
 
 The Nginx container manages access to a small python application which acts as a web server. The docker files are primarily for ensuring that the service is running.
 
-Certificates location: ` /home/administrator/certs`
+Certificates location: `` /home/administrator/certs``
 
 Startup Instructions
 --------------------

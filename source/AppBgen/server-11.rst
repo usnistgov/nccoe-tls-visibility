@@ -16,14 +16,11 @@ Network Configuration
 
 Service Details
 ---------------
-+-----------+------------+---------------------------+
-| Service   | Version    | Containerized             | 
-+-----------+------------+---------------------------+
 +-------------+-----------+---------------+
 | Service     | Version   | Containerized |
 +=============+===========+===============+
-| 3.25.1    | No            |
-+-----------+---------------+
+| Syslog-ng   | 3.25.1    | No            |
++-------------+-----------+---------------+
 | f5forwarder | N/A       | No            |
 +-------------+-----------+---------------+
 
@@ -61,7 +58,7 @@ Configuration Files
 *``f5forwarder.service`` is used to keep the f5-redis.py script running constantly, so as to not fall behind on logs.
 *``key-remover.py`` is simply a tool used to clear the Redis database of keys. While not part of the build, it is included here for convenience.
 
-Certificates location: `[[Certificates]]`
+Certificates location: ``[[Certificates]]``
 
 Startup Instructions
 --------------------
@@ -72,4 +69,4 @@ Finally, the F5-Syslog service was enabled through the following commands:
 
     service syslog-ng start
 
-service f5forwarder start
+    service f5forwarder start

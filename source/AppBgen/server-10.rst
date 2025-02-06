@@ -16,14 +16,11 @@ Network Configuration
 
 Service Details
 ---------------
-+-----------+------------+---------------------------+
-| Service   | Version    | Containerized             | 
-+-----------+------------+---------------------------+
 +-------------+-----------+---------------+
 | Service     | Version   | Containerized |
 +=============+===========+===============+
-| 7.2.4     | No            |
-+-----------+---------------+
+| Redis       | 7.2.4     | No            |
++-------------+-----------+---------------+
 
 
 Notes
@@ -53,7 +50,7 @@ Configuration Files
 
 The primary usage of ``redis.conf`` was to ensure the ability to use TLSv1.3 and to indicate the certificates needed for the TLSv1.3 connection between it and the various products directly inserting keys into it.
 
-Certificates location: `/home/administrator/redis-baremetal/redis-7.2.4/certs/`
+Certificates location: ``/home/administrator/redis-baremetal/redis-7.2.4/certs/``
 
 Startup Instructions
 --------------------

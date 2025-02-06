@@ -16,14 +16,11 @@ Network Configuration
 
 Service Details
 ---------------
-+-----------+------------+---------------------------+
-| Service   | Version    | Containerized             | 
-+-----------+------------+---------------------------+
 +-------------+-----------+---------------+
 | Service     | Version   | Containerized |
 +=============+===========+===============+
-| 1.18.0    | Yes           |
-+-----------+---------------+
+| Nginx       | 1.18.0    | Yes           |
++-------------+-----------+---------------+
 | Keycloak    | 20        | Yes           |
 +-------------+-----------+---------------+
 | OpenSSL     | 1.1.1f    | Yes           |
@@ -69,7 +66,7 @@ Configuration Files
 
 The server was configured with two network interfaces: one for management access and another for TLS client connectivity. Keycloak was deployed using a containerized setup. The necessary TLS certificates and configuration files were stored in the app directory. The deployment ensures secure authentication and access management by utilizing Docker for isolation and flexibility.
 
-Certificates location: `/home/administrator/certs`
+Certificates location: ``/home/administrator/certs``
 
 Startup Instructions
 --------------------

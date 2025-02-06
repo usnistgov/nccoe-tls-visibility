@@ -16,14 +16,11 @@ Network Configuration
 
 Service Details
 ---------------
-+-----------+------------+---------------------------+
-| Service   | Version    | Containerized             | 
-+-----------+------------+---------------------------+
 +-------------+-----------+---------------+
 | Service     | Version   | Containerized |
 +=============+===========+===============+
-| 1.18.0    | Yes           |
-+-----------+---------------+
+| Nginx       | 1.18.0    | Yes           |
++-------------+-----------+---------------+
 |             |           |               |
 +-------------+-----------+---------------+
 | OpenSSL     | 1.1.1f    | Yes           |
@@ -73,7 +70,7 @@ Nginx is configured to listen for incoming TLSv1.3 connections on the SERVER net
 * ``eva.conf`` contains details on how to retrieve these keys.
 * ``override.conf`` contains instructions for the system to ensure that the EVA agent is running prior to the affected service.
 
-Certificates location: ` /home/administrator/certs`
+Certificates location: `` /home/administrator/certs``
 
 Startup Instructions
 --------------------

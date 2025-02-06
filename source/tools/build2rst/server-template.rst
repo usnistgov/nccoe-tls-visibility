@@ -16,9 +16,6 @@ Network Configuration
 
 Service Details
 ---------------
-+-----------+------------+---------------------------+
-| Service   | Version    | Containerized             | 
-+-----------+------------+---------------------------+
 ENUMERATE_Service_Version_Containerized
 
 
@@ -43,7 +40,7 @@ ENUMERATE_Config
 
 [[Configuration Description]]
 
-Certificates location: `[[Certificates]]`
+Certificates location: ``[[Certificates]]``
 
 Startup Instructions
 --------------------

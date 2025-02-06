@@ -16,14 +16,11 @@ Network Configuration
 
 Service Details
 ---------------
-+-----------+------------+---------------------------+
-| Service   | Version    | Containerized             | 
-+-----------+------------+---------------------------+
 +-------------+-----------+---------------+
 | Service     | Version   | Containerized |
 +=============+===========+===============+
-| 11.0.6    | No            |
-+-----------+---------------+
+| MariaDB     | 11.0.6    | No            |
++-------------+-----------+---------------+
 |             |           |               |
 +-------------+-----------+---------------+
 | OpenSSL     | 1.1.1f    | Yes           |
@@ -67,7 +64,7 @@ Nginx is configured to listen for incoming TLSv1.3 connections on the SERVER net
 
 Once operational, Keycloak was configured with a new realm named "CORP". Within this realm, a user named "testuser" was provisioned. Additionally, an OpenID Connect Client entry was created to allow authentication for a simple Python test application, as described in the Web Application Server Configuration. The docker files are primarily for ensuring that the service is running.
 
-Certificates location: `/etc/mysql/certs`
+Certificates location: ``/etc/mysql/certs``
 
 Startup Instructions
 --------------------
