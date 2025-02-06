@@ -1,10 +1,10 @@
 Redis Server Configuration
-=============================
+-----------------------------
 
 The Redis server build started with a standard Ubuntu 20.04.6 LTS virtual machine created with allocations of 2 vCPUs, 16 GB of memory, 50 GB of storage, and 2 network interface cards. 
 
 Network Configuration
----------------------
+^^^^^^^^^^^^^^^^^^^^^
 
 +-----------+------------+----------------+--------------------------------------------------------------------------------------------------+
 | Interface | Network    | Address        | Purpose                                                                                          |
@@ -15,7 +15,7 @@ Network Configuration
 +-----------+------------+----------------+--------------------------------------------------------------------------------------------------+
 
 Service Details
----------------
+^^^^^^^^^^^^^^^
 +-------------+-----------+---------------+
 | Service     | Version   | Containerized |
 +=============+===========+===============+
@@ -24,7 +24,7 @@ Service Details
 
 
 Notes
------
+^^^^^
 
 Redis 7.2.4 was built from source for this build, in order to enable the ability to use TLS when connecting to it. To do this, the following command was used:
 
@@ -40,7 +40,7 @@ Second, Redis was configured to only listen on the network interface connected t
 
 
 Configuration Files
--------------------
+^^^^^^^^^^^^^^^^^^^
 
 +--------------------------------------------------------------------------------+
 | Configuration Files                                                            |
@@ -53,7 +53,7 @@ The primary usage of ``redis.conf`` was to ensure the ability to use TLSv1.3 and
 Certificates location: ``/home/administrator/redis-baremetal/redis-7.2.4/certs/``
 
 Startup Instructions
---------------------
+^^^^^^^^^^^^^^^^^^^^
 
 Finally, the Redis service was enabled through the following commands:
 

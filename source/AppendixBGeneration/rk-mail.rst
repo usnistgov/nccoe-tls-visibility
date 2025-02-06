@@ -1,10 +1,10 @@
 Mail Server Configuration
-=============================
+-----------------------------
 
 The Mail server build started with a standard Ubuntu 20.04.6 LTS virtual machine created with allocations of 2 vCPUs, 16 GB of memory, 50 GB of storage, and 2 network interface cards. 
 
 Network Configuration
----------------------
+^^^^^^^^^^^^^^^^^^^^^
 
 +-----------+------------+----------------+--------------------------------------------------------------------------------------------------+
 | Interface | Network    | Address        | Purpose                                                                                          |
@@ -15,7 +15,7 @@ Network Configuration
 +-----------+------------+----------------+--------------------------------------------------------------------------------------------------+
 
 Service Details
----------------
+^^^^^^^^^^^^^^^
 +-------------+-----------+---------------+
 | Service     | Version   | Containerized |
 +=============+===========+===============+
@@ -28,7 +28,7 @@ Service Details
 
 
 Notes
------
+^^^^^
 
 The Mail application server consists of a Postfix service and Dovecot service providing SMTP and IMAP capabilities respectively.
 
@@ -42,7 +42,7 @@ Second, Mail was configured to only listen on the network interface connected to
 
 
 Configuration Files
--------------------
+^^^^^^^^^^^^^^^^^^^
 
 +--------------------------------------------------------------------------------+
 | Configuration Files                                                            |
@@ -73,7 +73,7 @@ In addition to the configs listed, it was also necessary to create MX records in
 Certificates location: ``/home/tlsadmin/certs``
 
 Startup Instructions
---------------------
+^^^^^^^^^^^^^^^^^^^^
 
 Finally, the Mail service was enabled through the following commands:
 

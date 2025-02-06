@@ -1,10 +1,10 @@
 F5-Syslog Server Configuration
-=============================
+-----------------------------
 
 The F5-Syslog server build started with a standard Ubuntu 20.04.6 LTS virtual machine created with allocations of 2 vCPUs, 16 GB of memory, 50 GB of storage, and 2 network interface cards. 
 
 Network Configuration
----------------------
+^^^^^^^^^^^^^^^^^^^^^
 
 +-----------+------------+----------------+--------------------------------------------------------------------------------------------------+
 | Interface | Network    | Address        | Purpose                                                                                          |
@@ -15,7 +15,7 @@ Network Configuration
 +-----------+------------+----------------+--------------------------------------------------------------------------------------------------+
 
 Service Details
----------------
+^^^^^^^^^^^^^^^
 +-------------+-----------+---------------+
 | Service     | Version   | Containerized |
 +=============+===========+===============+
@@ -26,7 +26,7 @@ Service Details
 
 
 Notes
------
+^^^^^
 
 This server hosts a syslog-ng service collecting logs from the F5 BIG-IP device. These logs contain keys to be used for decryption. This server also hosts a python script which continuously reads the logs for these keys, and uploads them to the Redis database for use by the decryptors.
 
@@ -40,7 +40,7 @@ Second, F5-Syslog was configured to only listen on the network interface connect
 
 
 Configuration Files
--------------------
+^^^^^^^^^^^^^^^^^^^
 
 +--------------------------------------------------------------------------------+
 | Configuration Files                                                            |
@@ -61,7 +61,7 @@ Configuration Files
 Certificates location: ``/certs``
 
 Startup Instructions
---------------------
+^^^^^^^^^^^^^^^^^^^^
 
 Finally, the F5-Syslog service was enabled through the following commands:
 

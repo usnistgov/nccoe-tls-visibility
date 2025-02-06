@@ -1,10 +1,10 @@
 [[Name]] Server Configuration
-=============================
+-----------------------------
 
 The [[Name]] server build started with a standard [[OS]] virtual machine created with allocations of 2 vCPUs, 16 GB of memory, 50 GB of storage, and 2 network interface cards. 
 
 Network Configuration
----------------------
+^^^^^^^^^^^^^^^^^^^^^
 
 +-----------+------------+----------------+--------------------------------------------------------------------------------------------------+
 | Interface | Network    | Address        | Purpose                                                                                          |
@@ -15,12 +15,12 @@ Network Configuration
 +-----------+------------+----------------+--------------------------------------------------------------------------------------------------+
 
 Service Details
----------------
+^^^^^^^^^^^^^^^
 ENUMERATE_Service_Version_Containerized
 
 
 Notes
------
+^^^^^
 
 [[Description]]
 
@@ -34,7 +34,7 @@ Second, [[Name]] was configured to only listen on the network interface connecte
 
 
 Configuration Files
--------------------
+^^^^^^^^^^^^^^^^^^^
 
 ENUMERATE_Config
 
@@ -43,7 +43,7 @@ ENUMERATE_Config
 Certificates location: ``[[Certificates]]``
 
 Startup Instructions
---------------------
+^^^^^^^^^^^^^^^^^^^^
 
 Finally, the [[Name]] service was enabled through the following commands:
 

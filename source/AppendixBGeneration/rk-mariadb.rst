@@ -1,10 +1,10 @@
 MariaDB Server Configuration
-=============================
+-----------------------------
 
 The MariaDB server build started with a standard Ubuntu 20.04.6 LTS virtual machine created with allocations of 2 vCPUs, 16 GB of memory, 50 GB of storage, and 2 network interface cards. 
 
 Network Configuration
----------------------
+^^^^^^^^^^^^^^^^^^^^^
 
 +-----------+------------+----------------+--------------------------------------------------------------------------------------------------+
 | Interface | Network    | Address        | Purpose                                                                                          |
@@ -15,7 +15,7 @@ Network Configuration
 +-----------+------------+----------------+--------------------------------------------------------------------------------------------------+
 
 Service Details
----------------
+^^^^^^^^^^^^^^^
 +-------------+-----------+---------------+
 | Service     | Version   | Containerized |
 +=============+===========+===============+
@@ -28,7 +28,7 @@ Service Details
 
 
 Notes
------
+^^^^^
 
 As none of the currently available MariaDB container images on DockerHub used a version of OpenSSL supported by the Nubeva agent, the MariaDB 11.0.2 software was installed directly on the host VM.
 
@@ -42,7 +42,7 @@ Second, MariaDB was configured to only listen on the network interface connected
 
 
 Configuration Files
--------------------
+^^^^^^^^^^^^^^^^^^^
 
 +--------------------------------------------------------------------------------+
 | Configuration Files                                                            |
@@ -66,7 +66,7 @@ MariaDB is configured to listen for incoming TLSv1.3 connections on the SERVER n
 Certificates location: ``/etc/mysql/certs``
 
 Startup Instructions
---------------------
+^^^^^^^^^^^^^^^^^^^^
 
 Finally, the MariaDB service was enabled through the following commands:
 
