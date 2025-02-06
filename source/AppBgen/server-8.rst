@@ -64,7 +64,13 @@ Configuration Files
 | /home/administrator/keycloak/nginx-build/docker-compose.yaml                   |
 +--------------------------------------------------------------------------------+
 
-The server was configured with two network interfaces: one for management access and another for TLS client connectivity. Keycloak was deployed using a containerized setup. The necessary TLS certificates and configuration files were stored in the app directory. The deployment ensures secure authentication and access management by utilizing Docker for isolation and flexibility.
+Nginx is configured to listen for incoming TLSv1.3 connections on the SERVER network. The Key Management Agent receives key material through an SSH connection from the Key Governance Platform over the MANAGEMENT network, authenticated using an SSH key pair. The Nginx reverse proxy is secured with an SSL certificate issued through DigiCert. The docker files are primarily for ensuring that the service is running and using the correct certificates.
+
+* ``eva-openssl.cnf`` contains config lines which are included in ``openssl.cnf``. It details which services should use the EVA agent to retrieve keys from AppViewX and use them in the workflow.
+* ``eva.conf`` contains details on how to retrieve these keys.
+* ``override.conf`` contains instructions for the system to ensure that the EVA agent is running prior to the affected service.
+
+Once operational, Keycloak was configured with a new realm named "CORP". Within this realm, a user named "testuser" was provisioned. Additionally, an OpenID Connect Client entry was created to allow authentication for a simple Python test application, as described in the Web Application Server Configuration. The docker files are primarily for ensuring that the service is running.
 
 Certificates location: ``/home/administrator/certs``
 
