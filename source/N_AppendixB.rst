@@ -50,9 +50,11 @@ shows the wiring configurations between the two routers and two middleboxes.
 
 .. _Figure B-1:
 
-Figure B-1: Middlebox Networking Details
+.. figure:: images/Middlebox_Network_Detail.svg
+   :width: 90%
+   :alt: Image showing the details of the middlebox networking, described above.
 
-.. image:: images/Middlebox_Network_Detail.svg
+   Middlebox Networking Details
 
 .. _B.4.1:
 
