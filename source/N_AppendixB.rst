@@ -60,7 +60,7 @@ B.4.1 Layer 2 Networking Configuration
 ======================================
 
 
-The Layer 2 middlebox is invisible to routers ``RA`` and ``RB``.  When it is powered up, ARP requests from ``RA`` and ``RB`` are copied between ``SRVPATCHB1`` and ``SRVPATCHB2`` such that ``RA`` and ``RB`` have direct connections on the 192.168.80.0/24 network.  
+The Layer 2 middlebox is invisible to routers ``RA`` and ``RB``.  When it is powered up, ARP requests from ``RA`` and ``RB`` are copied between ``SRVPATCHB1`` and ``SRVPATCHB2`` such that ``RA`` and ``RB`` have direct connections on the ``192.168.80.0/24`` network.  
 The use of three separate subnets between the middleboxes and the routers ensures that regardless of which combination is active, there is a path to the ``SERVER`` network segment.
 
 .. _B.4.2:
@@ -68,8 +68,8 @@ The use of three separate subnets between the middleboxes and the routers ensure
 B.4.2 Layer 3 Networking Configuration
 ======================================
 
-* ``SRVPATCHA1`` is assigned to the 192.168.60.0/24 network space.
-* ``SRVPATCHA2`` is assigned to the 192.168.70.0/24 network space.
+* ``SRVPATCHA1`` is assigned to the ``192.168.60.0/24`` network space.
+* ``SRVPATCHA2`` is assigned to the ``192.168.70.0/24`` network space.
 
 
 When the Layer 3 middlebox is powered up, router ``RA`` establishes a TCP connection to the middlebox ``T`` over network segment ``SRVPATCHA1``.
