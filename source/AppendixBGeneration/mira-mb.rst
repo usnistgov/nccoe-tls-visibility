@@ -11,9 +11,17 @@ The virtual appliance is instantiated from the same virtual appliance template (
 MIRA ETO Middlebox Network Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-+-----------+------------+-----------------+--------------------------------------------------------------------------------+
-| Interface | Network    | IP Address      | Purpose                                                                        |
-+===========+============+=================+================================================================================+
++-----------+---------------+------------------------+--------------------------------------------------------------------------------+
+| Interface | Network       | IP Address             | Purpose                                                                        |
++===========+===============+========================+================================================================================+
+| 1         | MANAGEMENT    | 192.168.10.65          |
++-----------+---------------+------------------------+
+| 2         | SERVERPATCHB1 | N/A Layer 2 connection |
++-----------+---------------+------------------------+
+| 3         | SERVERPATCHB2 | N/A Layer 2 connection |
++-----------+---------------+------------------------+
+| 4         | DECRYPTED     | N/A Layer 2 connection |
++-----------+---------------+------------------------+
 
 
 The VM was created with a resource allocation including 8 vCPUs, 16 GB of memory, and 75 GB of storage.
@@ -41,9 +49,17 @@ This section describes the configuration of the MIRA ETO device for intercepting
 Additional Configuration Files
 ------------------------------
 
-+------------------------------------------------------------------------------------+
-| Relevant Configuration Files                                                       |
-+====================================================================================+
++-----------------------------------------------------------------+
+| Relevant Configuration Files                                    |
++=================================================================+
+| root/keylog2redis.py                                            |
++-----------------------------------------------------------------+
+| root/keylog2redis.sh                                            |
++-----------------------------------------------------------------+
+| root/ScriptInstructions.txt                                     |
++-----------------------------------------------------------------+
 
-[[Configuration Files Description]]
+* The shell script ``keylog2redis.sh`` is used to run and capture the output of ``keylog2redis.py``.
+
+* The python script ``keylog2redis.py`` is used to process Mira's log files for captured keys, and forward those keys to redis for use by the decryptors. 
 

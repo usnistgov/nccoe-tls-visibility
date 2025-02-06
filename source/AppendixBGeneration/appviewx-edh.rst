@@ -14,13 +14,13 @@ The second virtual appliance, the Software Security Module, was created in vSphe
 AppViewX Appliance Network Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-+-----------+------------+-----------------+--------------------------------------------------------------------------------+
-| Interface | Network    | IP Address      | Purpose                                                                        |
-+===========+============+=================+================================================================================+
-| 1         | MANAGEMENT | 192.168.10.xxx  | Access to the web-based management console and connectivity to other products. |
-+-----------+------------+-----------------+--------------------------------------------------------------------------------+
-| 2         | HSMNET     | 192.168.yyy.xxx | Provides connectivity to the hardware security module                          |
-+-----------+------------+-----------------+--------------------------------------------------------------------------------+
++-----------+---------------+------------------------+--------------------------------------------------------------------------------+
+| Interface | Network       | IP Address             | Purpose                                                                        |
++===========+===============+========================+================================================================================+
+| 1         | MANAGEMENT    | 192.168.10.xxx         | Access to the web-based management console and connectivity to other products. |
++-----------+---------------+------------------------+--------------------------------------------------------------------------------+
+| 2         | HSMNET        | 192.168.yyy.xxx        | Provides connectivity to the hardware security module                          |
++-----------+---------------+------------------------+--------------------------------------------------------------------------------+
 
 
 AppViewX Software Security Module Appliance Network Configuration
@@ -92,23 +92,23 @@ The figure below shows shows the contents of the workflow for the Diffie-Hellman
 Additional Configuration Files
 ------------------------------
 
-+------------------------------------------------------------------------------------+
-| Relevant Configuration Files                                                       |
-+====================================================================================+
-| lab_build/appviewx/workflows/TLS 1_3 DH 2024/1st Attempt Key.py                    |
-+------------------------------------------------------------------------------------+
-| lab_build/appviewx/workflows/TLS 1_3 DH 2024/Defining Curves.py                    |
-+------------------------------------------------------------------------------------+
-| lab_build/appviewx/workflows/TLS 1_3 DH 2024/Encrypting and Archiving.py           |
-+------------------------------------------------------------------------------------+
-| lab_build/appviewx/workflows/TLS 1_3 DH 2024/Executing Commands.py                 |
-+------------------------------------------------------------------------------------+
-| lab_build/appviewx/workflows/TLS 1_3 DH 2024/Key Generation In.py                  |
-+------------------------------------------------------------------------------------+
-| lab_build/appviewx/workflows/TLS 1_3 DH 2024/add_external_key.py                   |
-+------------------------------------------------------------------------------------+
-| lab_build/appviewx/workflows/TLS 1_3 DH 2024/final.py                              |
-+------------------------------------------------------------------------------------+
++-----------------------------------------------------------------+
+| Relevant Configuration Files                                    |
++=================================================================+
+| workflows/TLS 1_3 DH 2024/1st Attempt Key.py                    |
++-----------------------------------------------------------------+
+| workflows/TLS 1_3 DH 2024/Defining Curves.py                    |
++-----------------------------------------------------------------+
+| workflows/TLS 1_3 DH 2024/Encrypting and Archiving.py           |
++-----------------------------------------------------------------+
+| workflows/TLS 1_3 DH 2024/Executing Commands.py                 |
++-----------------------------------------------------------------+
+| workflows/TLS 1_3 DH 2024/Key Generation In.py                  |
++-----------------------------------------------------------------+
+| workflows/TLS 1_3 DH 2024/add_external_key.py                   |
++-----------------------------------------------------------------+
+| workflows/TLS 1_3 DH 2024/final.py                              |
++-----------------------------------------------------------------+
 
-These python files were created  as part of the creation of the workflow for this build in AppViewX.
+These files were created  as part of the creation of the workflow for this build in AppViewX. This workflow serves the purpose of creating and registering keys with the AppViewX Secure Software module to make those keys available to the servers and decryptors which need them.
 

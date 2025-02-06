@@ -11,9 +11,9 @@ The MIRA ETO virtual machine was created in vSphere from the vendor supplied app
 MIRA ETO Passive Decryptor Network Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-+-----------+------------+-----------------+--------------------------------------------------------------------------------+
-| Interface | Network    | IP Address      | Purpose                                                                        |
-+===========+============+=================+================================================================================+
++-----------+---------------+------------------------+--------------------------------------------------------------------------------+
+| Interface | Network       | IP Address             | Purpose                                                                        |
++===========+===============+========================+================================================================================+
 
 
 The VM was created with a resource allocation including 8 vCPUs, 16 GB of memory, and 75 GB of storage.
@@ -109,9 +109,9 @@ Fifth, the credentials that AppViewX will need to push the server key pairs to E
 Additional Configuration Files
 ------------------------------
 
-+------------------------------------------------------------------------------------+
-| Relevant Configuration Files                                                       |
-+====================================================================================+
++-----------------------------------------------------------------+
+| Relevant Configuration Files                                    |
++=================================================================+
 
 [[Configuration Files Description]]
 

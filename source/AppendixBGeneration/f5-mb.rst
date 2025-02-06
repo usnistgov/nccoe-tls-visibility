@@ -14,9 +14,17 @@ Additionally, a separate VM was created for the purpose of forwarding exported s
 F5 BIG-IP Active Decryptor Network Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-+-----------+------------+-----------------+--------------------------------------------------------------------------------+
-| Interface | Network    | IP Address      | Purpose                                                                        |
-+===========+============+=================+================================================================================+
++-----------+---------------+------------------------+--------------------------------------------------------------------------------+
+| Interface | Network       | IP Address             | Purpose                                                                        |
++===========+===============+========================+================================================================================+
+| 1         | MANAGEMENT    |
++-----------+---------------+
+| 2         | SERVERPATCHA1 | 192.168.60.2           |
++-----------+---------------+------------------------+
+| 3         | SERVERPATCHA2 | 192.168.70.1           |
++-----------+---------------+------------------------+
+| 4         | DECRYPTED     | N/A Layer 2 connection |
++-----------+---------------+------------------------+
 
 
 The VM was created with a resource allocation including 8 vCPUs, 16 GB of memory, and 75 GB of storage.
@@ -42,7 +50,7 @@ F5 BIG-IP Syslog Server Network Configuration
 
 This VM, running Ubuntu 20.04.6 LTS was created with a resource allocation including 8 vCPUs, 16 GB of memory, and 75 GB of storage.
 
-.. include Syslog Server
+.. include:: f5syslog.rst
 
 
 
@@ -60,9 +68,25 @@ This section describes the configuration of the F5 BIG-IP device for interceptin
 Additional Configuration Files
 ------------------------------
 
-+------------------------------------------------------------------------------------+
-| Relevant Configuration Files                                                       |
-+====================================================================================+
++-----------------------------------------------------------------+
+| Relevant Configuration Files                                    |
++=================================================================+
+| big-ip/irules/nccoeKeyExportToRedisClientSide_iRule.txt         |
++-----------------------------------------------------------------+
+| big-ip/irules/nccoeKeyExportToRedisServerSide_iRule.txt         |
++-----------------------------------------------------------------+
+| big-ip/irules/ssloS_NETSCOUT-port_remap.txt                     |
++-----------------------------------------------------------------+
+| big-ip/irules/sslo_BreakInspect-gw_in_t.txt                     |
++-----------------------------------------------------------------+
+| big-ip/irules/sslo_BreakInspect-lib.txt                         |
++-----------------------------------------------------------------+
 
-[[Configuration Files Description]]
+A number of iRules were defined for this build within F5. 
+
+* The iRules ``nccoeKeyExportToRedisClientSide`` and ``nccoeKeyExportToRedisServerSide`` exist to forward acquired session keys to Redis, for use by the other decryptors.
+
+* The ``ssloS_NETSCOUT-port_remap`` iRule remaps traffic from HTTPS to HTTP to better enable the intrusion detection system.
+
+* Finally, the last two ``sslo_BreakInspect-lib`` and ``sslo_BreakInspect-gw_in_t`` iRules are associated with hosts to instruct the F5 product to perform Break & Inspect on these hosts.
 

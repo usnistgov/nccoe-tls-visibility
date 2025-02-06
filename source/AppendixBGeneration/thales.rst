@@ -11,9 +11,9 @@ The Luna HSM from Thales TCT is a physical hardware appliance that was installed
 Thales TCT Luna HSM Appliance Network Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-+-----------+------------+-----------------+--------------------------------------------------------------------------------+
-| Interface | Network    | IP Address      | Purpose                                                                        |
-+===========+============+=================+================================================================================+
++-----------+---------------+------------------------+--------------------------------------------------------------------------------+
+| Interface | Network       | IP Address             | Purpose                                                                        |
++===========+===============+========================+================================================================================+
 
 
 1. SSH into the hardware appliance as the appliance administrator account to access the Luna shell
@@ -119,9 +119,9 @@ This section contains instructions for configuring the AppViewX key governance p
 Additional Configuration Files
 ------------------------------
 
-+------------------------------------------------------------------------------------+
-| Relevant Configuration Files                                                       |
-+====================================================================================+
++-----------------------------------------------------------------+
+| Relevant Configuration Files                                    |
++=================================================================+
 
 [[Configuration Files Description]]
 

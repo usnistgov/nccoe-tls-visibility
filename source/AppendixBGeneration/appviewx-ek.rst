@@ -14,13 +14,13 @@ The second virtual appliance, the Software Security Module, was created in vSphe
 AppViewX Appliance Network Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-+-----------+------------+-----------------+--------------------------------------------------------------------------------+
-| Interface | Network    | IP Address      | Purpose                                                                        |
-+===========+============+=================+================================================================================+
-| 1         | MANAGEMENT | 192.168.10.xxx  | Access to the web-based management console and connectivity to other products. |
-+-----------+------------+-----------------+--------------------------------------------------------------------------------+
-| 2         | HSMNET     | 192.168.yyy.xxx | Provides connectivity to the hardware security module                          |
-+-----------+------------+-----------------+--------------------------------------------------------------------------------+
++-----------+---------------+------------------------+--------------------------------------------------------------------------------+
+| Interface | Network       | IP Address             | Purpose                                                                        |
++===========+===============+========================+================================================================================+
+| 1         | MANAGEMENT    | 192.168.10.xxx         | Access to the web-based management console and connectivity to other products. |
++-----------+---------------+------------------------+--------------------------------------------------------------------------------+
+| 2         | HSMNET        | 192.168.yyy.xxx        | Provides connectivity to the hardware security module                          |
++-----------+---------------+------------------------+--------------------------------------------------------------------------------+
 
 
 AppViewX Software Security Module Appliance Network Configuration
@@ -52,10 +52,7 @@ The primary appliance was provisioned with the following modules:
 +----------------------------------------------------------+--------------------------------------------------------------------------+
 
 
-Redis Server Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. import redis here
+.. include:: redis.rst
 
 
 
@@ -96,15 +93,15 @@ The figure below shows shows the contents of the workflow for the Exported Key w
 Additional Configuration Files
 ------------------------------
 
-+------------------------------------------------------------------------------------+
-| Relevant Configuration Files                                                       |
-+====================================================================================+
-| lab_build/appviewx/workflows/Redis DB - NIST POC/Result.py                         |
-+------------------------------------------------------------------------------------+
-| lab_build/appviewx/workflows/Redis DB - NIST POC/JSON Content.yaml                 |
-+------------------------------------------------------------------------------------+
-| lab_build/appviewx/workflows/Redis DB - NIST POC/Fetch Data Using Client Random.py |
-+------------------------------------------------------------------------------------+
++-----------------------------------------------------------------+
+| Relevant Configuration Files                                    |
++=================================================================+
+| workflows/Redis DB - NIST POC/Result.py                         |
++-----------------------------------------------------------------+
+| workflows/Redis DB - NIST POC/JSON Content.yaml                 |
++-----------------------------------------------------------------+
+| workflows/Redis DB - NIST POC/Fetch Data Using Client Random.py |
++-----------------------------------------------------------------+
 
-These python files were created  as part of the creation of the workflow for this build in AppViewX.
+These files were created  as part of the creation of the workflow for this build in AppViewX. This workflow serves the purpose of managing access to the Redis database containing keys indexed by their Client Random ID.
 
