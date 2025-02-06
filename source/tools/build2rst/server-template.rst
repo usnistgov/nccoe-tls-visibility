@@ -39,7 +39,6 @@ Second, [[Name]] was configured to only listen on the network interface connecte
 Configuration Files
 -------------------
 
-+--------------------------------------------------------------+
 ENUMERATE_Config
 
 [[Configuration Description]]

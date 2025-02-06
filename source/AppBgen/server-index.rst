@@ -10,3 +10,5 @@
    /AppBgen/server-7.rst
    /AppBgen/server-8.rst
    /AppBgen/server-9.rst
+   /AppBgen/server-10.rst
+   /AppBgen/server-11.rst
