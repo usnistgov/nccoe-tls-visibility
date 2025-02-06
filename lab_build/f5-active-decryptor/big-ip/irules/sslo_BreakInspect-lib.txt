@@ -1,0 +1,103 @@
+# Copyright (c) 2018.  F5 Networks, Inc.  See End User License Agreement (EULA) for license terms.
+# Notwithstanding anything to the contrary in the EULA, Licensee may copy and modify
+# this software product for its internal business purposes. Further, Licensee may upload,
+# publish and distribute the modified version of the software product on devcentral.f5.com.
+
+# emit a log message
+# uses ACCESS::log ssl-orchestrator.[debug|notice|error] $msg to make use of
+# the Common Logging Framework
+proc log {level msg} {
+ if {$msg eq ""} { return }
+
+ if {$level == 0} {
+  ACCESS::log ssl-orchestrator.error "[virtual] $msg"
+ } elseif {$level == 1} {
+  ACCESS::log ssl-orchestrator.notice "[virtual] $msg"
+ } elseif {$level == 2} {
+  ACCESS::log ssl-orchestrator.debug "[virtual] $msg"
+ }
+} ; #proc log
+
+# try to ascertain protocol from first few bytes that server
+# sent. If unrecognized, return value of argument ptcl, else
+# suitable protocol string
+proc ssf_ptcl {ptcl taste} {
+ if {[regexp {^(220 .+ (ESMTP|\*) (OK|NO|BAD) ).*\r\n$} $taste]} {
+  # looks like SMTP (not a complete test)
+  return "smtp"
+ }
+ if {[string first "SSH-2.0-" $taste] == 0} {
+  #looks like SSH
+  return "ssh"
+ }
+ return $ptcl
+} ; #proc ssf_ptcl
+
+
+# try to ascertain protocol from first few bytes that client
+# sent. If unrecognized, return value of argument ptcl, else
+# suitable protocol string.
+#
+# For test against expected http methods, make sure we have enough
+# data "mincollectlen" bytes for comparison to be valid. If not, set
+# ptcl so caller can collect more data. Note that "mincollectlen"
+# is set to 8 which is the longest http method aka "PROPFIND". If we
+# update the expected set of http methods, we need to make sure
+# that "mincollectlen" is updated, as needed.
+proc csf_ptcl {ptcl taste len} {
+ if {[regexp {^([A-Z]+) (?:/|https?://|[A-Za-z\d-]{1,63}[.]|\[[a-fA-F\d:]+\]|(?:[*]\x20))} $taste junk method]} {
+  # looks like HTTP (not a complete test because we are disinclined
+  # to accumulate client data looking for full HTTP request)
+  if { $method eq "CONNECT" } {
+   return "http-connect"
+  }
+  if {([lsearch -exact -sorted {DELETE GET HEAD LOCK
+   OPTIONS PATCH POST PROPFIND PUT TRACE UNLOCK} $method] >= 0)} {
+   return "http"
+  }
+ }
+ if {$ptcl eq "http" || $ptcl eq "https" || $ptcl eq "http-connect"} {
+  if { $len < 8 } {
+   set ptcl "incomplete"
+  } else {
+   set ptcl "unknown"
+  }
+  return $ptcl
+ }
+ if {[string first "SSH-2.0-" $taste] == 0} {
+  #looks like SSH, which is ssf (chuckle) so we shouldn't be here,
+  #but in future after we hear from server we may check on what
+  #client says to better discriminate application protocol (like
+  #if server says SSH-2.0 and client says SSH-1.99 we suspect older
+  #client, maybe vulnerable to protocol downgrade attack)
+  return "ssh"
+ }
+ return $ptcl
+} ; #proc csf_ptcl
+
+proc store_host_header said {
+ if {[regexp {^([A-Z]+) (?:/|https?://|[A-Za-z\d-]{1,63}[.]|\[[a-fA-F\d:]+\]|(?:[*]\x20))} $said junk method] &&
+     ([lsearch -exact -sorted {CONNECT DELETE GET HEAD LOCK OPTIONS PATCH POST PROPFIND PUT TRACE UNLOCK} $method] >= 0)} {
+  set host_hdr [findstr ${said} "Host: " 6 "\r\n"]
+  if { [SSL::mode] == 0 } {
+   set scheme "http://"
+  } else {
+   set scheme "https://"
+  }
+  if { ${host_hdr} ne "" } {
+   set cat_result [CATEGORY::lookup "${scheme}${host_hdr}/" -id custom]
+   set custom "| [join ${cat_result} { | }] |"
+   set scratchpad [lindex ${cat_result} 0]
+   if { ${custom} eq "|  |" } {
+    set custom "| 153 |"
+    set scratchpad "153"
+   }
+   ACCESS::perflow set perflow.custom ${custom}
+   ACCESS::perflow set perflow.scratchpad ${scratchpad}
+ } else {
+   # Empty host header found
+  }
+ } else {
+  # Not HTTP or HTTPS, or unable to parse header.
+ }
+} ; #proc store_host_header

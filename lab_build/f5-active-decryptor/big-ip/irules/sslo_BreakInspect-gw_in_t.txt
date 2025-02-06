@@ -1,0 +1,296 @@
+# Copyright (c) 2018.  F5 Networks, Inc.  See End User License Agreement (EULA) for license terms.
+# Notwithstanding anything to the contrary in the EULA, Licensee may copy and modify
+# this software product for its internal business purposes. Further, Licensee may upload,
+# publish and distribute the modified version of the software product on devcentral.f5.com.
+
+when CLIENT_ACCEPTED {
+ SSL::disable clientside
+ SSL::disable serverside
+
+ catch {
+  set tmp "HTTP::disable"
+  eval $tmp
+  unset tmp
+ }
+
+ sharedvar ctx
+
+ set ctx(log) 0
+ set srcIP [IP::client_addr]
+ set dstIP [IP::local_addr]
+ set srcPort [TCP::client_port]
+ set dstPort [TCP::local_port]
+ set ctx(SNI) ""
+ set ctx(ptcl) "unknown"
+
+
+ # maintain the next two lists in lockstep (!)
+ if {[set x [lsearch -integer -sorted [list 21 22 25 53 80 110 115 143 443 465 587 990 993 995 3128 8080] [TCP::local_port]]] >= 0} {
+     set ctx(ptcl) [lindex [list "ftp" "ssh" "smtp" "dns" "http" "pop3" "sftp" "imap" "https" "smtps" "smtp" "ftps" "imaps" "pop3s" "http" "http"] $x]
+ }
+
+ if {$ctx(log) > 1} {
+  call /Common/sslo_BreakInspect.app/sslo_BreakInspect-lib::log 2 "CLIENT_ACCEPTED TCP from ${srcIP}_${srcPort} to ${dstIP}_${dstPort} L7 guess=$ctx(ptcl)"
+ }
+
+ TCP::collect 1 0 ; # dispatch probe
+} ; #CLIENT_ACCEPTED
+
+
+when SERVER_CONNECTED {
+ if { not [info exists ctx(csf)] } {
+  #initial connection, currently a probe, listen for SSF
+  TCP::collect 1
+ }
+
+ if {$ctx(log) > 1} {
+  set didsnat ""
+  set snatIP [IP::local_addr]
+  set snatPort [TCP::local_port]
+  if {($snatIP ne $srcIP) || ($snatPort ne $srcPort)} {
+   # even when we do not deliberately SNAT (e.g., when in split mode)
+   # TMOS may give us a fresh client ephemeral port.  Possible reasons
+   # include DAG on the exit VLAN and "at the moment, the requested
+   # client port belongs to the TCB for an earlier connection now
+   # stuck in TCP TIME/WAIT state"
+   set didsnat "SNAT ${snatIP}_${snatPort}"
+  }
+  call /Common/sslo_BreakInspect.app/sslo_BreakInspect-lib::log 2 "SERVER_CONNECTED ${srcIP}_${srcPort} to ${dstIP}_${dstPort} ${didsnat}"
+ }
+} ; #SERVER_CONNECTED
+
+when SERVER_DATA {
+ set len [TCP::payload length]
+ if { [info exists ctx(csf)] } {
+  #someone beat us to it
+  TCP::release
+  return
+ } elseif {!$len} {
+  if {$ctx(log) > 1} {
+   call /Common/sslo_BreakInspect.app/sslo_BreakInspect-lib::log 2 "SERVER_DATA got empty payload, retrying"
+  }
+  TCP::collect
+  return
+ } else {
+  set ctx(ssf) true
+  set said [TCP::payload]
+ }
+
+ set ctx(ptcl) [call /Common/sslo_BreakInspect.app/sslo_BreakInspect-lib::ssf_ptcl $ctx(ptcl) $said]
+
+ call /Common/sslo_BreakInspect.app/sslo_BreakInspect-lib::log 2 "SERVER_DATA server spoke first ${len} bytes, L7 guess=$ctx(ptcl)"
+
+ TCP::release
+} ; #SERVER_DATA
+
+when CLIENT_DATA {
+ set len [TCP::payload length]
+ if { [info exists ctx(ssf)] } {
+  #someone beat us to it
+  TCP::release
+  return
+ } elseif {!$len} {
+  call /Common/sslo_BreakInspect.app/sslo_BreakInspect-lib::log 2 "CLIENT_DATA got empty payload, retrying"
+  TCP::collect
+  return
+ } else {
+  set ctx(csf) true
+  set said [TCP::payload]
+  # release accepted event, if held, to proxy for creating connection to server
+  TCP::release 0
+ }
+
+ # got at least one octet
+
+ if {($len < 44) &&
+     ( ([binary scan $said c type] == 1) &&
+       (($type & 0xff) == 22) )} {
+  # may be partial TLS Client Hello (unusual)
+  # allow up to 7 seconds for the rest to arrive
+  # by modifying the connection idle timer. This will be
+  # reset after we get the complete hello (or plaintext data)
+  if {$ctx(log) > 1} {
+   call /Common/sslo_BreakInspect.app/sslo_BreakInspect-lib::log 2 "CLIENT_DATA Incomplete Client Hello, set idle timeout to 7 sec"
+  }
+  set ipIdleTmo [IP::idle_timeout]
+  IP::idle_timeout 7
+ } ; #(partial Client Hello)
+
+ SSL::enable clientside
+ SSL::allow_nonssl 1
+
+ after 0 { TCP::release }
+} ; #CLIENT_DATA
+
+
+when CLIENTSSL_PASSTHROUGH {
+ #Reset connection idle timer
+ if {[info exists ipIdleTmo]} {
+  IP::idle_timeout $ipIdleTmo
+ }
+
+ #csf_ptcl needs at least 8 bytes for http traffic to find the
+ #http method. SSL ingress processing ensures we have at least
+ #9 bytes before it calls CLIENTSSL_PASSTHROUGH. So, we don't
+ #need any timers to collect data here, however, add a check
+ #in case ssl behavior changes.
+ if {($ctx(ptcl) eq "http" || $ctx(ptcl) eq "https") && ${len} < 8} {
+  call /Common/sslo_BreakInspect.app/sslo_BreakInspect-lib::log 1 "CLIENTSSL_PASSTHROUGH http insuffient bytes ${len}"
+  reject
+  return
+ }
+
+ # not TLS
+ set ctx(ptcl) [call /Common/sslo_BreakInspect.app/sslo_BreakInspect-lib::csf_ptcl $ctx(ptcl) $said $len]
+ call /Common/sslo_BreakInspect.app/sslo_BreakInspect-lib::log 2 "CLIENTSSL_PASSTHROUGH client spoke first ${len} bytes, not TLS, L7 guess=$ctx(ptcl)"
+
+}
+
+when CLIENTSSL_CLIENTHELLO {
+ #Reset connection idle timer
+ if {[info exists ipIdleTmo]} {
+  IP::idle_timeout $ipIdleTmo
+ }
+
+ if {$ctx(log) > 1} {
+  if {[SSL::extensions exists -type 0]} {
+   binary scan [SSL::extensions -type 0] @9a* SNI
+   if {[regexp {(?i)[^a-z0-9.-]} $SNI]} {
+    call /Common/sslo_BreakInspect.app/sslo_BreakInspect-lib::log 1 "CLIENTSSL_CLIENTHELLO client offered bogus SNI"
+   } else {
+    set ctx(SNI) [string tolower $SNI]
+   }
+  }
+  call /Common/sslo_BreakInspect.app/sslo_BreakInspect-lib::log 2 "CLIENTSSL_CLIENTHELLO client spoke [SSL::cipher version] Client Hello ${len} bytes, SNI='$ctx(SNI)', L7 guess=$ctx(ptcl), pre-HS"
+ }
+
+ SSL::enable serverside
+} ; #CLIENTSSL_CLIENTHELLO
+
+
+when CLIENTSSL_HANDSHAKE {
+ SSL::unclean_shutdown enable
+
+ if {$ctx(log) > 1} {
+  set m [expr {($ctx(SNI) eq "") ? "NO_SNI" : $ctx(SNI)}]
+  append m "-[SSL::cipher version]-[SSL::cipher name]-[SSL::cipher bits]"
+  call /Common/sslo_BreakInspect.app/sslo_BreakInspect-lib::log 2 "CLIENTSSL_HANDSHAKE ${m}"
+ }
+
+ set clientssl_handshake 1
+ if { [info exists serverssl_data_collected] } {
+  peer { SSL::release }
+ }
+
+ SSL::collect
+} ; #CLIENTSSL_HANDSHAKE
+
+
+when CLIENTSSL_DATA {
+ #Get inner protocol
+ set inner_ptcl [call /Common/sslo_BreakInspect.app/sslo_BreakInspect-lib::csf_ptcl $ctx(ptcl) [SSL::payload] [SSL::payload length]]
+
+ #HTTP CONNECT inside SSL?
+ if { $inner_ptcl eq "http-connect" } {
+  call /Common/sslo_BreakInspect.app/sslo_BreakInspect-lib::log 1 "CLIENTSSL_DATA Detected HTTP CONNECT inside TLS. Reject."
+  reject
+  return
+ }
+
+ if { [info exists ctx(ssf_ssl)] } {
+  SSL::release
+  return
+ } else {
+  set ctx(csf_ssl) true
+ }
+
+ # If csf_ptcl returns incomplete, then there is insufficient data collected
+ # to determine HTTP method (this could be for example due to split HTTP
+ # requests to prevent BEAST attack). Set a timer to collect more bytes.
+ # If timer expires, then release whatever data we got to process further.
+ if { $inner_ptcl eq "incomplete" } {
+  call /Common/sslo_BreakInspect.app/sslo_BreakInspect-lib::log 2 "CLIENTSSL_DATA ${srcIP}_${srcPort} to ${dstIP}_${dstPort} insufficient decrypted SSL payload, set timer"
+  if { ![info exists rccollecttmr] } {
+   set rccollecttmr [after 1000 {
+    call /Common/sslo_BreakInspect.app/sslo_BreakInspect-lib::log 1 "CLIENTSSL_DATA ${srcIP}_${srcPort} to ${dstIP}_${dstPort} 1234 insufficient decrypted SSL payload, reset L7 ptcl to unknown"
+    set ctx(ptcl) "unknown"
+    unset rccollecttmr
+    event CLIENTSSL_DATA disable ; # prevent more CLIENTSSL_DATA event
+    SSL::release
+   }]
+  }
+  return
+ }
+ if {[info exists rccollecttmr]} {
+  after cancel $rccollecttmr
+  unset rccollecttmr
+ }
+
+ # Update ctx(ptcl) to the inner protocol unless this is http.
+ # For http, update to https
+ if { $inner_ptcl ne "http" } {
+  set ctx(ptcl) $inner_ptcl
+ } else {
+  set ctx(ptcl) "https"
+ }
+
+ event CLIENTSSL_DATA disable ; # prevent more CLIENTSSL_DATA event
+
+ if {$ctx(log) > 1} {
+  call /Common/sslo_BreakInspect.app/sslo_BreakInspect-lib::log 2 "CLIENTSSL_DATA client spoke first within TLS [SSL::payload length] bytes, inner-protocol $inner_ptcl, L7 guess=$ctx(ptcl), post-HS"
+ }
+
+ SSL::release
+} ; #CLIENTSSL_DATA
+
+when SERVERSSL_HANDSHAKE {
+ SSL::unclean_shutdown enable
+ SSL::collect
+} ; #SERVERSSL_HANDSHAKE
+
+when L7CHECK_CLIENT_DATA {
+  L7CHECK::protocol set $ctx(ptcl)
+  if { $ctx(ptcl) eq "http" || $ctx(ptcl) eq "https" } {
+   catch {
+    set tmp "HTTP::enable"
+    eval $tmp
+    unset tmp
+    CONNECTOR::enable
+   }
+  }
+}
+
+when L7CHECK_SERVER_DATA {
+  L7CHECK::protocol set $ctx(ptcl)
+}
+
+when SERVERSSL_DATA {
+ if { [info exists ctx(csf_ssl)] } {
+  SSL::release
+  return
+ } else {
+  set ctx(ssf_ssl) true
+ }
+
+ set ctx(ptcl) [call /Common/sslo_BreakInspect.app/sslo_BreakInspect-lib::ssf_ptcl $ctx(ptcl) [SSL::payload]]
+
+ if {$ctx(ptcl) eq "imap"} {
+  set ctx(ptcl) "imaps"
+ } elseif {$ctx(ptcl) eq "smtp"} {
+  set ctx(ptcl) "smtps"
+ } elseif {$ctx(ptcl) eq "pop3"} {
+  set ctx(ptcl) "pop3s"
+ } elseif {$ctx(ptcl) eq "ftp"} {
+  set ctx(ptcl) "ftps"
+ }
+
+ if {$ctx(log) > 1} {
+  call /Common/sslo_BreakInspect.app/sslo_BreakInspect-lib::log 2 "SERVERSSL_DATA server spoke first within TLS [SSL::payload length] bytes, L7 guess=$ctx(ptcl)"
+ }
+
+ if { [info exists clientssl_handshake] } {
+  SSL::release
+ } else {
+  set serverssl_data_collected 1
+ }
+} ; #SERVERSSL_DATA

@@ -1,0 +1,55 @@
+when RULE_INIT {
+    set static::tlsType "1.3"
+    set static::tupleDelimeter ";"
+}
+
+when CLIENTSSL_HANDSHAKE {
+    #Initialize an empty array (TCL array are hashes/name:value pairs
+    array set fastKeyArray {}
+    if {[SSL::cipher version] == "TLSv1.3" } {
+        log local0. "========CLIENT SIDE  TLS1.3==================="
+        log local0. "TCP source port: [TCP::remote_port]"
+        log local0. "CLIENT_HANDSHAKE_TRAFFIC_SECRET [SSL::clientrandom] [SSL::tls13_secret client hs]"
+        log local0. "SERVER_HANDSHAKE_TRAFFIC_SECRET [SSL::clientrandom] [SSL::tls13_secret server hs]"
+        log local0. "CLIENT_TRAFFIC_SECRET_0 [SSL::clientrandom] [SSL::tls13_secret client app]"
+        log local0. "SERVER_TRAFFIC_SECRET_0 [SSL::clientrandom] [SSL::tls13_secret server app]"
+        log local0. "CSIP: [IP::client_addr]"
+        log local0. "========TLS1.3 =============================="
+        log local0. "CLIENT_HANDSHAKE_TRAFFIC_SECRET [SSL::clientrandom] [SSL::tls13_secret client hs] SERVER_HANDSHAKE_TRAFFIC_SECRET [SSL::clientrandom] [SSL::tls13_secret server hs] CLIENT_TRAFFIC_SECRET_0 [SSL::clientrandom] [SSL::tls13_secret client app] SERVER_TRAFFIC_SECRET_0 [SSL::clientrandom] [SSL::tls13_secret server app]"
+        #set "fastKeyArray(CETS)" "[SSL::tls13_secret client early]"
+        set "fastKeyArray(CETS)" "ff"
+        set "fastKeyArray(CHTS)" "[SSL::tls13_secret client hs]"
+        set "fastKeyArray(CR)" "[SSL::clientrandom]"
+        set "fastKeyArray(CTS0)" "[SSL::tls13_secret client app]"
+        # set fastKeyArray{"LastUsed"} "[clock scan -format {%Y-%m-%d %H:%M:%S}]"
+        set "fastKeyArray(LastUsed)" "[clock clicks -milliseconds]"
+        set "fastKeyArray(MK)" "ff"
+        set "fastKeyArray(SHTS)" "[SSL::tls13_secret server hs]"
+        set "fastKeyArray(STS0)" "[SSL::tls13_secret server app]"
+        set "fastKeyArray(TYPE)" $static::tlsType
+        set "fastKeyArray(XS)" "[SSL::sessionsecret]"
+        set jsonString ""
+        set tuple [IP::client_addr]$static::tupleDelimeter[TCP::remote_port]$static::tupleDelimeter[IP::local_addr clientside]$static::tupleDelimeter[TCP::local_port clientside]$static::tupleDelimeter[IP::protocol]$static::tupleDelimeter[SSL::clientrandom]
+       # log local0. "Tuple: $tuple"
+        set keyCount 1
+        set jsonArrayLength [array size fastKeyArray]
+        foreach key [array names fastKeyArray] {
+            log local0. "in array key: $key $keyCount length: $jsonArrayLength"
+            if { $keyCount != $jsonArrayLength } {
+                set jsonString  $jsonString""$key"":"$fastKeyArray($key),"
+            } elseif { $keyCount == $jsonArrayLength  } {
+                set jsonString  $jsonString""$key"":"$fastKeyArray($key)"
+            } else {
+                set jsonString "Something wrong with length calculation"
+            }
+            incr keyCount 1
+        }
+        #set jsonString "{ $jsonString }"
+        set jsonString  $jsonString
+        log local0. "### $tuple ### ${jsonString}"
+        set hsl [HSL::open -proto UDP -pool redis_pool]
+        HSL::send $hsl "### $tuple ### ${jsonString}"
+   } else {
+        log local0. "NOT1.3"
+   }
+}

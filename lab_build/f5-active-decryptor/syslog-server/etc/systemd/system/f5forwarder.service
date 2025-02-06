@@ -1,0 +1,15 @@
+[Unit]
+Description=F5 Syslog Forwarder
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python /home/tlsadmin/redis-forwarder/f5-redis.py /var/log/remote.log
+#StandardOutput=/home/tlsadmin/redis-forwarder/forwarder.log
+Restart=on-failure
+User=tlsadmin
+
+LimitNOFILE=16384
+
+[Install]
+WantedBy=multi-user.target
+Alias=f5forwarder.service
