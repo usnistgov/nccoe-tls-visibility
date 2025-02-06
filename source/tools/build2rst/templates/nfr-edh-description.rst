@@ -1,4 +1,4 @@
-.. import testapp ek
-.. import keycloak ek
-.. import mariadb ek
-.. import mail ek
+.. include:: rk-testapp.rst
+.. include:: rk-mail.rst
+.. include:: rk-keycloak.rst
+.. include:: rk-mariadb.rst

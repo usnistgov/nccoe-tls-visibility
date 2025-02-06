@@ -27,4 +27,4 @@ ENUMERATE_App2Interface_App2Network_App2IP_App2Purpose
 
 This VM, running Ubuntu 20.04.6 LTS was created with a resource allocation including 8 vCPUs, 16 GB of memory, and 75 GB of storage.
 
-.. include Syslog Server
+.. include:: f5syslog.rst

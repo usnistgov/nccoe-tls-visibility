@@ -25,7 +25,4 @@ The primary appliance was provisioned with the following modules:
 ENUMERATE_PluginName_PluginLink
 
 
-Redis Server Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. import redis here
+.. include:: redis.rst
