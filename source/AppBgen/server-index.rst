@@ -1,14 +1,14 @@
 .. toctree::
    :maxdepth: 1
 
-   /AppBgen/server-1.rst
-   /AppBgen/server-2.rst
-   /AppBgen/server-3.rst
-   /AppBgen/server-4.rst
-   /AppBgen/server-5.rst
-   /AppBgen/server-6.rst
-   /AppBgen/server-7.rst
-   /AppBgen/server-8.rst
-   /AppBgen/server-9.rst
-   /AppBgen/server-10.rst
-   /AppBgen/server-11.rst
+   /AppBgen/rk-testapp.rst
+   /AppBgen/rk-mail.rst
+   /AppBgen/rk-keycloak.rst
+   /AppBgen/rk-mariadb.rst
+   /AppBgen/ek-proxy.rst
+   /AppBgen/ek-testapp.rst
+   /AppBgen/ek-mail.rst
+   /AppBgen/ek-keycloak.rst
+   /AppBgen/ek-mariadb.rst
+   /AppBgen/redis.rst
+   /AppBgen/f5syslog.rst

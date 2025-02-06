@@ -179,6 +179,13 @@ def generate_rst_files(xlsx_file, location, stem, root, template):
     with open(template, 'r') as templ_file:
         template_lines = templ_file.readlines()
 
+
+    filename_location = None
+    for n in range(len(data[0])):
+        if data[0][n] == "Filename":
+            filename_location = n
+
+
     for i, row in enumerate(data):
         print(row)
         if i != 0:
@@ -189,7 +196,10 @@ def generate_rst_files(xlsx_file, location, stem, root, template):
             # replace something like [[Description]] with the value of the "Description" column
             rst_content = perform_replacement(row, replacers, rst_content, template_lines, data)
 
-            output_filename = f"{stem}-{i}.rst"
+            if filename_location == None or row[filename_location] == None:
+                output_filename = f"{stem}-{i}.rst"
+            else:
+                output_filename = f"{row[filename_location]}.rst"
             output_path = os.path.join(location, output_filename)
             with open(output_path, 'w') as output_file:
                 output_file.write(rst_content)
