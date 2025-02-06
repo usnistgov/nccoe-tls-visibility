@@ -37,7 +37,7 @@ The Mail application server consists of a Postfix service and Dovecot service pr
 The server was assigned the unique hostname ek-mail.visibility.nccoe.org. An associated "A" record for the server's hostname and IP address was recorded in the lab DNS service. The Mail software was installed using the native "apt" Ubuntu package installer.
 
 
-First, a PKI certificate and key were created in PEM format using the DigiCert CertCentral service referencing the server's hostname. The certificate and key were uploaded to the VM and stored in the  /home/tlsadmin/certs directory. Additionally, the DigiCert CertCentral CA certificate in PEM format was uploaded to the same folder.
+First, a PKI certificate and key were created in PEM format using the DigiCert CertCentral service referencing the server's hostname. The certificate and key were uploaded to the VM and stored in the /home/tlsadmin/certs directory. Additionally, the DigiCert CertCentral CA certificate in PEM format was uploaded to the same folder.
 Second, Mail was configured to only listen on the network interface connected to the SERVER network. 
 
 
@@ -76,7 +76,7 @@ In addition to the configs listed, it was also necessary to create MX records in
 
 ``local-data: "ek-mail.visibility.nccoe.org. IN MX 10 ek-mail.visibility.nccoe.org"``
 
-Certificates location: `` /home/tlsadmin/certs``
+Certificates location: ``/home/tlsadmin/certs``
 
 Startup Instructions
 --------------------

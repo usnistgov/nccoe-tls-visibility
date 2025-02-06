@@ -66,7 +66,7 @@ Postfix is configured to listen for incoming TLSv1.3 connections on the SERVER n
 * ``eva.conf`` contains details on how to retrieve these keys.
 * ``override.conf`` contains instructions for the system to ensure that the EVA agent is running prior to the affected service.
 
-In addition to the configs listed, it was also necessary to create MX records in the DNS for each mail server present in the build, to ensure that the external mail server could communicate with them. In this case, the following was added to DNS Resolver > General Settings > Custom options ... in the PFSense firewall:
+In addition to the configs listed, it was also necessary to create MX records in the DNS for each mail server present in the build, to ensure that the external mail server could communicate with them. In this case, the following was added to ``DNS Resolver > General Settings > Custom options ...`` in the PFSense firewall:
 
 ``local-data: "rk-mail.visibility.nccoe.org. IN MX 10 ek-mail.visibility.nccoe.org"``
 

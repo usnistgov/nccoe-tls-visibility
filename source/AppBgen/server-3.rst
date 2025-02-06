@@ -37,7 +37,7 @@ The Keycloak application server runs within a Docker container, with an Nginx HT
 The server was assigned the unique hostname rk-keycloak.visibility.nccoe.org. An associated "A" record for the server's hostname and IP address was recorded in the lab DNS service. The Keycloak software was installed using the native "apt" Ubuntu package installer.
 
 
-First, a PKI certificate and key were created in PEM format using the DigiCert CertCentral service referencing the server's hostname. The certificate and key were uploaded to the VM and stored in the  /home/administrator/certs directory. Additionally, the DigiCert CertCentral CA certificate in PEM format was uploaded to the same folder.
+First, a PKI certificate and key were created in PEM format using the DigiCert CertCentral service referencing the server's hostname. The certificate and key were uploaded to the VM and stored in the /home/administrator/certs directory. Additionally, the DigiCert CertCentral CA certificate in PEM format was uploaded to the same folder.
 Second, Keycloak was configured to only listen on the network interface connected to the SERVER network. 
 
 
@@ -64,7 +64,7 @@ Nginx is configured to listen for incoming TLSv1.3 connections on the SERVER net
 
 Once operational, Keycloak was configured with a new realm named "CORP". Within this realm, a user named "testuser" was provisioned. Additionally, an OpenID Connect Client entry was created to allow authentication for a simple Python test application, as described in the Web Application Server Configuration. The docker files are primarily for ensuring that the service is running.
 
-Certificates location: `` /home/administrator/certs``
+Certificates location: ``/home/administrator/certs``
 
 Startup Instructions
 --------------------

@@ -37,7 +37,7 @@ The web application server consists of an Nginx reverse proxy in front of a Pyth
 The server was assigned the unique hostname rk-testapp.visibility.nccoe.org. An associated "A" record for the server's hostname and IP address was recorded in the lab DNS service. The TestApp software was installed using the native "apt" Ubuntu package installer.
 
 
-First, a PKI certificate and key were created in PEM format using the DigiCert CertCentral service referencing the server's hostname. The certificate and key were uploaded to the VM and stored in the  /certs directory. Additionally, the DigiCert CertCentral CA certificate in PEM format was uploaded to the same folder.
+First, a PKI certificate and key were created in PEM format using the DigiCert CertCentral service referencing the server's hostname. The certificate and key were uploaded to the VM and stored in the /certs directory. Additionally, the DigiCert CertCentral CA certificate in PEM format was uploaded to the same folder.
 Second, TestApp was configured to only listen on the network interface connected to the SERVER network. 
 
 
@@ -75,7 +75,7 @@ Nginx is configured to listen for incoming TLSv1.3 connections on the SERVER net
 
 The Nginx container manages access to a small python application which acts as a web server. The docker files are primarily for ensuring that the service is running.
 
-Certificates location: `` /certs``
+Certificates location: ``/certs``
 
 Startup Instructions
 --------------------

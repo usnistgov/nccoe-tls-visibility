@@ -37,7 +37,7 @@ The Proxy application server runs within a Docker container, with an Nginx HTTP 
 The server was assigned the unique hostname ek-proxy.visibility.nccoe.org. An associated "A" record for the server's hostname and IP address was recorded in the lab DNS service. The Proxy software was installed using the native "apt" Ubuntu package installer.
 
 
-First, a PKI certificate and key were created in PEM format using the DigiCert CertCentral service referencing the server's hostname. The certificate and key were uploaded to the VM and stored in the  /home/administrator/certs directory. Additionally, the DigiCert CertCentral CA certificate in PEM format was uploaded to the same folder.
+First, a PKI certificate and key were created in PEM format using the DigiCert CertCentral service referencing the server's hostname. The certificate and key were uploaded to the VM and stored in the /home/administrator/certs directory. Additionally, the DigiCert CertCentral CA certificate in PEM format was uploaded to the same folder.
 Second, Proxy was configured to only listen on the network interface connected to the SERVER network. 
 
 
@@ -70,7 +70,7 @@ Nginx is configured to listen for incoming TLSv1.3 connections on the SERVER net
 * ``eva.conf`` contains details on how to retrieve these keys.
 * ``override.conf`` contains instructions for the system to ensure that the EVA agent is running prior to the affected service.
 
-Certificates location: `` /home/administrator/certs``
+Certificates location: ``/home/administrator/certs``
 
 Startup Instructions
 --------------------
