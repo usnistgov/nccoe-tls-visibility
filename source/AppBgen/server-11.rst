@@ -54,9 +54,9 @@ Configuration Files
 | /etc/systemd/system/f5forwarder.service                                        |
 +--------------------------------------------------------------------------------+
 
-*``f5-redis.py`` is the python script used to forward keys extracted from syslog (received from F5 BIG-IP) to the Redis server.
-*``f5forwarder.service`` is used to keep the f5-redis.py script running constantly, so as to not fall behind on logs.
-*``key-remover.py`` is simply a tool used to clear the Redis database of keys. While not part of the build, it is included here for convenience.
+* ``f5-redis.py`` is the python script used to forward keys extracted from syslog (received from F5 BIG-IP) to the Redis server.
+* ``f5forwarder.service`` is used to keep the f5-redis.py script running constantly, so as to not fall behind on logs.
+* ``key-remover.py`` is simply a tool used to clear the Redis database of keys. While not part of the build, it is included here for convenience.
 
 Certificates location: ``/certs``
 
