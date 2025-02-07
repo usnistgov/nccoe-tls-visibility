@@ -16,33 +16,53 @@ Similarly, the vCyberStream appliance is used to provide decrypted and encrypted
 NetScout vStream Virtual Appliance Network Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-+-----------+---------------+------------------------+--------------------------------------------------------------------------------+
-| Interface | Network       | IP Address             | Purpose                                                                        |
-+===========+===============+========================+================================================================================+
++-----------+------------+------------------------+---------------------------------------------------------------------------------------------------+
+| Interface | Network    | IP Address             | Purpose                                                                                           |
++===========+============+========================+===================================================================================================+
+| 1         | MANAGEMENT | 192.168.10.4           | Connectivity to ISNG appliance.                                                                   |
++-----------+------------+------------------------+---------------------------------------------------------------------------------------------------+
+| 2         | ENCRYPTED  | N/A Layer 2 connection | Access to the encrypted network data provided by the network tap.                                 |
++-----------+------------+------------------------+---------------------------------------------------------------------------------------------------+
+| 3         | DECRYPTED  | N/A Layer 2 connection | Access to the network where decryptors output the decrypted traffic.                              |
++-----------+------------+------------------------+---------------------------------------------------------------------------------------------------+
 
 
 NetScout vCyberStream Virtual Appliance Network Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-+-----------+---------------+------------------------+--------------------------------------------------------------------------------+
-| Interface | Network       | IP Address             | Purpose                                                                        |
-+===========+===============+========================+================================================================================+
++-----------+------------+------------------------+---------------------------------------------------------------------------------------------------+
+| Interface | Network    | IP Address             | Purpose                                                                                           |
++===========+============+========================+===================================================================================================+
+| 1         | MANAGEMENT | 192.168.10.4           | Connectivity to ISNG appliance.                                                                   |
++-----------+------------+------------------------+---------------------------------------------------------------------------------------------------+
+| 2         | ENCRYPTED  | N/A Layer 2 connection | Access to the encrypted network data provided by the network tap.                                 |
++-----------+------------+------------------------+---------------------------------------------------------------------------------------------------+
+| 3         | DECRYPTED  | N/A Layer 2 connection | Access to the network where decryptors output the decrypted traffic.                              |
++-----------+------------+------------------------+---------------------------------------------------------------------------------------------------+
 
 
 NetScout ISNG Virtual Appliance Network Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-+-----------+------------+----------------+--------------------------------------------+
-| Interface | Network    | IP Address     | Purpose                                    |
-+===========+============+================+============================================+
++-----------+------------+------------------------+----------------------------------------------------------------------+
+| Interface | Network    | IP Address             | Purpose                                                              |
++===========+============+========================+======================================================================+
+| 1         | MANAGEMENT | 192.168.10.4           | Connectivity to OCI appliance                                        |
++-----------+------------+------------------------+----------------------------------------------------------------------+
+| 2         | ENCRYPTED  | N/A Layer 2 connection | Access to the encrypted network data provided by the network tap     |
++-----------+------------+------------------------+----------------------------------------------------------------------+
+| 3         | DECRYPTED  | N/A Layer 2 connection | Access to the network where decryptors output the decrypted traffic. |
++-----------+------------+------------------------+----------------------------------------------------------------------+
 
 
 NetScout OCI Virtual Appliance Network Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-+-----------+------------+----------------+--------------------------------------------+
-| Interface | Network    | IP Address     | Purpose                                    |
-+===========+============+================+============================================+
++-----------+------------+----------------+--------------------------------------------------------------------------------+
+| Interface | Network    | IP Address     | Purpose                                                                        |
++===========+============+================+================================================================================+
+| 1         | MANAGEMENT | 192.168.10.3   | Access to the web-based management console and connectivity to other products. |
++-----------+------------+----------------+--------------------------------------------------------------------------------+
 
 
 Real-time Analytics
@@ -82,7 +102,7 @@ Additional Configuration Files
 | vcyberstream/custom-suricata-rules/suricata-rules.txt           |
 +-----------------------------------------------------------------+
 
-* ``custom-rules.txt`` contains the custom rules added to enable detection of the demonstration scenarios detailed in Appendix C. They are quite specific to these use cases to demonstrate feasibility and it is recommended to instead use open-source or more developed rulesets in practice.
-
+* ``custom-rules.txt`` contains the custom rules added to enable detection of the demonstration scenarios detailed in Appendix C. They are quite specific to these use cases to demonstrate feasibility and it is recommended to instead use open-source or more developed rulesets in practice._x000D_
+_x000D_
 * ``suricata.yaml`` contains a modified suricata.yaml used in this build. In particular some changes were made to enable the detection of SMTP messages, as well as for capturing files sent over TLS. Note that this file should be carefully reviewed and modified to meet the needs of an organization's systems, as some of the configurations used in development may add to latency or storage requirements.
 

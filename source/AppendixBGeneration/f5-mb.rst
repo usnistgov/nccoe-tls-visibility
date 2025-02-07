@@ -14,17 +14,17 @@ Additionally, a separate VM was created for the purpose of forwarding exported s
 F5 BIG-IP Active Decryptor Network Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-+-----------+---------------+------------------------+--------------------------------------------------------------------------------+
-| Interface | Network       | IP Address             | Purpose                                                                        |
-+===========+===============+========================+================================================================================+
-| 1         | MANAGEMENT    |
-+-----------+---------------+
-| 2         | SERVERPATCHA1 | 192.168.60.2           |
-+-----------+---------------+------------------------+
-| 3         | SERVERPATCHA2 | 192.168.70.1           |
-+-----------+---------------+------------------------+
-| 4         | DECRYPTED     | N/A Layer 2 connection |
-+-----------+---------------+------------------------+
++-----------+------------+------------------------+---------------------------------------------------------------------------------------------------+
+| Interface | Network    | IP Address             | Purpose                                                                                           |
++===========+============+========================+===================================================================================================+
+| 1         | MANAGEMENT | 192.168.10.2           | Access to the web-based management console and connectivity to other products.                    |
++-----------+------------+------------------------+---------------------------------------------------------------------------------------------------+
+| 2         | SRVPATCHA1 | 192.168.60.2           | Upstream of Layer 3 F5 BIG-IP.                                                                    |
++-----------+------------+------------------------+---------------------------------------------------------------------------------------------------+
+| 3         | SRVPATCHA2 | 192.168.70.1           | Downstream of Layer 3 F5 BIG-IP.                                                                  |
++-----------+------------+------------------------+---------------------------------------------------------------------------------------------------+
+| 4         | DECRYPTED  | N/A Layer 2 connection | Access to the network where decryptors output the decrypted traffic.                              |
++-----------+------------+------------------------+---------------------------------------------------------------------------------------------------+
 
 
 The VM was created with a resource allocation including 8 vCPUs, 16 GB of memory, and 75 GB of storage.
@@ -44,9 +44,9 @@ The primary appliance was provisioned with the following modules from the ``Syst
 F5 BIG-IP Syslog Server Network Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-+-----------+------------+----------------+--------------------------------------------+
-| Interface | Network    | IP Address     | Purpose                                    |
-+===========+============+================+============================================+
++-----------+------------+------------------------+----------------------------------------------------------------------+
+| Interface | Network    | IP Address             | Purpose                                                              |
++===========+============+========================+======================================================================+
 
 This VM, running Ubuntu 20.04.6 LTS was created with a resource allocation including 8 vCPUs, 16 GB of memory, and 75 GB of storage.
 
@@ -82,11 +82,11 @@ Additional Configuration Files
 | big-ip/irules/sslo_BreakInspect-lib.txt                         |
 +-----------------------------------------------------------------+
 
-A number of iRules were defined for this build within F5. 
-
-* The iRules ``nccoeKeyExportToRedisClientSide`` and ``nccoeKeyExportToRedisServerSide`` exist to forward acquired session keys to Redis, for use by the other decryptors.
-
-* The ``ssloS_NETSCOUT-port_remap`` iRule remaps traffic from HTTPS to HTTP to better enable the intrusion detection system.
-
+A number of iRules were defined for this build within F5. _x000D_
+_x000D_
+* The iRules ``nccoeKeyExportToRedisClientSide`` and ``nccoeKeyExportToRedisServerSide`` exist to forward acquired session keys to Redis, for use by the other decryptors._x000D_
+_x000D_
+* The ``ssloS_NETSCOUT-port_remap`` iRule remaps traffic from HTTPS to HTTP to better enable the intrusion detection system._x000D_
+_x000D_
 * Finally, the last two ``sslo_BreakInspect-lib`` and ``sslo_BreakInspect-gw_in_t`` iRules are associated with hosts to instruct the F5 product to perform Break & Inspect on these hosts.
 

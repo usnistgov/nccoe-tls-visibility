@@ -11,17 +11,17 @@ The virtual appliance is instantiated from the same virtual appliance template (
 MIRA ETO Middlebox Network Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-+-----------+---------------+------------------------+--------------------------------------------------------------------------------+
-| Interface | Network       | IP Address             | Purpose                                                                        |
-+===========+===============+========================+================================================================================+
-| 1         | MANAGEMENT    | 192.168.10.65          |
-+-----------+---------------+------------------------+
-| 2         | SERVERPATCHB1 | N/A Layer 2 connection |
-+-----------+---------------+------------------------+
-| 3         | SERVERPATCHB2 | N/A Layer 2 connection |
-+-----------+---------------+------------------------+
-| 4         | DECRYPTED     | N/A Layer 2 connection |
-+-----------+---------------+------------------------+
++-----------+------------+------------------------+---------------------------------------------------------------------------------------------------+
+| Interface | Network    | IP Address             | Purpose                                                                                           |
++===========+============+========================+===================================================================================================+
+| 1         | MANAGEMENT | 192.168.10.65          | Access to the web-based management console and connectivity to other products.                    |
++-----------+------------+------------------------+---------------------------------------------------------------------------------------------------+
+| 2         | SRVPATCHB1 | N/A Layer 2 connection | In combination with SRVPATCHB2, allows MIRA to act as a layer2 passthrough and intercept traffic. |
++-----------+------------+------------------------+---------------------------------------------------------------------------------------------------+
+| 3         | SRVPATCHB2 | N/A Layer 2 connection | In combination with SRVPATCHB1, allows MIRA to act as a layer2 passthrough and intercept traffic. |
++-----------+------------+------------------------+---------------------------------------------------------------------------------------------------+
+| 4         | DECRYPTED  | N/A Layer 2 connection | Access to the network where decryptors output the decrypted traffic.                              |
++-----------+------------+------------------------+---------------------------------------------------------------------------------------------------+
 
 
 The VM was created with a resource allocation including 8 vCPUs, 16 GB of memory, and 75 GB of storage.
@@ -59,7 +59,7 @@ Additional Configuration Files
 | root/ScriptInstructions.txt                                     |
 +-----------------------------------------------------------------+
 
-* The shell script ``keylog2redis.sh`` is used to run and capture the output of ``keylog2redis.py``.
-
+* The shell script ``keylog2redis.sh`` is used to run and capture the output of ``keylog2redis.py``._x000D_
+_x000D_
 * The python script ``keylog2redis.py`` is used to process Mira's log files for captured keys, and forward those keys to redis for use by the decryptors. 
 
