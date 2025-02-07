@@ -6,9 +6,9 @@ This build uses the AppViewX product to manage access to the TLS session keys. W
 Instantiation of the AppViewX Virtual Appliances
 ------------------------------------------------
 
-To support this use case, two AppViewX products are deployed as virtual appliance machines. The main appviewX virtual appliance was created in vSphere from the vendor-supplied virtual appliance (OVF) file. It is provisioned with 8 vCPUs, 32 GB of memory, 250 GB of storage, and two network interfaces configured as described in Table 2 5. This appliance is leveraged by the other use cases discussed later in the document.
+To support this use case, two AppViewX products are deployed as virtual appliance machines. The main appviewX virtual appliance was created in vSphere from the vendor-supplied virtual appliance (OVF) file. It is provisioned with 8 vCPUs, 32 GB of memory, 250 GB of storage, and two network interfaces. This appliance is leveraged by the other use cases discussed later in the document.
 
-The second virtual appliance, the Software Security Module, was created in vSphere from a separate OVF file supplied by the vendor. It is provisioned with 1 vCPU, 2 GB of memory, 40 GB of storage, and a single network interface configured as described in Table 2 6. This appliance is only used for the generation, storage, distribution, and retrieval of the bounded-lifetime Diffie-Hellman key pairs that are used by the TLS servers.
+The second virtual appliance, the Software Security Module, was created in vSphere from a separate OVF file supplied by the vendor. It is provisioned with 1 vCPU, 2 GB of memory, 40 GB of storage, and a single network interface. This appliance is only used for the generation, storage, distribution, and retrieval of the bounded-lifetime Diffie-Hellman key pairs that are used by the TLS servers.
 
 
 AppViewX Appliance Network Configuration
@@ -29,7 +29,7 @@ AppViewX Software Security Module Appliance Network Configuration
 +-----------+------------+------------------------+----------------------------------------------------------------------+
 | Interface | Network    | IP Address             | Purpose                                                              |
 +===========+============+========================+======================================================================+
-| 1         | MANAGEMENT | 192.168.10.xxx         | Connectivity to other products.                                      |
+| 1         | MANAGEMENT | 192.168.10.109         | Connectivity to other products.                                      |
 +-----------+------------+------------------------+----------------------------------------------------------------------+
 
 

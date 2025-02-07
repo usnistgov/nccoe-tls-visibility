@@ -82,11 +82,11 @@ Additional Configuration Files
 | big-ip/irules/sslo_BreakInspect-lib.txt                         |
 +-----------------------------------------------------------------+
 
-A number of iRules were defined for this build within F5. _x000D_
-_x000D_
-* The iRules ``nccoeKeyExportToRedisClientSide`` and ``nccoeKeyExportToRedisServerSide`` exist to forward acquired session keys to Redis, for use by the other decryptors._x000D_
-_x000D_
-* The ``ssloS_NETSCOUT-port_remap`` iRule remaps traffic from HTTPS to HTTP to better enable the intrusion detection system._x000D_
-_x000D_
+A number of iRules were defined for this build within F5. 
+
+* The iRules ``nccoeKeyExportToRedisClientSide`` and ``nccoeKeyExportToRedisServerSide`` exist to forward acquired session keys to Redis, for use by the other decryptors.
+
+* The ``ssloS_NETSCOUT-port_remap`` iRule remaps traffic from HTTPS to HTTP to better enable the intrusion detection system.
+
 * Finally, the last two ``sslo_BreakInspect-lib`` and ``sslo_BreakInspect-gw_in_t`` iRules are associated with hosts to instruct the F5 product to perform Break & Inspect on these hosts.
 

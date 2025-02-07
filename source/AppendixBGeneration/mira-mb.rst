@@ -59,7 +59,7 @@ Additional Configuration Files
 | root/ScriptInstructions.txt                                     |
 +-----------------------------------------------------------------+
 
-* The shell script ``keylog2redis.sh`` is used to run and capture the output of ``keylog2redis.py``._x000D_
-_x000D_
+* The shell script ``keylog2redis.sh`` is used to run and capture the output of ``keylog2redis.py``.
+
 * The python script ``keylog2redis.py`` is used to process Mira's log files for captured keys, and forward those keys to redis for use by the decryptors. 
 
