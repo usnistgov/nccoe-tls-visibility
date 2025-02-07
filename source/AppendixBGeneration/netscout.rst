@@ -49,10 +49,15 @@ Real-time Analytics
 -------------------
 The passive real-time decryptors and the break and inspect middleboxes each forward decrypted TLSv1.3 traffic to the real-time analytics platform over an isolated and secured network channel labeled ``DECRYPTED``. The real-time analytics are then performed on these streams of decrypted traffic within a limited time of the decrypted traffic's receipt. The decrypted traffic is retained by the analytics platform only as necessary and only for a short period of time.
 
+The decrypted traffic can be analyzed from the NetScout OCI user interface, by navigating to ``Security Events Center``,
+
+
 Post-Facto Analytics
 --------------------
 
 In each of the lab builds, encrypted traffic is intercepted and forwarded to the post facto analytics platform by a network tap on the ``SERVER`` network segment over the ``ENCRYPTED`` network segment. The post facto analytics platform is responsible for securely managing the captured traffic, including its eventual destruction. Real world implementations of these architectures would require network taps from all of the various physical and logical networks that make up the data center's logical data plane. For the middlebox builds, an additional network tap may be placed on the client-facing network segment. Alternatively, the middlebox may copy the incoming and outgoing encrypted traffic directly to the ``ENCRYPTED`` network.
+
+The traffic decrypted by NetScout can be viewed by navigating to ``Packet Analysis``, 
 
 
 

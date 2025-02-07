@@ -65,7 +65,7 @@ This section describes the configuration of AppViewX to manage access to the Red
 
 The figure below shows how to access the workflow library.
 
-.. figure:: /images/figures//images/figures/Figure-2-1.png
+.. figure:: /images/figures//images/figures/appviewx-workflows.png
    :width: 90%
    :alt: Image showing how to access the workflow library.
 
@@ -77,7 +77,7 @@ The figure below shows how to access the workflow library.
 
 The figure below shows shows the contents of the workflow for the Exported Key workflow.
 
-.. figure:: /images/figures//lab_build/appviewx/workflows/Redis DB - NIST POC/workflow.png
+.. figure:: /images/figures//images/figures/redis-workflow.png
    :width: 90%
    :alt: Image showing the contents of the Exported Key workflow.
 
