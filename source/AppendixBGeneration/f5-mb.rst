@@ -98,7 +98,7 @@ This section describes the configuration of the F5 BIG-IP device for interceptin
 
 
 
-#. Create profiles for each server by navigating to ``System >Profiles > SSL``. ``force13_clientssl`` was used as the base profile, and the correct certificates are selected for ``Certificate Key Chain``.
+#. Create profiles for each server by navigating to ``System > Profiles > SSL``. ``force13_clientssl`` was used as the base profile, and the correct certificates are selected for ``Certificate Key Chain``.
 
    .. figure:: /images/figures/f5-profile.png
       :width: 90%
