@@ -64,7 +64,7 @@ This section describes the configuration of AppViewX to do several things: perio
 
 The figure below shows how to access the workflow library.
 
-.. figure:: /images/figures//images/figures/appviewx-workflows.png
+.. figure:: /images/figures/appviewx-workflows.png
    :width: 90%
    :alt: Image showing how to access the workflow library.
 
@@ -76,7 +76,7 @@ The figure below shows how to access the workflow library.
 
 The figure below shows shows the contents of the workflow for the Diffie-Hellman workflow.
 
-.. figure:: /images/figures//images/figures/edh-workflow.png
+.. figure:: /images/figures/edh-workflow.png
    :width: 90%
    :alt: Image showing the contents of the Diffie Hellman workflow.
 

@@ -69,7 +69,7 @@ This section contains instructions for configuring the AppViewX key governance p
 
 #. Navigate to ``Inventory > Device > HSM``.
 
-   .. figure:: /images/figures/
+   .. figure:: /images/figures/appviewx-thales1.png
       :width: 90%
       :alt: Image showing the HSM tab in AppViewX.
 
@@ -105,7 +105,7 @@ This section contains instructions for configuring the AppViewX key governance p
 
 #. Choose a ``Key Handler Name`` of appviewx-all.
 
-   .. figure:: /images/figures/
+   .. figure:: /images/figures/appviewx-thales2.png
       :width: 90%
       :alt: Image showing the configuration parameters for the HSM device.
 

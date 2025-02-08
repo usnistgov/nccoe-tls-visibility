@@ -16,7 +16,7 @@ This build uses the Not For Radio EVA product as the Key Management Agent on eac
 Configuration Procedure
 -----------------------
 
-[[Configuration Procedure Summary]]
+See configuration of individual TLS servers.
 
 
 
@@ -28,5 +28,5 @@ Additional Configuration Files
 | Relevant Configuration Files                                    |
 +=================================================================+
 
-[[Configuration Files Description]]
+See configuration of individual TLS servers.
 

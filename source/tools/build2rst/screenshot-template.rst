@@ -1,6 +1,6 @@
 [[PreScreenshotText]]
 
-[[spaces]].. figure:: /images/figures/[[Screenshot]]
+[[spaces]].. figure:: [[Screenshot]]
 [[spaces]]   :width: 90%
 [[spaces]]   :alt: [[ScreenshotAltText]]
 

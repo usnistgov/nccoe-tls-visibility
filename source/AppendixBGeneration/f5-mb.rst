@@ -62,6 +62,114 @@ Configuration Procedure
 
 This section describes the configuration of the F5 BIG-IP device for intercepting encrypted traffic on Layer 3 and outputting the decrypted traffic.
 
+#. The following ``SSL Orchestrator`` policies were configured to support decryption, and associated with the profiles created. This will be highly dependent on the individual build. 
+
+   .. figure:: /images/figures/f5-ssl-orchestrator.png
+      :width: 90%
+      :alt: Image showing SSL Orchestrator policies.
+
+      SSL Orchestrator
+
+
+
+
+
+#. Upload each certificate by navigating to ``System > Certificate Management > Import SSL Certificates and Keys``. Select ``Certificate`` for ``Import Type``.
+
+   .. figure:: /images/figures/f5-upload-certificate.png
+      :width: 90%
+      :alt: Image showing certificate import.
+
+      Import Certificates
+
+
+
+
+
+#. Upload each key by navigating to ``System > Certificate Management > Import SSL Certificates and Keys``. Select ``Key`` for ``Import Type``.
+
+   .. figure:: /images/figures/f5-upload-key.png
+      :width: 90%
+      :alt: Image showing key import.
+
+      Import Keys
+
+
+
+
+
+#. Create profiles for each server by navigating to ``System >Profiles > SSL``. ``force13_clientssl`` was used as the base profile, and the correct certificates are selected for ``Certificate Key Chain``.
+
+   .. figure:: /images/figures/f5-profile.png
+      :width: 90%
+      :alt: Image showing profile creation.
+
+      Profile Creation
+
+
+
+
+
+#. It is important to ensure that the decryptor policies are selected under ``Access Policy``.
+
+   .. figure:: /images/figures/f5-profile2.png
+      :width: 90%
+      :alt: Image showing profile settings.
+
+      Profile Settings.
+
+
+
+
+
+#. For this setup, a pool was created for each server, to ensure that F5 BIG-IP acted as a reverse proxy, by navigating to ``Pools``.
+
+   .. figure:: /images/figures/f5-pool.png
+      :width: 90%
+      :alt: Image showing pool settings.
+
+      Pool Settings
+
+
+
+
+
+#. A virtual server is created for each server by navigating to ``Virtual Server``.
+
+   .. figure:: /images/figures/f5-virtual-server.png
+      :width: 90%
+      :alt: Image showing virtual server creation.
+
+      Virtual Server Creation
+
+
+
+
+
+#. Ensure that the correct ``SSL profile`` is associated with each virtual server. Note that ``Client`` refers to the F5 BIG-IP product acting as a client (communicating with the TLS servers), and ``Server`` refers to the product acting as a server (communicating with clients of the TLS servers).
+
+   .. figure:: /images/figures/f5-virtual-server-settings.png
+      :width: 90%
+      :alt: Image showing virtual server settings.
+
+      Virtual Server Settings
+
+
+
+
+
+#. ``Address Translation`` and ``Port Translation`` are enabled, along with setting ``Source Address Translation`` to ``Auto Map`` in order to enable the reverse proxy to remap IP addresses from ``192.168.60.0/24`` to ``192.168.30.0/24``.
+
+   .. figure:: /images/figures/f5-virtual-server-settings2.png
+      :width: 90%
+      :alt: Image showing virtual server address translation settings.
+
+      Virtual Server Address Translation
+
+
+
+
+
 
 
 
