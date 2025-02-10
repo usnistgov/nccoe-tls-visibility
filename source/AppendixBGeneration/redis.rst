@@ -11,8 +11,6 @@ Network Configuration
 +-----------+------------+----------------+--------------------------------------------------------------------------------------------------+
 | 1         | MANAGEMENT | 192.168.10.150 | Management access to the server and transfer of session key material to Key Governance Platform. |
 +-----------+------------+----------------+--------------------------------------------------------------------------------------------------+
-| 2         | SERVER     | N/A            | Connectivity from TLS clients.                                                                   |
-+-----------+------------+----------------+--------------------------------------------------------------------------------------------------+
 
 Service Details
 ^^^^^^^^^^^^^^^
@@ -31,12 +29,11 @@ Redis 7.2.4 was built from source for this build, in order to enable the ability
 ``make BUILD_TLS=yes``
 
 
-
 The server was assigned the unique hostname redis.visibility.nccoe.org. An associated "A" record for the server's hostname and IP address was recorded in the lab DNS service. The Redis software was installed using the native "apt" Ubuntu package installer.
 
 
 First, a PKI certificate and key were created in PEM format using the DigiCert CertCentral service referencing the server's hostname. The certificate and key were uploaded to the VM and stored in the /home/administrator/redis-baremetal/redis-7.2.4/certs/ directory. Additionally, the DigiCert CertCentral CA certificate in PEM format was uploaded to the same folder.
-Second, Redis was configured to only listen on the network interface connected to the SERVER network. 
+Second, Redis was configured to only listen on the network interface connected to the MANAGEMENT network. 
 
 
 Configuration Files

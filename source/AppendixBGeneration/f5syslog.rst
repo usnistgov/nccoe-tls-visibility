@@ -11,8 +11,6 @@ Network Configuration
 +-----------+------------+----------------+--------------------------------------------------------------------------------------------------+
 | 1         | MANAGEMENT | 192.168.10.151 | Management access to the server and transfer of session key material to Key Governance Platform. |
 +-----------+------------+----------------+--------------------------------------------------------------------------------------------------+
-| 2         | SERVER     | N/A            | Connectivity from TLS clients.                                                                   |
-+-----------+------------+----------------+--------------------------------------------------------------------------------------------------+
 
 Service Details
 ^^^^^^^^^^^^^^^
@@ -32,11 +30,9 @@ This server hosts a syslog-ng service collecting logs from the F5 BIG-IP device.
 
 
 
-The server was assigned the unique hostname f5-syslog.visibility.nccoe.org. An associated "A" record for the server's hostname and IP address was recorded in the lab DNS service. The F5-Syslog software was installed using the native "apt" Ubuntu package installer.
+The server was assigned the unique hostname f5-syslog.visibility.nccoe.org. An associated "A" record for the server's hostname and IP address was recorded in the lab DNS service. The F5-Syslog software was installed using the native "apt" Ubuntu package installer, as well as a custom python script which receives and forwards keys from F5's syslog to the Redis server.
 
 
-First, a PKI certificate and key were created in PEM format using the DigiCert CertCentral service referencing the server's hostname. The certificate and key were uploaded to the VM and stored in the /certs directory. Additionally, the DigiCert CertCentral CA certificate in PEM format was uploaded to the same folder.
-Second, F5-Syslog was configured to only listen on the network interface connected to the SERVER network. 
 
 
 Configuration Files

@@ -51,9 +51,13 @@ shows the wiring configurations between the two routers and two middleboxes.
 
 .. _Figure B-1:
 
-Figure B-1: Middlebox Networking Details
+.. figure:: /images/figures/Figure-1-5-v1.png
+   :width: 90%
+   :alt: Image showing split path between middlebox networking, allowing for the option to switch between Layer 2 and Layer 3 middlebox implementations in the same build.
 
-.. image:: images/Middlebox_Network_Detail.svg
+   Middlebox Networking Details
+
+.. image:: 
 
 .. _B.4.1:
 
