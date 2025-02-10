@@ -1,3 +1,5 @@
+.. _mira-edh:
+
 MIRA Encrypted Traffic Orchestrator (ETO) for Real-time Decryption Using Bounded-Lifetime EDH Keys
 =============================
 
@@ -126,5 +128,5 @@ Additional Configuration Files
 | Relevant Configuration Files                                    |
 +=================================================================+
 
-[[Configuration Files Description]]
+No additional files needed for this build.
 

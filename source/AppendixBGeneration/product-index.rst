@@ -3,7 +3,7 @@
 
    /AppendixBGeneration/f5-mb.rst
    /AppendixBGeneration/mira-mb.rst
-   /AppendixBGeneration/mira-edh.rst
+   /AppendixBGeneration/mira-ek.rst
    /AppendixBGeneration/nfr-ek.rst
    /AppendixBGeneration/appviewx-ek.rst
    /AppendixBGeneration/appviewx-edh.rst

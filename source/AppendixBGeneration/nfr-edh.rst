@@ -1,3 +1,5 @@
+.. _nfr-edh:
+
 TLS Server Configuration with Not For Radio Using Bounded-Lifetime EDH Keys
 =============================
 

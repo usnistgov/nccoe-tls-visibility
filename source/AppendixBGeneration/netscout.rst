@@ -1,3 +1,5 @@
+.. _netscout:
+
 NETSCOUT for Visibility Analytics
 =============================
 
@@ -88,6 +90,7 @@ From here, select an interface, and time period (or ``Live Capture``). Check the
 .. figure:: /images/figures/netscout-packet-analysis.png
    :width: 90%
    :alt: Image showing the Packet Analysis module.
+   
    Packet Analysis in NetScout nGeniusOne
 
 
@@ -99,31 +102,7 @@ From here, select an interface, and time period (or ``Live Capture``). Check the
 Configuration Procedure
 -----------------------
 
-[[Configuration Procedure Summary]]
-
-[[PreScreenshotText]]
-
-.. figure:: /images/figures/netscout-security-events-center.png
-   :width: 90%
-   :alt: Image showing the Security Events Center.
-
-   Security Events Center in NetScout OCI
-
-
-
-
-
-[[PreScreenshotText]]
-
-.. figure:: /images/figures/netscout-packet-analysis.png
-   :width: 90%
-   :alt: Image showing the Packet Analysis module.
-
-   Packet Analysis in NetScout nGeniusOne
-
-
-
-
+The NetScout product was configured to receive traffic from the ``DECRYPTED`` and ``ENCRYPTED`` interfaces, such that it would perform in both the post-facto and real-time scenarios. Additional configuration to fine-tune the IDS to support the demonstration scenarios detailed in Appendix C, and demonstrate the visibility of the contents of the ``DECRYPTED`` traffic stream and the ability to decrypt the ``ENCRYPTED`` traffic stream using keys from the Diffie Hellman and Exported Session Keys scenarios.
 
 
 

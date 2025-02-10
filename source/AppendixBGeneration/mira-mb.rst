@@ -1,3 +1,5 @@
+.. _mira-mb:
+
 MIRA ETO as a Layer 2 Middlebox
 =============================
 

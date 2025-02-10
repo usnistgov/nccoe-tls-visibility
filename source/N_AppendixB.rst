@@ -5,6 +5,7 @@ B. Descriptions of the Build implementations
 
 The TLS 1.3 Visibility lab incorporates four implementations of the reference architectures within the same build environment:
 
+
 * :ref:`B.2`,
 * :ref:`B.3`,
 * :ref:`B.4.1`, and

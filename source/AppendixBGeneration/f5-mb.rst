@@ -1,3 +1,5 @@
+.. _f5-mb:
+
 F5 BIG-IP as a Layer 3 Middlebox
 =============================
 

@@ -1,3 +1,5 @@
+.. _appviewx-ek:
+
 AppViewX for Exported Session Key Governance
 =============================
 
