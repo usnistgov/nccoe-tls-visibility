@@ -1,0 +1,50 @@
+.. _scenario-3.3:
+
+Scenario 3.3: Command and Control
+=================================
+
+Purpose
+-------
+
+Scan network traffic content for known command-and-control or exfiltration protocols.
+
+Description
+-----------
+
+This demonstration shows how decrypted traffic can be utilized to identify, collect, and report on Command-and-Control activity on the network. A traffic generation script produced sample Command-and-Control traffic over the network.
+
+Procedure
+---------
+
+1. Use script3.3 to make a request to an HTTP server configured to simulate Command and Control traffic. 
+2. Observe the detection of the traffic as indicative of Command and Control activity in NetScout's Security Events Center.
+
+Expected Outcome
+----------------
+
+The traffic is detected as potentially indicative of a Command and Control attack by NetScout's internal IDS.
+
++-------------------------------------------------+-------------------------------------------------+
+| Passive                                         | Active                                          |
++------------------------+------------------------+------------------------+------------------------+
+| Bounded Life-Time      | Exported Session Key   | Break & Inspect (Mira) | Break and Inspect (F5) |
++-----------+------------+-----------+------------+-----------+------------+-----------+------------+
+| Real-Time | Post-Facto | Real-Time | Post-Facto | Real-Time | Post-Facto | Real-Time | Post-Facto |
++===========+============+===========+============+===========+============+===========+============+
+| Pass      | Pass       | Pass      | Pass       | Pass      | Pass       | Pass      | Pass       | 
++-----------+------------+-----------+------------+-----------+------------+-----------+------------+
+
+Screenshots
+-----------
+
+
+
+.. figure:: /images/demonstration_results/3.3.cnc.png
+   :width: 90%
+   :alt: A screenshot of NetScout's OCI interface showing that traffic which resembles a known Command and Control attack is detected as potentially malicious.
+
+   Detection of potential Command and Control attack.
+
+
+
+

@@ -1,0 +1,50 @@
+.. _scenario-4.2:
+
+Scenario 4.2: Outdated Software
+===============================
+
+Purpose
+-------
+
+Identify and report on the use of outdated software.
+
+Description
+-----------
+
+This demonstration shows how decrypted traffic can be utilized to identify, collect, and report on the use of outdated software in network traffic. In this scenario, a traffic generation script is used to create traffic indicative of having a lower software version for the user’s browser.
+
+Procedure
+---------
+
+1. Use script4.2 to generate traffic indicative of an outdated browser version in the user agent.
+2. Observe the detection of the outdated software in NetScout's Security Events Center.
+
+Expected Outcome
+----------------
+
+The traffic is identified as indicative of an outdated browser by NetScout's internal IDS.
+
++-------------------------------------------------+-------------------------------------------------+
+| Passive                                         | Active                                          |
++------------------------+------------------------+------------------------+------------------------+
+| Bounded Life-Time      | Exported Session Key   | Break & Inspect (Mira) | Break and Inspect (F5) |
++-----------+------------+-----------+------------+-----------+------------+-----------+------------+
+| Real-Time | Post-Facto | Real-Time | Post-Facto | Real-Time | Post-Facto | Real-Time | Post-Facto |
++===========+============+===========+============+===========+============+===========+============+
+| Pass      | Pass       | Pass      | Pass       | Pass      | Pass       | Pass      | Pass       | 
++-----------+------------+-----------+------------+-----------+------------+-----------+------------+
+
+Screenshots
+-----------
+
+
+
+.. figure:: /images/demonstration_results/4.2.outdated-user-agent.png
+   :width: 90%
+   :alt: A screenshot of NetScout's OCI interface showing that traffic indicative of an outdated browser is detected as a potential vulnerability.
+
+   Detection of outdated browser.
+
+
+
+

@@ -1,0 +1,50 @@
+.. _scenario-4.1:
+
+Scenario 4.1: Outdated Protocols
+================================
+
+Purpose
+-------
+
+Identify and report on the use of outdated protocols. (and/or 'practices').
+
+Description
+-----------
+
+This demonstration shows how decrypted traffic can be utilized to identify, collect, and report on the use of outdated protocols in network traffic. A traffic generation script was used to utilize outdated protocols on the network.
+
+Procedure
+---------
+
+1. Use script4.1 to generate TLS1.2 traffic.
+2. Observe the identification of the traffic as TLS1.2 in NetScout's Packet Analysis tool.
+
+Expected Outcome
+----------------
+
+The traffic is identified as TLS1.2 in NetScout.
+
++-------------------------------------------------+-------------------------------------------------+
+| Passive                                         | Active                                          |
++------------------------+------------------------+------------------------+------------------------+
+| Bounded Life-Time      | Exported Session Key   | Break & Inspect (Mira) | Break and Inspect (F5) |
++-----------+------------+-----------+------------+-----------+------------+-----------+------------+
+| Real-Time | Post-Facto | Real-Time | Post-Facto | Real-Time | Post-Facto | Real-Time | Post-Facto |
++===========+============+===========+============+===========+============+===========+============+
+| Pass      | Pass       | Pass      | Pass       | Pass      | Pass       | Pass      | Pass       | 
++-----------+------------+-----------+------------+-----------+------------+-----------+------------+
+
+Screenshots
+-----------
+
+
+
+.. figure:: /images/demonstration_results/4.1.outdated-protocols.png
+   :width: 90%
+   :alt: A screenshot of NetScout's packet capture interface showing TLS 1.2 traffic.
+
+   TLS1.2 traffic.
+
+
+
+
