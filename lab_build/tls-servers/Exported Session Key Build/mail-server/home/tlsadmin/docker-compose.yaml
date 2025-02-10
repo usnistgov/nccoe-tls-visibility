@@ -1,0 +1,27 @@
+services: 
+  mail:
+    container_name: mail
+    ulimits:
+      memlock: 67108864
+    build:
+      context: /home/tlsadmin/build-mail-container-image
+    entrypoint: /tmp/entrypoint.sh
+    volumes:
+      - ./mnt_postfix/main.cf:/etc/postfix/main.cf:rw
+      - ./mnt_postfix/master.cf:/etc/postfix/master.cf:rw
+      - ./certs:/etc/postfix/tls:r
+      - ./certs:/certs
+      - ./mnt_dovecot/dovecot.conf:/etc/dovecot/dovecot.conf:rw
+      - ./certs:/etc/dovecot/private:r
+#      - ./mnt_container_tmp_files:/tmp:rw
+      - ./mnt_container_logs:/var/logs:rw
+      - ./build-mail-container-image/nfr/conf/:/etc/eva/
+      - ./build-mail-container-image/nfr/syslog-eva.conf:/etc/syslog-ng/conf.d/eva.conf
+      - ./build-mail-container-image/nfr/openssl.cnf:/etc/ssl/openssl.cnf
+#    entrypoint: /tmp/entrypoint.sh
+    ports:
+      - "25:25"
+      - "587:587"
+      - "143:143"
+      - "993:993"
+

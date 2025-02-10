@@ -1,0 +1,31 @@
+
+services:
+  app:
+    container_name: testapp
+    command: python3 testapp.py
+    build: ./testapp-build
+    volumes:
+      - ./testapp-build/testapp:/app
+      - ./certs:/certs
+      - ./payload.php:/app/payload.php
+    ports:
+      - "5000:5000"
+    restart: unless-stopped
+
+  reverse_proxy:
+    container_name: reverse_proxy
+    build: 
+      context: ./nginx-build
+    ulimits: 
+      memlock: 67108864
+    ports:
+      - "80:80"
+      - "443:443"
+    restart: unless-stopped
+    entrypoint: /tmp/entrypoint.sh
+    volumes:
+      - ./certs:/certs
+      - ./nginx-default.conf:/etc/nginx/sites-enabled/default.conf
+      - ./nginx-build/nfr/conf/:/etc/eva/
+      - ./nginx-build/nfr/syslog-eva.conf:/etc/syslog-ng/conf.d/eva.conf
+      - ./nginx-build/nfr/openssl.cnf:/etc/ssl/openssl.cnf

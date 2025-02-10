@@ -1,0 +1,65 @@
+# See /usr/share/postfix/main.cf.dist for a commented, more complete version
+
+
+# Debian specific:  Specifying a file name will cause the first
+# line of that file to be used as the name.  The Debian default
+# is /etc/mailname.
+#myorigin = /etc/mailname
+
+smtpd_banner = $myhostname ESMTP $mail_name (Ubuntu)
+biff = no
+
+# appending .domain is the MUA's job.
+append_dot_mydomain = no
+
+# Uncomment the next line to generate "delayed mail" warnings
+#delay_warning_time = 4h
+
+readme_directory = no
+
+# See http://www.postfix.org/COMPATIBILITY_README.html -- default to 2 on
+# fresh installs.
+compatibility_level = 2
+
+debug_peer_level = 10
+debug_peer_list = 192.168.70.1
+
+# TLS parameters
+smtpd_tls_CAfile = /home/tlsadmin/certs/DigiCertCA.crt.pem
+smtpd_tls_cert_file = /home/tlsadmin/certs/rk-mail.crt.pem
+smtpd_tls_key_file = /home/tlsadmin/certs/rk-mail.key.pem
+smtpd_use_tls=yes
+smtpd_tls_session_cache_database = btree:${data_directory}/smtpd_scache
+smtp_tls_session_cache_database = btree:${data_directory}/smtp_scache
+#virtual_alias_domains = ismtp.visibility.nccoe.org
+
+# See /usr/share/doc/postfix/TLS_README.gz in the postfix-doc package for information on enabling SSL in the smtp client.
+smtpd_recipient_restrictions = permit_mynetworks permit_sasl_authenticated
+smtpd_relay_restrictions = permit_mynetworks permit_sasl_authenticated defer_unauth_destination
+myhostname = nfr-ismtp
+alias_maps = hash:/etc/aliases
+alias_database = hash:/etc/aliases
+myorigin = rk-mail.visibility.nccoe.org
+mydestination = rk-mail.visibility.nccoe.org localhost
+mynetworks_style = subnet
+mynetworks = 172.0.0.0/8 127.0.0.0/8 192.168.40.0/24 192.168.90.0/24 192.168.70.0/24 192.168.30.0/24
+relayhost = 
+mailbox_size_limit = 51200000
+recipient_delimiter = ;
+inet_interfaces = all
+#default_transport = error
+#relay_transport = error
+inet_protocols = ipv4
+smtpd_tls_security_level = encrypt
+
+# NOTE: this requires a client certificate. unsure if needed
+# smtpd_tls_req_ccert = yes
+smtpd_tls_protocols = !SSLv2, !SSLv3, !TLSv1, !TLSv1.1, !TLSv1.2
+smtpd_tls_mandatory_protocols = !SSLv2, !SSLv3, !TLSv1, !TLSv1.1, !TLSv1.2
+smtp_tls_mandatory_ciphers = high
+# smtpd_sasl_auth_enable = yes
+smtp_tls_CAfile = /etc/ssl/certs/ca-certificates.crt
+#smtp_tls_security_level = secure
+#smtp_tls_mandatory_protocols  = !SSLv2, !SSLv3, !TLSv1, !TLSv1.1, !TLSv1.2
+
+tls_eecdh_auto_curves = secp384r1

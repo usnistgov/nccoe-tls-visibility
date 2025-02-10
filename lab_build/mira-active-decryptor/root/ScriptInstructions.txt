@@ -1,0 +1,1 @@
+Use a cronjob to run the keylog2redis.sh script periodically. 

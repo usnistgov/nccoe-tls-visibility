@@ -1,0 +1,34 @@
+.. _nfr-ek:
+
+Configuring TLS Servers with Not For Radio Using Exported Session Keys
+=============================
+
+This build uses the Not For Radio EVA product as the Key Management Agent on each TLS server. The build includes two HTTPS servers, a TLSv1.3-enabled instance of the MariaDB database server, and TLSv1.3-enabled instances of Postfix and Dovecot, for SMTP and IMAP connectivity, respectively. The following sections will provide the details of each of these servers, as well as the EVA agent configurations on each.
+
+.. include:: ek-proxy.rst
+.. include:: ek-testapp.rst
+.. include:: ek-mail.rst
+.. include:: ek-keycloak.rst
+.. include:: ek-mariadb.rst
+
+
+
+
+
+Configuration Procedure
+-----------------------
+
+See configuration of individual TLS servers.
+
+
+
+
+Additional Configuration Files
+------------------------------
+
++-----------------------------------------------------------------+
+| Relevant Configuration Files                                    |
++=================================================================+
+
+See configuration of individual TLS servers.
+

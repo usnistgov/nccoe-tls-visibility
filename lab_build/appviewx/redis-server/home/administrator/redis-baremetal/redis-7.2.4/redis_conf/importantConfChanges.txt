@@ -1,0 +1,31 @@
+The Redis server build started with a standard Ubuntu 20.04.06 LTS virtual machine created with allocations of 1 CPU, 8GB of memory, 50GB of storage, and 1 network interface card. The server's network configuration is reflected in Table ?-? Redis Server Network Configuration. A folder named redis-baremetal was created in the default non-root user's home directory to store the configuration and related filed for the following Redis 7.2.4 deployment. 
+
+A bare-metal version of Redis was selected opposed to a dockerized version due to TLS 1.3 configuration complications. Redis version 7.2.4 was installed directly from the official Redis github page https://github.com/redis/redis and unzipped into the redis-baremetal folder, creating the redis-baremetal/redis-7.2.4 directory. The server was assigned the unique hostname “redis.visibility.nccoe.org”. An associated “A” record for the server’s hostname and IP address was recorded in the lab DNS service. 
+
+First, a PKI certificate and key were created in PEM format using the DigiCert CertCentral service referencing the server’s hostname. The certificate and key were uploaded to the VM and stored in the /redis-baremetal/redis-7.2.4/certs directory. Additionally, the DigiCert CertCentral CA certificate in PEM format was uploaded to the same folder.
+
+Next, the Redis server was configured to use the TLS certificates and key. The configuration file named "redis.conf" in the /redis-baremetal/redis-7.2.4/redis_conf directory was altered to include the following sections:
+
+################################## NETWORK #####################################
+bind * -::*
+protected-mode no
+tcp-backlog 511
+timeout 0
+tcp-keepalive 300
+
+################################ TLS/SSL #####################################
+port 0
+tls-port 6379
+
+tls-cert-file /home/administrator/redis-baremetal/redis-7.2.4/certs/redis_visibility_nccoe_org.pem
+tls-key-file /home/administrator/redis-baremetal/redis-7.2.4/certs/redis.key
+tls-ca-cert-file /home/administrator/redis-baremetal/redis-7.2.4/certs/DigiCertCA.crt
+tls-auth-clients optional
+tls-protocols "TLSv1.2 TLSv1.3"
+
+Leave the rest of the config set to defaults. 
+
+All files named in the TLS/SSL section of the configuration file contain the PKI information (certificate chain, certificate, or key) encoded in PEM format. 
+
+created the file /etc/systemd/system/redis.service
+Enabled the redis service.  
