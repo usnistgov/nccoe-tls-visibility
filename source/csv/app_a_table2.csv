@@ -1,0 +1,19 @@
+﻿Architecture Component,Collaborator,Product Information
+Enterprise PKI,DigiCert,CertCentral Certificate Management Platform
+TLS Client,,Mozilla Firefox Browser
+,,Microsoft Edge Browser
+,,Command-line Email Client & Mozilla Thunderbird
+Tap,,VMWare vSphere Distributed vSwitch port mirroring
+TLS Server(s),,Containerized nginx reverse proxy and Keycloak IdAM application
+,,Containerized nginx reverse proxy and Python test application
+,,MariaDB Database Server
+,,Containerized Postfix SMTP Server and Dovecot IMAP Server 
+Key Capture and Registration Agent,Not For Radio,Encryption Visibility Architecture Encryption Visibility Agent (EVA) Version 0.7.0
+Real-time Decryptor,MIRA,Encrypted Traffic Orchestration (ETO) Version 2.1.0 build 2023.10.24-0009 Virtual Appliance
+Key Governance Platform,AppViewX,appviewX Version 2020.3.10 build 55 Virtual Appliance
+,,Redis database 
+Real-time Analytics Platform,NetScout,nGeniusONE Version 6.3.5 build 2416
+,,Omnis Cyber Intelligence (OCI) Version 6.3.5 build 2416
+Post Facto Analytics Platform,,vSTREAM ISNG Version 6.3.5 build 946 
+,,vCYBERSTREAM ISNG Version 6.3.5 build 946
+Key Source,Thales TCT,Luna Network HSM T-5000 Firmware: Version 7.11.1 FIPS-validated
