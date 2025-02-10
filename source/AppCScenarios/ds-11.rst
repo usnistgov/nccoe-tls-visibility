@@ -1,0 +1,50 @@
+.. _scenario-3.4:
+
+Scenario 3.4: Unsanitized User Input
+====================================
+
+Purpose
+-------
+
+Scan network traffic for un-sanitized user input.
+
+Description
+-----------
+
+This demonstration shows how decrypted traffic can be utilized to identify, collect, and report on potential attacks on network infrastructure. A SQL injection query was created through the browser over HTTPS against an HTTPS server for this scenario.
+
+Procedure
+---------
+
+1. Use script 3.4 to generate traffic indicative of an attempted SQL injection attack.
+2. Observe the detecton of the traffic as indicative of potential SQL injection in NetScout's Security Events Center. 
+
+Expected Outcome
+----------------
+
+The traffic is detected as potentially indicative of a SQL injection attack by NetScout's internal IDS.
+
++-------------------------------------------------+-------------------------------------------------+
+| Passive                                         | Active                                          |
++------------------------+------------------------+------------------------+------------------------+
+| Bounded Life-Time      | Exported Session Key   | Break & Inspect (Mira) | Break and Inspect (F5) |
++-----------+------------+-----------+------------+-----------+------------+-----------+------------+
+| Real-Time | Post-Facto | Real-Time | Post-Facto | Real-Time | Post-Facto | Real-Time | Post-Facto |
++===========+============+===========+============+===========+============+===========+============+
+| Pass      | Pass       | Pass      | Pass       | Pass      | Pass       | Pass      | Pass       | 
++-----------+------------+-----------+------------+-----------+------------+-----------+------------+
+
+Screenshots
+-----------
+
+
+
+.. figure:: /images/demonstration_results/3.4.sql-injection.png
+   :width: 90%
+   :alt: A screenshot of NetScout's OCI interface showing that traffic which appears to contain a SQL injection attack in an HTTP request is detected as potentially malicious.
+
+   Detection of SQL injection attack.
+
+
+
+
