@@ -4,10 +4,9 @@ Additional Materials
 ####################
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 5
    :titlesonly:
-   :glob:
-   :hidden:
+   :includehidden:
 
    M_AppendixA.rst
    N_AppendixB.rst

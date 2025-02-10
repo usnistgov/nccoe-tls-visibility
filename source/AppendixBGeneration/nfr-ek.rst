@@ -1,3 +1,5 @@
+.. _nfr-ek:
+
 Configuring TLS Servers with Not For Radio Using Exported Session Keys
 =============================
 

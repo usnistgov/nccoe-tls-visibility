@@ -1,3 +1,5 @@
+.. _appviewx-edh:
+
 AppViewX for Bounded-Lifetime Server Key Governance
 =============================
 

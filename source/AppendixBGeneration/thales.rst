@@ -1,3 +1,5 @@
+.. _thales:
+
 Protecting Key Material in AppViewX Using the Thales HSM
 =============================
 
@@ -125,5 +127,5 @@ Additional Configuration Files
 | Relevant Configuration Files                                    |
 +=================================================================+
 
-[[Configuration Files Description]]
+No additional files needed for this build.
 
