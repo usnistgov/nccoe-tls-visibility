@@ -112,18 +112,6 @@ This section describes the configuration of the F5 BIG-IP device for interceptin
 
 
 
-#. It is important to ensure that the decryptor policies are selected under ``Access Policy``.
-
-   .. figure:: /images/figures/f5-profile2.png
-      :width: 90%
-      :alt: Image showing profile settings.
-
-      Profile Settings.
-
-
-
-
-
 #. For this setup, a pool was created for each server, to ensure that F5 BIG-IP acted as a reverse proxy, by navigating to ``Pools``.
 
    .. figure:: /images/figures/f5-pool.png
@@ -167,6 +155,18 @@ This section describes the configuration of the F5 BIG-IP device for interceptin
       :alt: Image showing virtual server address translation settings.
 
       Virtual Server Address Translation
+
+
+
+
+
+#. It is important to ensure that the decryptor policies are selected under ``Access Policy``.
+
+   .. figure:: /images/figures/f5-virtual-server-settings3.png
+      :width: 90%
+      :alt: Image showing Access Policy Settings.
+
+      Virtual Server Access Policy
 
 
 
