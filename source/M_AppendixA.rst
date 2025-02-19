@@ -24,7 +24,7 @@ In the lab build for this reference architecture, software or services used for 
 .. csv-table:: Build Components for the Passive Decryption Using Bounded-Lifetime EDH Keys Reference Architecture
    :widths: 20 15 40
    :header: "Architecture Component", "Collaborator", "Product Information"
-   :file: csv/app_a_table3.csv
+   :file: csv/app_a_table1.csv
 
 Return to :ref:`3.2.2`.
 Return to :ref:`3.2`.

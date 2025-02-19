@@ -3,14 +3,15 @@ Enterprise PKI,DigiCert,CertCentral Certificate Management Platform
 TLS Client,,Mozilla Firefox Browser
 ,,Microsoft Edge Browser
 ,,Command-line Email Client & Mozilla Thunderbird
-Break and Inspect Device (Layer 3),F5,BIG-IP SSL Orchestrator Version 17.0.0 build 0.0.22
-,,F5 Syslog Receiver / Redis Forwarder Server
+Real-time Decryptor,MIRA,Encrypted Traffic Orchestration (ETO) Version 3.1.0-2024.11.28-4781 Virtual Appliance
 TLS Server(s),,Containerized nginx reverse proxy and Keycloak IdAM application
 ,,Containerized nginx reverse proxy and Python test app
+,,MariaDB Database Server
+,,Containerized Postfix SMTP Server and Dovecot IMAP Server 
 Key Governance Platform,AppViewX,appviewX Version 2020.3.10 build 55 Virtual Appliance
 ,,Redis database 
-Real-time Analytics Platform,NetScout,nGeniusONE Version 6.3.5 build 2416
-,,Omnis Cyber Intelligence (OCI) Version 6.3.5 build 2416
-Post Facto Analytics Platform,,vSTREAM ISNG Version 6.3.5 build 946
-,,vCYBERSTREAM ISNG Version 6.3.5 build 946
+Real-time Analytics Platform,NetScout,nGeniusONE Version 6.3.5 build 3184
+,,Omnis Cyber Intelligence (OCI) Version 6.3.5 build 3184
+Post Facto Analytics Platform,,vSTREAM ISNG Version 6.3.5 build 3184
+,,vCYBERSTREAM ISNG Version 6.3.5 build 3184
 Key Source,Thales TCT,Luna Network HSM T-5000 Firmware: Version 7.11.1 FIPS-validated
