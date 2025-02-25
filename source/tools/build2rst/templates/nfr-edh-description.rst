@@ -1,4 +1,4 @@
-.. include:: rk-testapp.rst
-.. include:: rk-mail.rst
-.. include:: rk-keycloak.rst
-.. include:: rk-mariadb.rst
+.. include:: AppendixBGeneration/rk-testapp.rst
+.. include:: AppendixBGeneration/rk-mail.rst
+.. include:: AppendixBGeneration/rk-keycloak.rst
+.. include:: AppendixBGeneration/rk-mariadb.rst

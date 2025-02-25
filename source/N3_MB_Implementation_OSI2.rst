@@ -1,7 +1,6 @@
-.. toctree::
-   :maxdepth: 2
-   :hidden:
+.. _B.4.3:
 
-   AppendixBGeneration/mira-mb.rst
+B.4.3 Layer 2 Middlebox Implemention: MIRA ETO
+==============================================
 
-* :ref:`mira-mb`
+.. include:: AppendixBGeneration/mira-mb.rst

@@ -1,12 +1,10 @@
-.. toctree::
-   :maxdepth: 2
-   :hidden:
+.. _B.3:
 
-   AppendixBGeneration/appviewx-ek.rst
-   AppendixBGeneration/mira-ek.rst
-   AppendixBGeneration/nfr-ek.rst
+B.3 Architecture Implementation: Passive Inspection Using Exported Session Keys
+*******************************************************************************
+
+.. include:: AppendixBGeneration/appviewx-ek.rst
+.. include:: AppendixBGeneration/mira-ek.rst
+.. include:: AppendixBGeneration/nfr-ek.rst
 
 
-* :ref:`appviewx-ek`
-* :ref:`mira-ek`
-* :ref:`nfr-ek`

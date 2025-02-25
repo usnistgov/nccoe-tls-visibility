@@ -1,8 +1,5 @@
 .. _f5-mb:
 
-F5 BIG-IP as a Layer 3 Middlebox
-=============================
-
 This build uses the F5 BIG-IP product as a middlebox to actively break and inspect TLSv1.3 traffic. 
 
 Instantiation of the F5 BIG-IP Virtual Appliance
@@ -52,7 +49,7 @@ F5 BIG-IP Syslog Server Network Configuration
 
 This VM, running Ubuntu 20.04.6 LTS was created with a resource allocation including 8 vCPUs, 16 GB of memory, and 75 GB of storage.
 
-.. include:: f5syslog.rst
+.. include:: AppendixBGeneration/f5syslog.rst
 
 
 

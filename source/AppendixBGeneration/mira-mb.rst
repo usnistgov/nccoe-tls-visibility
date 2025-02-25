@@ -1,8 +1,5 @@
 .. _mira-mb:
 
-MIRA ETO as a Layer 2 Middlebox
-=============================
-
 This build uses the MIRA ETO product as a middlebox to actively break and inspect TLSv1.3 traffic. Because of differences in networking requirements, the passive decryption instance of ETO could not be used for middlebox functionality. A separate instance of ETO was created to function as a middlebox. 
 
 Instantiation of the Mira ETO Middlebox Appliance
