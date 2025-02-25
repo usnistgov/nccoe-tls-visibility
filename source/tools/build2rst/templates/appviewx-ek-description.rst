@@ -25,4 +25,4 @@ The primary appliance was provisioned with the following modules:
 ENUMERATE_PluginName_PluginLink
 
 
-.. include:: redis.rst
+.. include:: AppendixBGeneration/redis.rst

@@ -1,13 +1,9 @@
-.. toctree::
-   :maxdepth: 2
-   :hidden:
+.. _B.2:
 
-   AppendixBGeneration/appviewx-edh.rst
-   AppendixBGeneration/mira-edh.rst
-   AppendixBGeneration/nfr-edh.rst
+B.2 Architecture Implementation: Passive Inspection Using Bounded-lifetime DH Keys
+**********************************************************************************
 
-
-* :ref:`appviewx-edh`
-* :ref:`mira-edh`
-* :ref:`nfr-edh`
+.. include:: AppendixBGeneration/appviewx-edh.rst
+.. include:: AppendixBGeneration/mira-edh.rst
+.. include:: AppendixBGeneration/nfr-edh.rst
 
