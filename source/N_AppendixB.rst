@@ -1,7 +1,7 @@
 .. _AppendixB:
 
-B. Descriptions of the Build implementations
-#####################################################
+B. Descriptions of the Build Implementations
+############################################
 
 The TLS 1.3 Visibility lab incorporates four implementations of the reference architectures within the same build environment:
 
@@ -44,7 +44,7 @@ B.4 Architecture Implementation: Active Inspection Using Middleboxes
 Active inspection using middleboxes was implemented at both the OSI link layer (Layer 2) and the OSI network layer (Layer 3). 
 Within the lab, only one middlebox implementation can be functional at any one time.  To demonstrate the Layer 2 configuration, the MIRA ETO Middlebox (``W``) was powered up and
 the Layer 3 middlebox was powered down. Similarly, to demonstrate the Layer 3 configuration, the F5 Middlebox (``T``) was
-pwered up and the Layer 2 middlebox was powered down.
+powered up and the Layer 2 middlebox was powered down.
 
 In order to route traffic appropriately in either configuration, the middleboxes were wired in tandem between the Data Center Border Router (``RA``) and the Data Center Segment Router (``RB``).  :ref:`Figure B-1`, below,
 shows the wiring configurations between the two routers and two middleboxes. 
@@ -87,8 +87,8 @@ The middlebox has connectivity to the ``SERVER`` network segment through network
 
 .. _B.4.3:
 
-B.4.3 Layer 2 Middlebox Implemention
-====================================
+B.4.3 Layer 2 Middlebox Implementation
+======================================
 
 .. include:: N3_MB_Implementation_OSI2.rst
 

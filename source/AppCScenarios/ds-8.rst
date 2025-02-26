@@ -6,7 +6,7 @@ Scenario 3.1b: Malicious SMTP Attachment
 Purpose
 -------
 
-Scan network traffic for instances of malicous attachments in SMTP.
+Scan network traffic for instances of malicious attachments in SMTP.
 
 Description
 -----------

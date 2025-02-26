@@ -47,7 +47,7 @@ With the widespread threat of cyber-attacks, enterprises must be able to rapidly
 
 .. _C.4:
 
-C.4 Traffic Visibility to Support Monitoring for Compliance and Hygeine
+C.4 Traffic Visibility to Support Monitoring for Compliance and Hygiene
 ***********************************************************************
 
 Following a major compromise, enterprises must be able to establish a clear picture of how the attack occurred, including each system that was compromised, vulnerabilities that were exploited, attack methods that were used, and data that was exfiltrated. To be effective, accurate information must be obtained about all operations performed by attackers (even if logs were manipulated) from independent data sources. The security forensics scenario includes the ability to trace paths of attacks as they pivot laterally across the internal network of compromised systems. Affected systems may involve network-attached storage, identity management systems, databases, routers and switches, application servers, web servers, load balancers, client systems, and firewalls. The cybersecurity forensics scenario includes the following elements:
