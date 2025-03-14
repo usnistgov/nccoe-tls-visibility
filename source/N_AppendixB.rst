@@ -1,7 +1,7 @@
 .. _AppendixB:
 
-B. Descriptions of the Build implementations
-#####################################################
+B. Descriptions of the Build Implementations
+############################################
 
 The TLS 1.3 Visibility lab incorporates four implementations of the reference architectures within the same build environment. Because of this, some components are shared across the builds. The details of the different builds and shared components are presented below.
 
