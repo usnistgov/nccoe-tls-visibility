@@ -17,7 +17,7 @@ Procedure
 ---------
 
 1. Use script 3.4 to generate traffic indicative of an attempted SQL injection attack.
-2. Observe the detecton of the traffic as indicative of potential SQL injection in NetScout's Security Events Center. 
+2. Observe the detection of the traffic as indicative of potential SQL injection in NetScout's Security Events Center. 
 
 Expected Outcome
 ----------------
