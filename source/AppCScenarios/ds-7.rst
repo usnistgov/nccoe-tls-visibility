@@ -6,7 +6,7 @@ Scenario 3.1a: Malicious HTTPS File Serving
 Purpose
 -------
 
-Scan network traffic for instances of malicous files being transmitted over HTTPS.
+Scan network traffic for instances of malicious files being transmitted over HTTPS.
 
 Description
 -----------

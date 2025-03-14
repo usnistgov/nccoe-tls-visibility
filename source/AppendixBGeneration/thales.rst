@@ -44,7 +44,7 @@ This section contains instructions for configuring the AppViewX key governance p
 #. The Thales TCT Luna Client software must be installed on the AppViewX appliance (not the AppViewX SSM appliance). The client software was installed to the ``/home/appviewx/appviewx/hsm`` directory.
 
 
-#. The AppViewX dependency configuration information was updated to include the HSM by editing the file: ``/home/appviewx/appviewx/appviewx_dependences/properties/hsm``
+#. The AppViewX dependency configuration information was updated to include the HSM by editing the file: ``/home/appviewx/appviewx/appviewx_dependencies/properties/hsm``
    to ensure the line: ``export ChrystokiConfigurationPath=/appviewx/dependencies/hsm/``
 
 
