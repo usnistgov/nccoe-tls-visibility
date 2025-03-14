@@ -8,12 +8,13 @@ This section contains detailed instructions configuring the NetScout products us
 Instantiation of the NETSCOUT Virtual Appliances
 ------------------------------------------------
 
-The NETSCOUT platform consists of four virtual appliances created from the vendor supplied OVF files: a vSTREAM appliance, vCYBERSTREAM appliance, nGeniusONE appliance, and an Omnis Cyber Intelligence (OCI) appliance. The vStream and vCyberStream appliances are provisioned with three network interfaces, and the nGeniusOne and OCI appliances are each configured with a single network interface. 
+The NETSCOUT platform consists of four virtual appliances created from the vendor supplied OVF files: a vSTREAM appliance, vCYBERSTREAM appliance, nGeniusONE appliance, and an Omnis Cyber Intelligence (OCI) appliance. The vSTREAM and vCYBERSTREAM appliances are provisioned with three network interfaces, and the nGeniusOne and OCI appliances are each configured with a single network interface. 
 
 The vSTREAM appliance improves visibility into virtualized and cloud environments with deep packet inspection to further performance management and security. It is used in this build to provide decrypted and encrypted traffic to the NETSCOUT nGeniusONE appliance.
+
 The vCYBERSTREAM appliance assists in detection, investigation, and response to cyberthreats in real-time by leveraging packet-level data to identify suspicious activity across virtualized and cloud environments.
 
-NetScout vStream Virtual Appliance Network Configuration
+NetScout vSTREAM Virtual Appliance Network Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +-----------+------------+------------------------+---------------------------------------------------------------------------------------------------+
@@ -27,7 +28,7 @@ NetScout vStream Virtual Appliance Network Configuration
 +-----------+------------+------------------------+---------------------------------------------------------------------------------------------------+
 
 
-NetScout vCyberStream Virtual Appliance Network Configuration
+NetScout vCYBERSTREAM Virtual Appliance Network Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +-----------+------------+------------------------+---------------------------------------------------------------------------------------------------+
