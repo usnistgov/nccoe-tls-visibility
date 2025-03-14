@@ -8,12 +8,10 @@ This section contains detailed instructions configuring the NetScout products us
 Instantiation of the NETSCOUT Virtual Appliances
 ------------------------------------------------
 
-The NETSCOUT platform consists of four virtual appliances created from the vendor supplied OVF files: two vStream appliances, the nGeniusOne appliance, and the OCI appliance. The vStream and vCyberStream appliances are provisioned with three network interfaces, and the nGeniusOne and OCI appliances are each configured with a single network interface. 
+The NETSCOUT platform consists of four virtual appliances created from the vendor supplied OVF files: a vSTREAM appliance, vCYBERSTREAM appliance, nGeniusONE appliance, and an Omnis Cyber Intelligence (OCI) appliance. The vStream and vCyberStream appliances are provisioned with three network interfaces, and the nGeniusOne and OCI appliances are each configured with a single network interface. 
 
-The vStream appliance is used to provide decrypted and encrypted traffic to the NetScout nGeniusOne appliance.
-
-Similarly, the vCyberStream appliance is used to provide decrypted and encrypted traffic to the NetScout OCI appliance.
-
+The vSTREAM appliance improves visibility into virtualized and cloud environments with deep packet inspection to further performance management and security. It is used in this build to provide decrypted and encrypted traffic to the NETSCOUT nGeniusONE appliance.
+The vCYBERSTREAM appliance assists in detection, investigation, and response to cyberthreats in real-time by leveraging packet-level data to identify suspicious activity across virtualized and cloud environments.
 
 NetScout vStream Virtual Appliance Network Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -50,10 +48,6 @@ NetScout nGeniusOne Virtual Appliance Network Configuration
 | Interface | Network    | IP Address             | Purpose                                                              |
 +===========+============+========================+======================================================================+
 | 1         | MANAGEMENT | 192.168.10.4           | Connectivity to OCI appliance                                        |
-+-----------+------------+------------------------+----------------------------------------------------------------------+
-| 2         | ENCRYPTED  | N/A Layer 2 connection | Access to the encrypted network data provided by the network tap     |
-+-----------+------------+------------------------+----------------------------------------------------------------------+
-| 3         | DECRYPTED  | N/A Layer 2 connection | Access to the network where decryptors output the decrypted traffic. |
 +-----------+------------+------------------------+----------------------------------------------------------------------+
 
 
@@ -97,12 +91,26 @@ From here, select an interface, and time period (or ``Live Capture``). Check the
 
 
 
-
-
 Configuration Procedure
 -----------------------
 
 The NetScout product was configured to receive traffic from the ``DECRYPTED`` and ``ENCRYPTED`` interfaces, such that it would perform in both the post-facto and real-time scenarios. Additional configuration to fine-tune the IDS to support the demonstration scenarios detailed in Appendix C, and demonstrate the visibility of the contents of the ``DECRYPTED`` traffic stream and the ability to decrypt the ``ENCRYPTED`` traffic stream using keys from the Diffie Hellman and Exported Session Keys scenarios.
+
+
+
+
+The figure below shows how to add HTTPS traffic known to be decrypted as an application under HTTP in NetScout's application configuration. This will instruct NetScout to interpret that traffic as decrypted.
+
+.. figure:: /images/figures/netscout-application-settings.png
+   :width: 90%
+   :alt: Image showing the addition of an application in NetScout Application Configuration to show HTTPS traffic as HTTP.
+
+   Application Configuration allowing HTTPS to be viewed as HTTP.
+
+
+
+
+
 
 
 

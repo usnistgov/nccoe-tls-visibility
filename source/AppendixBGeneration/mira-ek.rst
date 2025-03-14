@@ -46,18 +46,12 @@ To switch between segments, navigate to ``Policies > Segments``, and select the 
    Switching segments between Diffie Hellman and Exported Session Keys. 
 
 
-
-
-
-
+Note that the integration for transferring exported session keys both to Mira and to the Redis server is enabled in the ``key_reporting`` section of ``eva.conf`` on each server.
 
 
 Additional Configuration Files
 ------------------------------
 
-+-----------------------------------------------------------------+
-| Relevant Configuration Files                                    |
-+=================================================================+
 
 No additional files needed for this build.
 

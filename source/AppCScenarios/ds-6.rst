@@ -46,5 +46,17 @@ Screenshots
    POST requests decrypted frame count visible.
 
 
+.. figure:: /images/demonstration_results/2.3.bandwidth-summary.png
+   :width: 90%
+   :alt: A screenshot of NetScout's Service Dashboard interface showing the number of transactions.
+
+   Statistics showing number of transactions, sessions, and request failures.
+
+.. figure:: /images/demonstration_results/2.3.bandwidth-traffic-monitor.png
+   :width: 90%
+   :alt: A screenshot of NetScout's Traffic Monitor interface showing statistics for traffic consuming the most bandwidth.
+
+   Statistics comparing the bandwidth from various sources.
+
 
 
