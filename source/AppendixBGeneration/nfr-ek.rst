@@ -20,15 +20,13 @@ Configuration Procedure
 
 See configuration of individual TLS servers.
 
+Note that the integration for transferring exported session keys both to Mira and to the Redis server is enabled in the ``key_reporting`` section of ``eva.conf`` on each server.
+
 
 
 
 Additional Configuration Files
 ------------------------------
-
-+-----------------------------------------------------------------+
-| Relevant Configuration Files                                    |
-+=================================================================+
 
 See configuration of individual TLS servers.
 

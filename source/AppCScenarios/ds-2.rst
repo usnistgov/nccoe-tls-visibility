@@ -46,5 +46,12 @@ Screenshots
    Layer specific information in a decrypted HTTP request.
 
 
+.. figure:: /images/demonstration_results/1.2.web-services.png
+   :width: 90%
+   :alt: A screenshot of NetScout's Web Services interface showing statistics for decrypted HTTP traffic.
+
+   Statistics for decrypted HTTP traffic.
+
+
 
 
