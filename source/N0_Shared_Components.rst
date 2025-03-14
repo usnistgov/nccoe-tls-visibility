@@ -1,9 +1,7 @@
-.. toctree::
-   :maxdepth: 2
-   :hidden:
+.. _B.1:
 
-   AppendixBGeneration/netscout.rst
-   AppendixBGeneration/thales.rst
+B.1 Shared Components Across All Builds
+***************************************
 
-* :ref:`netscout`
-* :ref:`thales`
+.. include:: AppendixBGeneration/netscout.rst
+.. include:: AppendixBGeneration/thales.rst

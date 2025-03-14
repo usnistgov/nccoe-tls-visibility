@@ -1,5 +1,5 @@
-.. include:: ek-proxy.rst
-.. include:: ek-testapp.rst
-.. include:: ek-mail.rst
-.. include:: ek-keycloak.rst
-.. include:: ek-mariadb.rst
+.. include:: AppendixBGeneration/ek-proxy.rst
+.. include:: AppendixBGeneration/ek-testapp.rst
+.. include:: AppendixBGeneration/ek-mail.rst
+.. include:: AppendixBGeneration/ek-keycloak.rst
+.. include:: AppendixBGeneration/ek-mariadb.rst

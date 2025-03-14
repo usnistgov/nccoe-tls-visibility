@@ -1,7 +1,6 @@
-.. toctree::
-   :maxdepth: 2
-   :hidden:
+.. _B.4.4:
 
-   AppendixBGeneration/f5-mb.rst
+B.4.4 Layer 3 Middlebox Implementation: F5 BIG-IP
+=================================================
 
-* :ref:`f5-mb`
+.. include:: AppendixBGeneration/f5-mb.rst

@@ -54,7 +54,7 @@ The primary appliance was provisioned with the following modules:
 +----------------------------------------------------------+--------------------------------------------------------------------------+
 
 
-.. include:: redis.rst
+.. include:: AppendixBGeneration/redis.rst
 
 
 
