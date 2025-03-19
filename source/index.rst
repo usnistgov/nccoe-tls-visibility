@@ -76,6 +76,11 @@ NIST used an agile process to make updates available as new example solutions we
 
 Please submit comments by completing the comment template spreadsheet posted on the `NCCoE TLS Visibility project page <https://www.nccoe.nist.gov/addressing-visibility-challenges-tls-13>`__ and emailing it to applied-crypto-visibility@nist.gov.
 
+.. note::
+   TODO: Fill in the dates below.
+
+Public comment period: xxx y, 2025 through Mmmmm dd, 2025
+
 All comments are subject to release under the Freedom of Information Act.
 
 NIST is particularly interested in your feedback on the following questions:
