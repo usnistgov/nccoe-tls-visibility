@@ -27,7 +27,7 @@
 
     // Add leaveNotice to external A elements
     $('a.external').leaveNotice({
-      siteName: "NCCoE MDL Project"
+      siteName: "NCCoE TLSV Project"
     });
   });
 })(jQuery);

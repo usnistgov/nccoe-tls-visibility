@@ -6,12 +6,22 @@ Additional Materials
 .. toctree::
    :maxdepth: 5
    :titlesonly:
-   :includehidden:
+   :hidden:
 
-   M_AppendixA.rst
-   N_AppendixB.rst
-   O_AppendixC.rst
-   P_AppendixD.rst
+   I_Glossary.rst
+   J_Acronyms.rst
+   K_References.rst
+   M_AppendixD.rst
+   N_AppendixE.rst
+   O_AppendixF.rst
+   P_AppendixG.rst
     
+* :ref:`Glossary`,
+* :ref:`Acronyms`,
+* :ref:`References`,
+* :ref:`AppendixD`,
+* :ref:`AppendixE`,
+* :ref:`AppendixF`,
+* :ref:`AppendixG`,
 
 

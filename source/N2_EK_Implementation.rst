@@ -1,6 +1,6 @@
-.. _B.3:
+.. _E.3:
 
-B.3 Architecture Implementation: Passive Inspection Using Exported Session Keys
+E.3 Architecture Implementation: Passive Inspection Using Exported Session Keys
 *******************************************************************************
 
 .. include:: AppendixBGeneration/appviewx-ek.rst

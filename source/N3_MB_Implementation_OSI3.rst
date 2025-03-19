@@ -1,6 +1,6 @@
-.. _B.4.4:
+.. _E.4.4:
 
-B.4.4 Layer 3 Middlebox Implementation: F5 BIG-IP
+E.4.4 Layer 3 Middlebox Implementation: F5 BIG-IP
 =================================================
 
 .. include:: AppendixBGeneration/f5-mb.rst

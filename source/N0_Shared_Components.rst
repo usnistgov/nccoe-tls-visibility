@@ -1,6 +1,6 @@
-.. _B.1:
+.. _E.1:
 
-B.1 Shared Components Across All Builds
+E.1 Shared Components Across All Builds
 ***************************************
 
 .. include:: AppendixBGeneration/netscout.rst

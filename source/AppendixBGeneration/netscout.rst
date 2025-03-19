@@ -95,7 +95,7 @@ From here, select an interface, and time period (or ``Live Capture``). Check the
 Configuration Procedure
 -----------------------
 
-The NetScout product was configured to receive traffic from the ``DECRYPTED`` and ``ENCRYPTED`` interfaces, such that it would perform in both the post-facto and real-time scenarios. Additional configuration to fine-tune the IDS to support the demonstration scenarios detailed in Appendix C, and demonstrate the visibility of the contents of the ``DECRYPTED`` traffic stream and the ability to decrypt the ``ENCRYPTED`` traffic stream using keys from the Diffie Hellman and Exported Session Keys scenarios.
+The NetScout product was configured to receive traffic from the ``DECRYPTED`` and ``ENCRYPTED`` interfaces, such that it would perform in both the post-facto and real-time scenarios. Additional configuration to fine-tune the IDS to support the demonstration scenarios detailed in Appendix F, and demonstrate the visibility of the contents of the ``DECRYPTED`` traffic stream and the ability to decrypt the ``ENCRYPTED`` traffic stream using keys from the Diffie Hellman and Exported Session Keys scenarios.
 
 
 
@@ -127,7 +127,7 @@ Additional Configuration Files
 | vcyberstream/custom-suricata-rules/suricata-rules.txt           |
 +-----------------------------------------------------------------+
 
-* ``custom-rules.txt`` contains the custom rules added to enable detection of the demonstration scenarios detailed in Appendix C. They are quite specific to these use cases to demonstrate feasibility and it is recommended to instead use open-source or more developed rulesets in practice.
+* ``custom-rules.txt`` contains the custom rules added to enable detection of the demonstration scenarios detailed in Appendix F. They are quite specific to these use cases to demonstrate feasibility and it is recommended to instead use open-source or more developed rulesets in practice.
 
 * ``suricata.yaml`` contains a modified suricata.yaml used in this build. In particular some changes were made to enable the detection of SMTP messages, as well as for capturing files sent over TLS. Note that this file should be carefully reviewed and modified to meet the needs of an organization's systems, as some of the configurations used in development may add to latency or storage requirements.
 

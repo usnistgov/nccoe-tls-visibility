@@ -1,14 +1,14 @@
 
-.. _AppendixC:
+.. _AppendixF:
 
-C. Details of the Functional Demonstrations and Results
+F. Details of the Functional Demonstrations and Results
 ################################################################
 
 
 
-.. _C.1:
+.. _F.1:
 
-C.1 Traffic Visibility to Support Troubleshooting
+F.1 Traffic Visibility to Support Troubleshooting
 *************************************************
 
 Enterprises providing services to customers, partners, and employees must have the ability to rapidly troubleshoot and fix issues when availability and operational issues occur. Operations troubleshooting scenarios demonstrate the enterprise tracing transactions through all tiers of an application, including collection of detailed information such as transaction identifiers, data payload, and the results of operations performed by each application tier. Because operational issues can be intermittent and difficult to replicate, troubleshooting scenarios include the ability to proactively collect and view detailed historical data that may or may not be available in logs. Examples of troubleshooting situations include application unavailability and intermittent system failures. Visibility may be required into enterprise elements such as communications for network-attached storage (NAS), identity management systems, databases, routers and switches, application servers, web servers, load balancers, and firewalls in order to build a complete picture of the end-to-end session across the enterprise. The troubleshooting scenario includes the following elements:
@@ -21,7 +21,7 @@ Enterprises providing services to customers, partners, and employees must have t
 
 .. _C.2:
 
-C.2 Traffic Visibility to Support Performance Monitoring
+F.2 Traffic Visibility to Support Performance Monitoring
 ********************************************************
 
 Application performance and response times are critical to customer service and time-sensitive mission-critical applications. Performance issues may range from application-specific response degradation to occurrences of malicious distributed denial of service attacks. Enterprises must be able to proactively detect and isolate performance issues for multi-tier applications. The performance monitoring scenario involves rapidly and accurately detecting user performance issues, predicting and resolving customer performance issues based on upstream degradation, maintaining the ability to rapidly identify sources of performance issues, monitoring across all mission-critical applications and platforms, and minimizing performance loads on applications and platforms. The performance monitoring scenario includes the following elements:
@@ -33,9 +33,9 @@ Application performance and response times are critical to customer service and 
 * Minimize performance load on applications/platforms
 
 
-.. _C.3:
+.. _F.3:
 
-C.3 Traffic Visibility to Support Cybersecurity Threat Triage and Forensics
+F.3 Traffic Visibility to Support Cybersecurity Threat Triage and Forensics
 ***************************************************************************
 
 With the widespread threat of cyber-attacks, enterprises must be able to rapidly triage indicators of compromise (IOCs), quickly distinguishing false positives from real attacks. The threat triage scenario includes triage, identification, and response to IOCs. IOCs may arise in a variety of enterprise elements. Examples include network-attached storage, identity management systems, databases, routers and switches, application servers, web servers, load balancers, and firewalls. They may be found in processes, open ports, and logs. Performing threat triage may require visibility into current and historical inbound and outbound communications. Effective performance of threat triage requires rapidly obtaining a clear picture of system state, reducing triage time with an accurate and detailed picture of current and historical communications, minimizing reliance on data sources that can be manipulated by attackers, and using independent data sources for verification. The cybersecurity threat triage scenario includes the following elements:
@@ -45,9 +45,9 @@ With the widespread threat of cyber-attacks, enterprises must be able to rapidly
 * Minimize reliance on data sources that can be manipulated by attackers (including end-point devices)
 
 
-.. _C.4:
+.. _F.4:
 
-C.4 Traffic Visibility to Support Monitoring for Compliance and Hygiene
+F.4 Traffic Visibility to Support Monitoring for Compliance and Hygiene
 ***********************************************************************
 
 Following a major compromise, enterprises must be able to establish a clear picture of how the attack occurred, including each system that was compromised, vulnerabilities that were exploited, attack methods that were used, and data that was exfiltrated. To be effective, accurate information must be obtained about all operations performed by attackers (even if logs were manipulated) from independent data sources. The security forensics scenario includes the ability to trace paths of attacks as they pivot laterally across the internal network of compromised systems. Affected systems may involve network-attached storage, identity management systems, databases, routers and switches, application servers, web servers, load balancers, client systems, and firewalls. The cybersecurity forensics scenario includes the following elements:
@@ -58,9 +58,9 @@ Following a major compromise, enterprises must be able to establish a clear pict
 
 
 
-.. _C.5:
+.. _F.5:
 
-C.5 Functional Demonstration Scripts and Results
+F.5 Functional Demonstration Scripts and Results
 ************************************************
 
 .. toctree::

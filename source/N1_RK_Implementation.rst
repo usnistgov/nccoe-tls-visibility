@@ -1,6 +1,6 @@
-.. _B.2:
+.. _E.2:
 
-B.2 Architecture Implementation: Passive Inspection Using Bounded-lifetime DH Keys
+E.2 Architecture Implementation: Passive Inspection Using Bounded-lifetime DH Keys
 **********************************************************************************
 
 .. include:: AppendixBGeneration/appviewx-edh.rst

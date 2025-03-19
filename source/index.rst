@@ -20,9 +20,6 @@ Addressing Visibility Challenges with TLS 1.3 within the Enterprise
    F_Demonstrations.rst
    G_RiskCompliance.rst
    H_GeneralFindings.rst
-   I_Glossary.rst
-   J_Acronyms.rst
-   K_References.rst
    L_Appendices.rst
    Z_ChangeLog.rst
 
@@ -46,7 +43,9 @@ Addressing Visibility Challenges with TLS 1.3 within the Enterprise
 |                            |                            | Westford, MA               |
 +----------------------------+----------------------------+----------------------------+
 | **John Kent** |br|         | **Russ Housley** |br|      |                            |
-| |br|                       | |br|                       |                            |
+| **Julian Sexton** |br|     | |br|                       |                            |
+| **Michael Dimond** |br|    | |br|                       |                            |
+| **Ryan Williams** |br|     | |br|                       |                            |
 | The MITRE Corporation |br| | Vigil Security, LLC |br|   |                            |
 | McLean, VA                 | Herndon, VA                |                            |
 +----------------------------+----------------------------+----------------------------+
@@ -56,6 +55,8 @@ Addressing Visibility Challenges with TLS 1.3 within the Enterprise
 February 2025
 
 PRELIMINARY DRAFT
+
+..figure: 
 
 |This graphic contains the logos for NIST and the NCCoE.|
 
@@ -74,11 +75,6 @@ You can view or download the initial public draft guide at the `NCCoE TLS Visibi
 NIST used an agile process to make updates available as new example solutions were added. With this initial public draft, all example solutions are complete. We are now asking for feedback on this initial public draft.
 
 Please submit comments by completing the comment template spreadsheet posted on the `NCCoE TLS Visibility project page <https://www.nccoe.nist.gov/addressing-visibility-challenges-tls-13>`__ and emailing it to applied-crypto-visibility@nist.gov.
-
-.. note::
-   TODO: Fill in the dates below.
-
-Public comment period: xxx y, 2025 through Mmmmm dd, 2025
 
 All comments are subject to release under the Freedom of Information Act.
 
@@ -162,7 +158,7 @@ The collaborators who have or will participate in this project's current or upco
 
 **DOCUMENT CONVENTIONS**
 
-The terms “shall” and “shall not” indicate requirements to be followed strictly to conform to the publication and from which no deviation is permitted. The terms “should” and “should not” indicate that among several possibilities, one is recommended as particularly suitable without mentioning or excluding others, or that a certain course of action is preferred but not necessarily required, or that (in the negative form) a certain possibility or course of action is discouraged but not prohibited. The terms “may” and “need not” indicate a course of action permissible within the limits of the publication. The terms “can” and “cannot” indicate a possibility and capability, whether material, physical, or causal.
+The terms "shall" and "shall not" indicate requirements to be followed strictly to conform to the publication and from which no deviation is permitted. The terms "should" and "should not" indicate that among several possibilities, one is recommended as particularly suitable without mentioning or excluding others, or that a certain course of action is preferred but not necessarily required, or that (in the negative form) a certain possibility or course of action is discouraged but not prohibited. The terms "may" and "need not" indicate a course of action permissible within the limits of the publication. The terms "can" and "cannot" indicate a possibility and capability, whether material, physical, or causal.
 
 **CALL FOR PATENT CLAIMS**
 

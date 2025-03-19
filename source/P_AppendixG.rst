@@ -1,6 +1,6 @@
-.. _AppendixD:
+.. _AppendixG:
 
-D. Mappings of TLS 1.3 Visibility Capabilities to Risk Framework Documents
+G. Mappings of TLS 1.3 Visibility Capabilities to Risk Framework Documents
 ###################################################################################
 
 Mappings between cybersecurity functions performed by the reference design's logical components and the security characteristics enumerated in relevant cybersecurity documents are provided in this appendix. These mappings are intended for any organization that is interested in implementing TLS 1.3 visibility solutions or that has begun or completed an implementation.
@@ -8,9 +8,9 @@ The mappings provide information on how cybersecurity functions from the referen
 
 Return to :ref:`Risk_and_Compliance_Management`.
 
-.. _D.1:
+.. _G.1:
 
-D.1 Use Cases
+G.1 Use Cases
 *************
 
 There are two primary use cases for this mapping. They are not intended to be comprehensive.
@@ -19,9 +19,9 @@ There are two primary use cases for this mapping. They are not intended to be co
 
 2.	**How can organizations implement TLS 1.3 visibility solutions?** This use case identifies how an organization's existing implementations of CSF Subcategories and SP 800-53 controls can help support trusted implementation of TLS 1.3 visibility solutions. An organization wanting to implement TLS 1.3 visibility solutions might first assess its current security capabilities so that it can plan how to add missing capabilities and enhance existing capabilities. Organizations can leverage their existing security investments and prioritize future security technology deployment to address the gaps.
 
-.. _D.2:
+.. _G.2:
 
-D.2 Mapping Terminology
+G.2 Mapping Terminology
 ***********************
 
 
@@ -43,9 +43,9 @@ When determining whether a reference design function's support for a given CSF S
 
 Also, when determining whether a function is supported by a CSF Subcategory, SP 800-53 control, capability, etc. with the relationship property of precedes, we do not consider whether it is possible to apply the function without first achieving the Subcategory, control, capability, or requirement. Rather, we consider whether, according to our reference design, the Subcategory, control, capability, or requirement. Rather, 434 we consider whether, according to our reference design, the Subcategory, control, capability, or 435 requirement is to be achieved prior to applying that function.
 
-.. _D.3:
+.. _G.3:
 
-D.3 Cybersecurity Framework (CSF) Mapping
+G.3 Cybersecurity Framework (CSF) Mapping
 *****************************************
 
 This section provides a mapping of system architectural elements to the CSF. It includes both CSF objectives that need to be met for secure operation of the platform for visibility into TLS 1.3-protected traffic and CSF objectives that the platform supports.
@@ -55,12 +55,12 @@ This section provides a mapping of system architectural elements to the CSF. It 
    :widths: 10 30 30 30
    :file: ./csv/csf.csv
 
-.. _D.4:
+.. _G.4:
 
-D.4 Special Publication (SP) 800-53 Mapping
+G.4 Special Publication (SP) 800-53 Mapping
 *******************************************
 
-While SP 800-53 identifies a broad range of controls that are applicable to the TLS 1.3 visibility platform that is described in this publication, a number of the controls are particularly needed to implement the demonstrated configuration securely. The following table identifies these controls using the “is supported by” designation. The table also identifies SP 800-53 controls that are supported by the demonstrated platform.
+While SP 800-53 identifies a broad range of controls that are applicable to the TLS 1.3 visibility platform that is described in this publication, a number of the controls are particularly needed to implement the demonstrated configuration securely. The following table identifies these controls using the "is supported by" designation. The table also identifies SP 800-53 controls that are supported by the demonstrated platform.
 
 .. nccoe-mapping-table::
    :header: Logical Architecture Component, Component's Function, Function's Relationship to SP 800-53 Controls, Relationship Explanation

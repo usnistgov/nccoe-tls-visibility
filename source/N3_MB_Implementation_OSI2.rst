@@ -1,6 +1,6 @@
-.. _B.4.3:
+.. _E.4.3:
 
-B.4.3 Layer 2 Middlebox Implementation: MIRA ETO
+E.4.3 Layer 2 Middlebox Implementation: MIRA ETO
 ==============================================
 
 .. include:: AppendixBGeneration/mira-mb.rst
