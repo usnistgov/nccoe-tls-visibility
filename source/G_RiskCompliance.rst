@@ -19,9 +19,9 @@ mitigations provided by security controls planned or in place."
 The NCCoE recommends that any discussion of risk management—particularly
 at the enterprise level— should begin by reviewing `NIST SP 800-37
 Revision 2, Risk Management Framework for Information Systems and
-Organizations <https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-37r2.pdf>`  —material
+Organizations <https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-37r2.pdf>`__  —material
 that is publicly available. The `Risk Management Framework
-(RMF) <http://csrc.nist.gov/groups/SMA/fisma/Risk-Management-Framework/>`  
+(RMF) <http://csrc.nist.gov/groups/SMA/fisma/Risk-Management-Framework/>`__ 
 guidance is invaluable and gave us a baseline to assess risks, from
 which we developed the project, the security characteristics of the
 build, and this guide.
@@ -224,7 +224,7 @@ the following steps:
   to hide their activity).
 
 See NIST SP 800-92 Revision 1, `Cybersecurity Log Management Planning
-Guide <https://csrc.nist.gov/pubs/sp/800/92/r1/ipd>`, for more
+Guide <https://csrc.nist.gov/pubs/sp/800/92/r1/ipd>`__, for more
 information on logging and log protection.
 
 Different types of malware execute with different intentions.

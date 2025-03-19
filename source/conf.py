@@ -26,7 +26,7 @@ author = 'NIST'
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 
-exclude_patterns = ['_site', 'Thumbs.db', '.DS_Store']
+exclude_patterns = ['_site', 'Thumbs.db', '.DS_Store', 'tools']
 
 extensions = [
     "myst_parser",
