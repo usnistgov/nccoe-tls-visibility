@@ -17,4 +17,4 @@ pycparser==2.21
 requests==2.31.0
 urllib3==2.2.1
 werkzeug==3.0.1
-zipp==3.18.1
+zipp==3.19.1
