@@ -1,5 +1,5 @@
 F5-Syslog Server Configuration
------------------------------
+------------------------------
 
 The F5-Syslog server build started with a standard Ubuntu 20.04.6 LTS virtual machine created with allocations of 2 vCPUs, 16 GB of memory, 50 GB of storage, and 2 network interface cards. 
 
@@ -38,17 +38,17 @@ The server was assigned the unique hostname f5-syslog.visibility.nccoe.org. An a
 Configuration Files
 ^^^^^^^^^^^^^^^^^^^
 
-+--------------------------------------------------------------------------------+
-| Configuration Files                                                            |
-+================================================================================+
-| /home/tlsadmin/redis-forwarder/f5-redis.py                                     |
-+--------------------------------------------------------------------------------+
-| /home/tlsadmin/redis-forwarder/key-remover.py                                  |
-+--------------------------------------------------------------------------------+
-| /etc/syslog-ng/syslog-ng.conf                                                  |
-+--------------------------------------------------------------------------------+
-| /etc/systemd/system/f5forwarder.service                                        |
-+--------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Configuration Files                                                                                                                                                                                      |
++==========================================================================================================================================================================================================+
+| `/home/tlsadmin/redis-forwarder/f5-redis.py <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/f5-active-decryptor/syslog-server/home/tlsadmin/redis-forwarder/f5-redis.py>`__       |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `/home/tlsadmin/redis-forwarder/key-remover.py <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/f5-active-decryptor/syslog-server/home/tlsadmin/redis-forwarder/key-remover.py>`__ |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `/etc/syslog-ng/syslog-ng.conf <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/f5-active-decryptor/syslog-server/etc/syslog-ng/syslog-ng.conf>`__                                 |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `/etc/systemd/system/f5forwarder.service <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/f5-active-decryptor/syslog-server/etc/systemd/system/f5forwarder.service>`__             |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 * ``f5-redis.py`` is the python script used to forward keys extracted from syslog (received from F5 BIG-IP) to the Redis server.
 * ``f5forwarder.service`` is used to keep the f5-redis.py script running constantly, so as to not fall behind on logs.

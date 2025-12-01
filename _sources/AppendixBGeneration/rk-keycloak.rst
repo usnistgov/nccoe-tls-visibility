@@ -44,17 +44,17 @@ Second, Keycloak was configured to only listen on the network interface connecte
 Configuration Files
 ^^^^^^^^^^^^^^^^^^^
 
-+--------------------------------------------------------------------------------+
-| Configuration Files                                                            |
-+================================================================================+
-| /home/administrator/docker-compose.yaml                                        |
-+--------------------------------------------------------------------------------+
-| /etc/nginx/default.conf                                                        |
-+--------------------------------------------------------------------------------+
-| /etc/eva/eva-openssl.cnf                                                       |
-+--------------------------------------------------------------------------------+
-| /etc/eva/eva.conf                                                              |
-+--------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Configuration Files                                                                                                                                                                                                                            |
++================================================================================================================================================================================================================================================+
+| `/home/administrator/docker-compose.yaml <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/tls-servers/Bounded-lifetime%20Rotated%20EDH%20Server%20Key%20Build/keycloak-server/home/administrator/docker-compose.yaml>`__ |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `/etc/nginx/default.conf <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/tls-servers/Bounded-lifetime%20Rotated%20EDH%20Server%20Key%20Build/keycloak-server/etc/nginx/default.conf>`__                                 |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `/etc/eva/eva-openssl.cnf <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/tls-servers/Bounded-lifetime%20Rotated%20EDH%20Server%20Key%20Build/keycloak-server/etc/eva/eva-openssl.cnf>`__                               |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `/etc/eva/eva.conf <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/tls-servers/Bounded-lifetime%20Rotated%20EDH%20Server%20Key%20Build/keycloak-server/etc/eva/eva.conf>`__                                             |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Nginx is configured to listen for incoming TLSv1.3 connections on the SERVER network. The Key Management Agent receives key material through an SSH connection from the Key Governance Platform over the MANAGEMENT network, authenticated using an SSH key pair. The Nginx reverse proxy is secured with an SSL certificate issued through DigiCert. 
 

@@ -95,15 +95,15 @@ The figure below shows shows the contents of the workflow for the Exported Key w
 Additional Configuration Files
 ------------------------------
 
-+-----------------------------------------------------------------+
-| Relevant Configuration Files                                    |
-+=================================================================+
-| workflows/Redis DB - NIST POC/Result.py                         |
-+-----------------------------------------------------------------+
-| workflows/Redis DB - NIST POC/JSON Content.yaml                 |
-+-----------------------------------------------------------------+
-| workflows/Redis DB - NIST POC/Fetch Data Using Client Random.py |
-+-----------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Relevant Configuration Files                                                                                                                                                                                                         |
++======================================================================================================================================================================================================================================+
+| `workflows/Redis DB - NIST POC/Result.py <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/appviewx/workflows/Redis%20DB%20-%20NIST%20POC/Result.py>`__                                                         |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `workflows/Redis DB - NIST POC/JSON Content.yaml <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/appviewx/workflows/Redis%20DB%20-%20NIST%20POC/JSON%20Content.yaml>`__                                       |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `workflows/Redis DB - NIST POC/Fetch Data Using Client Random.py <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/appviewx/workflows/Redis%20DB%20-%20NIST%20POC/Fetch%20Data%20Using%20Client%20Random.py>`__ |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-These files were created  as part of the creation of the workflow for this build in AppViewX. This workflow serves the purpose of managing access to the Redis database containing keys indexed by their Client Random ID.
+These files were created as part of the creation of the workflow for this build in AppViewX. This workflow serves the purpose of managing access to the Redis database containing keys indexed by their Client Random ID.
 

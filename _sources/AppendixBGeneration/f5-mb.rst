@@ -3,7 +3,7 @@
 This build uses the F5 BIG-IP product as a middlebox to actively break and inspect TLSv1.3 traffic. 
 
 Instantiation of the F5 BIG-IP Virtual Appliance
------------------------------------------------
+------------------------------------------------
 
 The virtual appliance is instantiated from the vendor supplied virtual appliance template (OVF) file with four network interfaces configured as detailed below. Each network interface is assigned a static IP address on the appropriate subnet. The product instructions were followed for applying the appropriate license keys to the virtual appliance, creating the default administrative user, as well as adding and configuring the four network interfaces.
 
@@ -42,10 +42,6 @@ The primary appliance was provisioned with the following modules from the ``Syst
 
 F5 BIG-IP Syslog Server Network Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-+-----------+------------+------------------------+----------------------------------------------------------------------+
-| Interface | Network    | IP Address             | Purpose                                                              |
-+===========+============+========================+======================================================================+
 
 This VM, running Ubuntu 20.04.6 LTS was created with a resource allocation including 8 vCPUs, 16 GB of memory, and 75 GB of storage.
 
@@ -175,19 +171,19 @@ This section describes the configuration of the F5 BIG-IP device for interceptin
 Additional Configuration Files
 ------------------------------
 
-+-----------------------------------------------------------------+
-| Relevant Configuration Files                                    |
-+=================================================================+
-| big-ip/irules/nccoeKeyExportToRedisClientSide_iRule.txt         |
-+-----------------------------------------------------------------+
-| big-ip/irules/nccoeKeyExportToRedisServerSide_iRule.txt         |
-+-----------------------------------------------------------------+
-| big-ip/irules/ssloS_NETSCOUT-port_remap.txt                     |
-+-----------------------------------------------------------------+
-| big-ip/irules/sslo_BreakInspect-gw_in_t.txt                     |
-+-----------------------------------------------------------------+
-| big-ip/irules/sslo_BreakInspect-lib.txt                         |
-+-----------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Relevant Configuration Files                                                                                                                                                                                    |
++=================================================================================================================================================================================================================+
+| `big-ip/irules/nccoeKeyExportToRedisClientSide_iRule.txt <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/f5-active-decryptor/big-ip/irules/nccoeKeyExportToRedisClientSide_iRule.txt>`__ |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `big-ip/irules/nccoeKeyExportToRedisServerSide_iRule.txt <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/f5-active-decryptor/big-ip/irules/nccoeKeyExportToRedisServerSide_iRule.txt>`__ |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `big-ip/irules/ssloS_NETSCOUT-port_remap.txt <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/f5-active-decryptor/big-ip/irules/ssloS_NETSCOUT-port_remap.txt>`__                         |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `big-ip/irules/sslo_BreakInspect-gw_in_t.txt <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/f5-active-decryptor/big-ip/irules/sslo_BreakInspect-gw_in_t.txt>`__                         |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `big-ip/irules/sslo_BreakInspect-lib.txt <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/f5-active-decryptor/big-ip/irules/sslo_BreakInspect-lib.txt>`__                                 |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 A number of iRules were defined for this build within F5. 
 

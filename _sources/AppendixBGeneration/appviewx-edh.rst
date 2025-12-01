@@ -94,23 +94,23 @@ The figure below shows shows the contents of the workflow for the Diffie-Hellman
 Additional Configuration Files
 ------------------------------
 
-+-----------------------------------------------------------------+
-| Relevant Configuration Files                                    |
-+=================================================================+
-| workflows/TLS 1_3 DH 2024/1st Attempt Key.py                    |
-+-----------------------------------------------------------------+
-| workflows/TLS 1_3 DH 2024/Defining Curves.py                    |
-+-----------------------------------------------------------------+
-| workflows/TLS 1_3 DH 2024/Encrypting and Archiving.py           |
-+-----------------------------------------------------------------+
-| workflows/TLS 1_3 DH 2024/Executing Commands.py                 |
-+-----------------------------------------------------------------+
-| workflows/TLS 1_3 DH 2024/Key Generation In.py                  |
-+-----------------------------------------------------------------+
-| workflows/TLS 1_3 DH 2024/add_external_key.py                   |
-+-----------------------------------------------------------------+
-| workflows/TLS 1_3 DH 2024/final.py                              |
-+-----------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Relevant Configuration Files                                                                                                                                                                                          |
++=======================================================================================================================================================================================================================+
+| `workflows/TLS 1_3 DH 2024/1st Attempt Key.py <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/appviewx/workflows/TLS%201_3%20DH%202024/1st%20Attempt%20Key.py>`__                              |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `workflows/TLS 1_3 DH 2024/Defining Curves.py <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/appviewx/workflows/TLS%201_3%20DH%202024/Defining%20Curves.py>`__                                |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `workflows/TLS 1_3 DH 2024/Encrypting and Archiving.py <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/appviewx/workflows/TLS%201_3%20DH%202024/Encrypting%20and%20Archiving.py>`__            |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `workflows/TLS 1_3 DH 2024/Executing Commands.py <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/appviewx/workflows/TLS%201_3%20DH%202024/Executing%20Commands.py>`__                          |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `workflows/TLS 1_3 DH 2024/Key Generation In.py <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/appviewx/workflows/TLS%201_3%20DH%202024/Key%20Generation%20In.py>`__                          |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `workflows/TLS 1_3 DH 2024/add_external_key.py <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/appviewx/workflows/TLS%201_3%20DH%202024/add_external_key.py>`__                                |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `workflows/TLS 1_3 DH 2024/final.py <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/appviewx/workflows/TLS%201_3%20DH%202024/final.py>`__                                                      |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 These files were created  as part of the creation of the workflow for this build in AppViewX. This workflow serves the purpose of creating and registering keys with the AppViewX Secure Software module to make those keys available to the servers and decryptors which need them.
 

@@ -25,9 +25,5 @@ See configuration of individual TLS servers.
 Additional Configuration Files
 ------------------------------
 
-+-----------------------------------------------------------------+
-| Relevant Configuration Files                                    |
-+=================================================================+
-
 See configuration of individual TLS servers.
 

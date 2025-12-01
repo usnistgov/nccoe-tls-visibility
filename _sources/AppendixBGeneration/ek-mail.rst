@@ -44,27 +44,27 @@ Second, Mail was configured to only listen on the network interface connected to
 Configuration Files
 ^^^^^^^^^^^^^^^^^^^
 
-+--------------------------------------------------------------------------------+
-| Configuration Files                                                            |
-+================================================================================+
-| /home/tlsadmin/build-mail-container-image/nfr/conf/eva-openssl.cnf             |
-+--------------------------------------------------------------------------------+
-| /home/tlsadmin/build-mail-container-image/nfr/conf/eva.cnf                     |
-+--------------------------------------------------------------------------------+
-| /home/tlsadmin/build-mail-container-image/Dockerfile                           |
-+--------------------------------------------------------------------------------+
-| /home/tlsadmin/build-mail-container-image/nfr/openssl.cnf                      |
-+--------------------------------------------------------------------------------+
-| /home/tlsadmin/build-mail-container-image/nfr/syslog-eva.conf                  |
-+--------------------------------------------------------------------------------+
-| /home/tlsadmin/build-mail-container-image/entrypoint.sh                        |
-+--------------------------------------------------------------------------------+
-| /home/tlsadmin/build-mail-container-image/testusers.txt                        |
-+--------------------------------------------------------------------------------+
-| /home/tlsadmin/mnt_postfix/main.cf                                             |
-+--------------------------------------------------------------------------------+
-| /home/tlsadmin/mnt_postfix/master.cf                                           |
-+--------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Configuration Files                                                                                                                                                                                                                                                       |
++===========================================================================================================================================================================================================================================================================+
+| `/home/tlsadmin/build-mail-container-image/nfr/conf/eva-openssl.cnf <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/tls-servers/Exported%20Session%20Key%20Build/mail-server/home/tlsadmin/build-mail-container-image/nfr/conf/eva-openssl.cnf>`__ |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `/home/tlsadmin/build-mail-container-image/nfr/conf/eva.conf <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/tls-servers/Exported%20Session%20Key%20Build/mail-server/home/tlsadmin/build-mail-container-image/nfr/conf/eva.conf>`__               |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `/home/tlsadmin/build-mail-container-image/Dockerfile <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/tls-servers/Exported%20Session%20Key%20Build/mail-server/home/tlsadmin/build-mail-container-image/Dockerfile>`__                             |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `/home/tlsadmin/build-mail-container-image/nfr/openssl.cnf <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/tls-servers/Exported%20Session%20Key%20Build/mail-server/home/tlsadmin/build-mail-container-image/nfr/openssl.cnf>`__                   |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `/home/tlsadmin/build-mail-container-image/nfr/syslog-eva.conf <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/tls-servers/Exported%20Session%20Key%20Build/mail-server/home/tlsadmin/build-mail-container-image/nfr/syslog-eva.conf>`__           |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `/home/tlsadmin/build-mail-container-image/entrypoint.sh <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/tls-servers/Exported%20Session%20Key%20Build/mail-server/home/tlsadmin/build-mail-container-image/entrypoint.sh>`__                       |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `/home/tlsadmin/build-mail-container-image/testusers.txt <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/tls-servers/Exported%20Session%20Key%20Build/mail-server/home/tlsadmin/build-mail-container-image/testusers.txt>`__                       |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `/home/tlsadmin/mnt_postfix/main.cf <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/tls-servers/Exported%20Session%20Key%20Build/mail-server/home/tlsadmin/mnt_postfix/main.cf>`__                                                                 |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `/home/tlsadmin/mnt_postfix/master.cf <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/tls-servers/Exported%20Session%20Key%20Build/mail-server/home/tlsadmin/mnt_postfix/master.cf>`__                                                             |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Postfix is configured to listen for incoming TLSv1.3 connections on the SERVER network. The Postfix server is secured with an SSL certificate issued through DigiCert. The docker files are primarily for ensuring the service is running and using the correct certificates.
 

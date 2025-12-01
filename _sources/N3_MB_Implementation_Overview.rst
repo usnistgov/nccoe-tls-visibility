@@ -28,7 +28,6 @@ shows the wiring configurations between the two routers and two middleboxes.
 
    Middlebox Networking Details
 
-.. image:: 
 
 .. _E.4.1:
 

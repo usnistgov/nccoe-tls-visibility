@@ -39,11 +39,12 @@ Second, Redis was configured to only listen on the network interface connected t
 Configuration Files
 ^^^^^^^^^^^^^^^^^^^
 
-+--------------------------------------------------------------------------------+
-| Configuration Files                                                            |
-+================================================================================+
-| redis.conf                                                                     |
-+--------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------+
+| Configuration Files                                                                                                     |
++=========================================================================================================================+
+| `redis.conf <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/appviewx/redis-server/redis.conf>`__ |
++-------------------------------------------------------------------------------------------------------------------------+
+
 
 The primary usage of ``redis.conf`` was to ensure the ability to use TLSv1.3 and to indicate the certificates needed for the TLSv1.3 connection between it and the various products directly inserting keys into it.
 
