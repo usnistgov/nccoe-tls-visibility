@@ -44,27 +44,27 @@ Second, TestApp was configured to only listen on the network interface connected
 Configuration Files
 ^^^^^^^^^^^^^^^^^^^
 
-+--------------------------------------------------------------------------------+
-| Configuration Files                                                            |
-+================================================================================+
-| /home/administrator/testapp-stack/nginx-build/nfr/conf/eva-openssl.cnf         |
-+--------------------------------------------------------------------------------+
-| /home/administrator/testapp-stack/nginx-build/nfr/conf/eva.cnf                 |
-+--------------------------------------------------------------------------------+
-| /home/administrator/testapp-stack/nginx-build/Dockerfile                       |
-+--------------------------------------------------------------------------------+
-| /home/administrator/testapp-stack/nginx-build/nfr/openssl.cnf                  |
-+--------------------------------------------------------------------------------+
-| /home/administrator/testapp-stack/nginx-build/nfr/syslog-eva.conf              |
-+--------------------------------------------------------------------------------+
-| /home/administrator/testapp-stack/nginx-build/entrypoint.sh                    |
-+--------------------------------------------------------------------------------+
-| /home/administrator/testapp-stack/nginx-default.conf                           |
-+--------------------------------------------------------------------------------+
-| /home/administrator/testapp-stack/docker-compose.yaml                          |
-+--------------------------------------------------------------------------------+
-| /home/administrator/testapp-build/testapp/testapp.py                           |
-+--------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Configuration Files                                                                                                                                                                                                                                                                  |
++======================================================================================================================================================================================================================================================================================+
+| `/home/administrator/testapp-stack/nginx-build/nfr/conf/eva-openssl.cnf <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/tls-servers/Exported%20Session%20Key%20Build/testapp-server/home/administrator/testapp-stack/nginx-build/nfr/conf/eva-openssl.cnf>`__ |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `/home/administrator/testapp-stack/nginx-build/nfr/conf/eva.conf <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/tls-servers/Exported%20Session%20Key%20Build/testapp-server/home/administrator/testapp-stack/nginx-build/nfr/conf/eva.conf>`__               |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `/home/administrator/testapp-stack/nginx-build/Dockerfile <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/tls-servers/Exported%20Session%20Key%20Build/testapp-server/home/administrator/testapp-stack/nginx-build/Dockerfile>`__                             |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `/home/administrator/testapp-stack/nginx-build/nfr/openssl.cnf <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/tls-servers/Exported%20Session%20Key%20Build/testapp-server/home/administrator/testapp-stack/nginx-build/nfr/openssl.cnf>`__                   |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `/home/administrator/testapp-stack/nginx-build/nfr/syslog-eva.conf <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/tls-servers/Exported%20Session%20Key%20Build/testapp-server/home/administrator/testapp-stack/nginx-build/nfr/syslog-eva.conf>`__           |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `/home/administrator/testapp-stack/nginx-build/entrypoint.sh <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/tls-servers/Exported%20Session%20Key%20Build/testapp-server/home/administrator/testapp-stack/nginx-build/entrypoint.sh>`__                       |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `/home/administrator/testapp-stack/nginx-default.conf <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/tls-servers/Exported%20Session%20Key%20Build/testapp-server/home/administrator/testapp-stack/nginx-default.conf>`__                                     |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `/home/administrator/testapp-stack/docker-compose.yml <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/tls-servers/Exported%20Session%20Key%20Build/testapp-server/home/administrator/testapp-stack/docker-compose.yml>`__                                     |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `/home/administrator/testapp-stack/testapp-build/testapp/testapp.py <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/tls-servers/Exported%20Session%20Key%20Build/testapp-server/home/administrator/testapp-stack/testapp-build/testapp/testapp.py>`__         |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Nginx is configured to listen for incoming TLSv1.3 connections on the SERVER network. The Nginx reverse proxy is secured with an SSL certificate issued through DigiCert. The docker files are primarily for ensuring that the service is running and using the correct certificates.
 

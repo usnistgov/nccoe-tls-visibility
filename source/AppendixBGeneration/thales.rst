@@ -123,9 +123,5 @@ This section contains instructions for configuring the AppViewX key governance p
 Additional Configuration Files
 ------------------------------
 
-+-----------------------------------------------------------------+
-| Relevant Configuration Files                                    |
-+=================================================================+
-
 No additional files needed for this build.
 

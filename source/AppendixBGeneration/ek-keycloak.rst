@@ -44,25 +44,25 @@ Second, Keycloak was configured to only listen on the network interface connecte
 Configuration Files
 ^^^^^^^^^^^^^^^^^^^
 
-+--------------------------------------------------------------------------------+
-| Configuration Files                                                            |
-+================================================================================+
-| /home/administrator/keycloak/nginx-build/nfr/conf/eva-openssl.cnf              |
-+--------------------------------------------------------------------------------+
-| /home/administrator/keycloak/nginx-build/nfr/conf/eva.cnf                      |
-+--------------------------------------------------------------------------------+
-| /home/administrator/keycloak/nginx-build/Dockerfile                            |
-+--------------------------------------------------------------------------------+
-| /home/administrator/keycloak/nginx-build/nfr/openssl.cnf                       |
-+--------------------------------------------------------------------------------+
-| /home/administrator/keycloak/nginx-build/nfr/syslog-eva.conf                   |
-+--------------------------------------------------------------------------------+
-| /home/administrator/keycloak/nginx-build/entrypoint.sh                         |
-+--------------------------------------------------------------------------------+
-| /home/administrator/keycloak/default.conf                                      |
-+--------------------------------------------------------------------------------+
-| /home/administrator/keycloak/nginx-build/docker-compose.yaml                   |
-+--------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Configuration Files                                                                                                                                                                                                                                                                                 |
++=====================================================================================================================================================================================================================================================================================================+
+| `/home/administrator/keycloak/nginx-build/nginx-build/nfr/conf/eva-openssl.cnf <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/tls-servers/Exported%20Session%20Key%20Build/keycloak-server/home/administrator/keycloak/nginx-build/nginx-build/nfr/conf/eva-openssl.cnf>`__ |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `/home/administrator/keycloak/nginx-build/nginx-build/nfr/conf/eva.conf <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/tls-servers/Exported%20Session%20Key%20Build/keycloak-server/home/administrator/keycloak/nginx-build/nginx-build/nfr/conf/eva.conf>`__               |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `/home/administrator/keycloak/nginx-build/nginx-build/Dockerfile <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/tls-servers/Exported%20Session%20Key%20Build/keycloak-server/home/administrator/keycloak/nginx-build/nginx-build/Dockerfile>`__                             |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `/home/administrator/keycloak/nginx-build/nginx-build/nfr/openssl.cnf <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/tls-servers/Exported%20Session%20Key%20Build/keycloak-server/home/administrator/keycloak/nginx-build/nginx-build/nfr/openssl.cnf>`__                   |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `/home/administrator/keycloak/nginx-build/nginx-build/nfr/syslog-eva.conf <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/tls-servers/Exported%20Session%20Key%20Build/keycloak-server/home/administrator/keycloak/nginx-build/nginx-build/nfr/syslog-eva.conf>`__           |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `/home/administrator/keycloak/nginx-build/nginx-build/entrypoint.sh <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/tls-servers/Exported%20Session%20Key%20Build/keycloak-server/home/administrator/keycloak/nginx-build/nginx-build/entrypoint.sh>`__                       |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `/home/administrator/keycloak/nginx-build/default.conf <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/tls-servers/Exported%20Session%20Key%20Build/keycloak-server/home/administrator/keycloak/nginx-build/default.conf>`__                                                 |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `/home/administrator/keycloak/nginx-build/docker-compose.yaml <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/tls-servers/Exported%20Session%20Key%20Build/keycloak-server/home/administrator/keycloak/nginx-build/docker-compose.yaml>`__                                   |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Nginx is configured to listen for incoming TLSv1.3 connections on the SERVER network. The Nginx reverse proxy is secured with an SSL certificate issued through DigiCert. The docker files are primarily for ensuring that the service is running and using the correct certificates.
 

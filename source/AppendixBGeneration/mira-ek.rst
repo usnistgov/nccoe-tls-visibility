@@ -1,7 +1,7 @@
 .. _mira-ek:
 
 MIRA ETO for Real-time Decryption using Exported Session Keys
-=============================
+=============================================================
 
 This build uses the MIRA ETO product to passively decrypt TLSv1.3 network traffic leveraging exported TLS session keys. The MIRA ETO product is shared with the EDH keys build, and so the initial configuration and network setup is the same. However, the configuration is slightly different.
 

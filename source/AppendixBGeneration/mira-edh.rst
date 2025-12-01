@@ -124,9 +124,5 @@ For ETO to decrypt the traffic associated with managed TLS servers, it also must
 Additional Configuration Files
 ------------------------------
 
-+-----------------------------------------------------------------+
-| Relevant Configuration Files                                    |
-+=================================================================+
-
 No additional files needed for this build.
 

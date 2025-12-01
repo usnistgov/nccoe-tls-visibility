@@ -18,7 +18,9 @@ data centers, and connections across the public internet.
 *The Transport Layer Security (TLS) Protocol Version 1.3* (RFC 8446
 :ref:`[2]<tls1_3rfc>`), always provides *forward secrecy*.
 In the legacy TLS 1.2 implementations, forward secrecy is optional, but
-in TLS 1.3 it is provided by default.
+in TLS 1.3, every session is compatible with forward secrecy, and it is
+achieved when compatible key management practices are employed, such as
+deleting keys when they are no longer needed.
 
 Many enterprises have regulatory requirements for visibility into network
 traffic and stored data. The approach used in TLS 1.3 to achieve forward 
@@ -30,7 +32,8 @@ enterprises choosing between using the TLS 1.2 protocol without forward
 secrecy or adopting TLS 1.3 together with some alternative method for 
 achieving visibility into internal traffic. If an enterprise opts for TLS 1.2, 
 it misses out on the performance enhancements in TLS 1.3 and faces additional
-risks by relying on increasingly out-of-date protocol implementations.
+risks by relying on increasingly out-of-date protocol implementations. Further,
+TLS 1.2 will not be updated to support post-quantum cryptographic (PQC) algorithms.
 
 Loss of visibility into received network traffic can impair critical
 functions such as network and application performance monitoring,

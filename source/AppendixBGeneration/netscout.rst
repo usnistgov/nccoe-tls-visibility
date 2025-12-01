@@ -119,13 +119,13 @@ The figure below shows how to add HTTPS traffic known to be decrypted as an appl
 Additional Configuration Files
 ------------------------------
 
-+-----------------------------------------------------------------+
-| Relevant Configuration Files                                    |
-+=================================================================+
-| vcyberstream/etc/suricata/suricata.yaml                         |
-+-----------------------------------------------------------------+
-| vcyberstream/custom-suricata-rules/suricata-rules.txt           |
-+-----------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Relevant Configuration Files                                                                                                                                                                 |
++==============================================================================================================================================================================================+
+| `vcyberstream/etc/suricata/suricata.yaml <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/netscout/vcyberstream/etc/suricata/suricata.yaml>`__                         |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `vcyberstream/custom-suricata-rules/custom-rules.txt <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/netscout/vcyberstream/custom-suricata-rules/custom-rules.txt>`__ |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 * ``custom-rules.txt`` contains the custom rules added to enable detection of the demonstration scenarios detailed in Appendix F. They are quite specific to these use cases to demonstrate feasibility and it is recommended to instead use open-source or more developed rulesets in practice.
 

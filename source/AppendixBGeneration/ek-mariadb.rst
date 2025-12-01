@@ -42,17 +42,17 @@ Second, MariaDB was configured to only listen on the network interface connected
 Configuration Files
 ^^^^^^^^^^^^^^^^^^^
 
-+--------------------------------------------------------------------------------+
-| Configuration Files                                                            |
-+================================================================================+
-| /etc/mysql/mariadb.conf.d/50-server.cnf                                        |
-+--------------------------------------------------------------------------------+
-| /etc/mysql/mariadb.cnf                                                         |
-+--------------------------------------------------------------------------------+
-| /etc/eva/eva-openssl.cnf                                                       |
-+--------------------------------------------------------------------------------+
-| /etc/eva/eva.conf                                                              |
-+--------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Configuration Files                                                                                                                                                                                                    |
++========================================================================================================================================================================================================================+
+| `/etc/mysql/mariadb.conf.d/50-server.cnf <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/tls-servers/Exported%20Session%20Key%20Build/mariadb-server/etc/mysql/mariadb.conf.d/50-server.cnf>`__ |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `/etc/mysql/mariadb.cnf <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/tls-servers/Exported%20Session%20Key%20Build/mariadb-server/etc/mysql/mariadb.cnf>`__                                   |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `/etc/eva/eva-openssl.cnf <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/tls-servers/Exported%20Session%20Key%20Build/mariadb-server/etc/eva/eva-openssl.cnf>`__                               |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `/etc/eva/eva.conf <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/tls-servers/Exported%20Session%20Key%20Build/mariadb-server/etc/eva/eva.conf>`__                                             |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Nginx is configured to listen for incoming TLSv1.3 connections on the SERVER network. The Nginx reverse proxy is secured with an SSL certificate issued through DigiCert. The docker files are primarily for ensuring that the service is running and using the correct certificates.
 

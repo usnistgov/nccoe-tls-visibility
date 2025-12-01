@@ -44,27 +44,27 @@ Second, TestApp was configured to only listen on the network interface connected
 Configuration Files
 ^^^^^^^^^^^^^^^^^^^
 
-+--------------------------------------------------------------------------------+
-| Configuration Files                                                            |
-+================================================================================+
-| /home/administrator/testapp-stack/testapp-build/testapp/oidc-client-secret.txt |
-+--------------------------------------------------------------------------------+
-| /home/administrator/testapp-stack/testapp-build/testapp/testapp.py             |
-+--------------------------------------------------------------------------------+
-| /home/administrator/testapp-stack/testapp-build/Dockerfile                     |
-+--------------------------------------------------------------------------------+
-| /home/administrator/testapp-stack/testapp-build/pyenv.cfg                      |
-+--------------------------------------------------------------------------------+
-| /home/administrator/testapp-stack/testapp-build/requirements.txt               |
-+--------------------------------------------------------------------------------+
-| /home/administrator/testapp-stack/docker-compose.yml                           |
-+--------------------------------------------------------------------------------+
-| /home/administrator/testapp-stack/nginx-default.conf                           |
-+--------------------------------------------------------------------------------+
-| /etc/eva/eva-openssl.cnf                                                       |
-+--------------------------------------------------------------------------------+
-| /etc/eva/eva.conf                                                              |
-+--------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Configuration Files                                                                                                                                                                                                                                                                                                         |
++=============================================================================================================================================================================================================================================================================================================================+
+| `/home/administrator/testapp-stack/testapp-build/testapp/oidc-client-secret.txt <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/tls-servers/Bounded-lifetime%20Rotated%20EDH%20Server%20Key%20Build/testapp-server/home/administrator/testapp-stack/testapp-build/testapp/oidc-client-secret.txt>`__ |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `/home/administrator/testapp-stack/testapp-build/testapp/testapp.py <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/tls-servers/Bounded-lifetime%20Rotated%20EDH%20Server%20Key%20Build/testapp-server/home/administrator/testapp-stack/testapp-build/testapp/testapp.py>`__                         |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `/home/administrator/testapp-stack/testapp-build/Dockerfile <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/tls-servers/Bounded-lifetime%20Rotated%20EDH%20Server%20Key%20Build/testapp-server/home/administrator/testapp-stack/testapp-build/Dockerfile>`__                                         |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `/home/administrator/testapp-stack/testapp-build/pyvenv.cfg <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/tls-servers/Bounded-lifetime%20Rotated%20EDH%20Server%20Key%20Build/testapp-server/home/administrator/testapp-stack/testapp-build/pyvenv.cfg>`__                                         |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `/home/administrator/testapp-stack/testapp-build/requirements.txt <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/tls-servers/Bounded-lifetime%20Rotated%20EDH%20Server%20Key%20Build/testapp-server/home/administrator/testapp-stack/testapp-build/requirements.txt>`__                             |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `/home/administrator/testapp-stack/docker-compose.yml <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/tls-servers/Bounded-lifetime%20Rotated%20EDH%20Server%20Key%20Build/testapp-server/home/administrator/testapp-stack/docker-compose.yml>`__                                                     |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `/home/administrator/testapp-stack/nginx-default.conf <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/tls-servers/Bounded-lifetime%20Rotated%20EDH%20Server%20Key%20Build/testapp-server/home/administrator/testapp-stack/nginx-default.conf>`__                                                     |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `/etc/eva/eva-openssl.cnf <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/tls-servers/Bounded-lifetime%20Rotated%20EDH%20Server%20Key%20Build/testapp-server/etc/eva/eva-openssl.cnf>`__                                                                                                             |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `/etc/eva/eva.conf <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/tls-servers/Bounded-lifetime%20Rotated%20EDH%20Server%20Key%20Build/testapp-server/etc/eva/eva.conf>`__                                                                                                                           |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Nginx is configured to listen for incoming TLSv1.3 connections on the SERVER network. The Key Management Agent receives key material through an SSH connection from the Key Governance Platform over the MANAGEMENT network, authenticated using an SSH key pair. The Nginx reverse proxy is secured with an SSL certificate issued through DigiCert. 
 

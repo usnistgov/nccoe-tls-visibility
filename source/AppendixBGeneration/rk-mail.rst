@@ -44,21 +44,21 @@ Second, Mail was configured to only listen on the network interface connected to
 Configuration Files
 ^^^^^^^^^^^^^^^^^^^
 
-+--------------------------------------------------------------------------------+
-| Configuration Files                                                            |
-+================================================================================+
-| /home/administrator/make-ssh-chroot.ssh                                        |
-+--------------------------------------------------------------------------------+
-| /etc/dovecot/dovecot.conf                                                      |
-+--------------------------------------------------------------------------------+
-| /etc/postfix/main.cf                                                           |
-+--------------------------------------------------------------------------------+
-| /etc/postfix/master.cf                                                         |
-+--------------------------------------------------------------------------------+
-| /etc/eva/eva-openssl.cnf                                                       |
-+--------------------------------------------------------------------------------+
-| /etc/eva/eva.conf                                                              |
-+--------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Configuration Files                                                                                                                                                                                                                        |
++============================================================================================================================================================================================================================================+
+| `/home/administrator/make-ssh-chroot.sh <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/tls-servers/Bounded-lifetime%20Rotated%20EDH%20Server%20Key%20Build/mail-server/home/administrator/make-ssh-chroot.sh>`__   |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `/etc/dovecot/dovecot.conf <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/tls-servers/Bounded-lifetime%20Rotated%20EDH%20Server%20Key%20Build/mail-server/etc/dovecot/dovecot.conf>`__                             |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `/etc/postfix/main.cf <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/tls-servers/Bounded-lifetime%20Rotated%20EDH%20Server%20Key%20Build/mail-server/etc/postfix/main.cf>`__                                       |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `/etc/postfix/master.cf <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/tls-servers/Bounded-lifetime%20Rotated%20EDH%20Server%20Key%20Build/mail-server/etc/postfix/master.cf>`__                                   |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `/etc/eva/eva-openssl.cnf <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/tls-servers/Bounded-lifetime%20Rotated%20EDH%20Server%20Key%20Build/mail-server/etc/eva/eva-openssl.cnf>`__                               |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `/etc/eva/eva.conf <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/tls-servers/Bounded-lifetime%20Rotated%20EDH%20Server%20Key%20Build/mail-server/etc/eva/eva.conf>`__                                             |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Postfix is configured to listen for incoming TLSv1.3 connections on the SERVER network. The Key Management Agent receives key material through an SSH connection from the Key Governance Platform over the MANAGEMENT network, authenticated using an SSH key pair. The Postfix server is secured with an SSL certificate issued through DigiCert. 
 

@@ -48,15 +48,15 @@ This section describes the configuration of the MIRA ETO device for intercepting
 Additional Configuration Files
 ------------------------------
 
-+-----------------------------------------------------------------+
-| Relevant Configuration Files                                    |
-+=================================================================+
-| root/keylog2redis.py                                            |
-+-----------------------------------------------------------------+
-| root/keylog2redis.sh                                            |
-+-----------------------------------------------------------------+
-| root/ScriptInstructions.txt                                     |
-+-----------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Relevant Configuration Files                                                                                                                              |
++===========================================================================================================================================================+
+| `root/keylog2redis.py <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/mira-active-decryptor/root/keylog2redis.py>`__               |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `root/keylog2redis.sh <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/mira-active-decryptor/root/keylog2redis.sh>`__               |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `root/ScriptInstructions.txt <https://github.com/usnistgov/nccoe-tls-visibility/blob/main/lab_build/mira-active-decryptor/root/ScriptInstructions.txt>`__ |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 * The shell script ``keylog2redis.sh`` is used to run and capture the output of ``keylog2redis.py``.
 
